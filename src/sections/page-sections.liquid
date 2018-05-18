@@ -12,6 +12,9 @@
       {% when 'richtext_block' %}
       {% include 'richtext-block' %}
 
+      {% when 'image_with_text' %}
+      {% include 'image-with-text' %}
+
     {% endcase %}
   </div>
   {% endfor %}
@@ -20,6 +23,55 @@
 {% schema %}
   {
     "blocks": [
+      {
+        "name": "Image with text",
+        "type": "image_with_text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "layout",
+            "label": "Image alignment",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Image with text"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      },
       {
         "name": "Video",
         "type": "video",

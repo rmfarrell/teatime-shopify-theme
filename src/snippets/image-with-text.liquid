@@ -1,0 +1,37 @@
+<section class="image-with-text">
+  {% capture image_layout %}
+    <div class="image-with-text__image">
+      {% if block.settings.image != blank %}
+        {% include 'responsive-image' with
+          image: block.settings.image,
+          max_width: 545,
+          max_height: 545
+        %}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+  {% endcapture %}
+
+  {% if block.settings.layout == 'left' %}
+    {{ image_layout }}
+  {% endif %}
+
+  <div class="image-with-text__text">
+    {% if block.settings.title != blank %}
+      <h2>{{ block.settings.title | escape }}</h2>
+    {% endif %}
+    {% if block.settings.text != blank %}
+      <div>{{ block.settings.text }}</div>
+    {% endif %}
+    {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+      <a href="{{ block.settings.button_link }}">
+        {{ block.settings.button_label | escape }}
+      </a>
+    {% endif %}
+  </div>
+
+  {% if block.settings.layout == 'right' %}
+    {{ image_layout }}
+  {% endif %}
+</section>
