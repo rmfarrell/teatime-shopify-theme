@@ -1,3 +1,25 @@
+{% comment %} 
+Product list
+TODO: hide on all but product pages
+{% endcomment %}
+{% if true  %}
+  {% comment %} Loop through product categories {% endcomment %}
+  <ul class="collection-lineup">
+    {% for block in section.blocks %}
+      {%- assign collection = collections[block.settings.collection] -%}
+      <li>
+        <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+        <h4>{{collection.title}}</h4>
+        <ul>
+          {% for product in collection.products %}
+            <li>{{ product.title }}</li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
 <footer>
   {% comment %} Logo {% endcomment %}
   <a href="/" itemprop="url"{% if section.settings.logo != blank %} class="logo-image"{% endif %}>
@@ -77,6 +99,19 @@
 {% schema %}
   {
     "name": "Footer",
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "label": "Collection",
+            "id": "collection",
+            "type": "collection"
+          }
+        ]
+      }
+    ],
     "settings": [
       {
         "type": "link_list",

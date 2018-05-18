@@ -39,11 +39,11 @@
       <ul>
           <li>
             <a>Shop *</a>
-            <ul>
+            <ul class="collection-lineup">
               {% for block in section.blocks %}
                 {%- assign collection = collections[block.settings.collection] -%}
-                <li>{{collection.products}}</li>
-                <li><img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}"></li>
+                <li>
+                <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">{{collection.title}}</li>
               {% endfor %}
             </ul>
           </li>
