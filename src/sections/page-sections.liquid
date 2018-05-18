@@ -1,0 +1,64 @@
+<div>
+  {% for block in section.blocks %}
+  <div class="content-blocks" {{ block.shopify_attributes }}>
+    {% case block.type %}
+
+      {% when 'promo' %}
+      {% include 'promo' %}
+
+      {% when 'video' %}
+      {% include 'video' %}
+
+      {% when 'richtext_block' %}
+      {% include 'richtext-block' %}
+
+    {% endcase %}
+  </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "blocks": [
+      {
+        "name": "Video",
+        "type": "video",
+        "settings": [
+          {
+            "id": "video",
+            "type": "video_url",
+            "accept": ["vimeo"],
+            "label": "Vimeo URL"
+          }
+        ]
+      },
+      {
+        "name": "Rich Text",
+        "type": "richtext_block",
+        "settings": [
+          {
+            "id": "rich_text_field",
+            "type": "richtext",
+            "label": "Enter rich text"
+          }
+        ]
+      },
+      {
+        "type": "promo",
+        "name": "Promo",
+        "settings": [
+          {
+            "id": "promoTitle",
+            "type": "textarea",
+            "label": "Title"
+          },
+          {
+            "id": "promoSubtitle",
+            "type": "textarea",
+            "label": "Subtitle"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

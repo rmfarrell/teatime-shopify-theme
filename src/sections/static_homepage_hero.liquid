@@ -1,0 +1,35 @@
+{%- comment -%}
+  Homepage hero.
+  Includes a static 
+{%- endcomment -%}
+<section class="homepage-hero">
+  <h1>{{section.settings.headline}}</h1>
+  {% comment %} Rolling can {% endcomment %}
+  {% for cta in linklists[section.settings.calls_to_action].links %}
+    <a href="" class="cta">{{cta.title}}</a>
+  {% endfor %}
+</section>
+
+{% schema %}
+  {
+    "name": "Homepage Hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline"
+      },
+      {
+        "type": "link_list",
+        "id": "calls_to_action",
+        "label": "Calls to Action"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage hero",
+        "category": "Static"
+      }
+    ]
+  }
+{% endschema %}
