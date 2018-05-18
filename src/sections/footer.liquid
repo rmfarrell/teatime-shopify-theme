@@ -1,43 +1,65 @@
 <footer>
+  {% comment %} Logo {% endcomment %}
+  <a href="/" itemprop="url"{% if section.settings.logo != blank %} class="logo-image"{% endif %}>
+    {% if section.settings.logo != blank %}
+      <img src="{{ section.settings.logo | img_url: image_size }}"
+          srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+          alt="{{ section.settings.logo.alt | default: shop.name }}"
+          itemprop="logo">
+    {% endif %}
+  </a>
 
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+  {% comment %} Contact {% endcomment %}
+  {% form 'contact' %}
 
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
+    {% if form.posted_successfully? %}
+      <p class="form-success">
+        {{ 'contact.form.post_success' | t }}
+      </p>
+    {% endif %}
 
-    {% endfor %}
+    {{ form.errors | default_errors }}
+
+    <label for="ContactFormEmail">{{ 'contact.form.email' | t }}</label>
+    <input type="email"
+      name="contact[email]"
+      id="ContactFormEmail"
+      placeholder="{{ 'contact.form.email' | t }}"
+      value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+      spellcheck="false"
+      autocomplete="off"
+      autocapitalize="off">
+
+    <input hidden
+      name="contact[context]"
+      id="ContactFormEmail"
+      value="footer-email">
+
+    <input type="submit" class="button" value="{{ 'contact.form.send' | t }}">
+
+  {% endform %}
+
+  {% comment %} Social Links {% endcomment %}
+  <ul class="social-links">
+    {% if section.settings.social_instagram_link %}
+      <li>
+        <a href="{{section.settings.social_instagram_link}}">*</a>
+      </li>
+    {% endif %}
+    {% if section.settings.social_twitter_link %}
+      <li>
+        <a href="{{section.settings.social_twitter_link}}">*</a>
+      </li>
+    {% endif %}
+    {% if section.settings.social_fb_link %}
+      <li>
+        <a href="{{section.settings.social_fb_link}}">*</a>
+      </li>
+    {% endif %}
+
   </ul>
 
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      {%- assign payment_icons_available = 'amazon_payments,american_express,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,google_pay,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' -%}
-
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
-          {% if payment_icons_available contains type %}
-            <li>
-              {%- assign icon_name = type | prepend: 'icon-' -%}
-              {% include icon_name %}
-              <span class="visually-hidden">{{ type | capitalize | replace: '_', ' ' }}</span>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    {% endunless %}
-  {% endif %}
-
+  {% comment %} Footer links {% endcomment %}
   {%- assign footer_linklist = section.settings.footer_linklist -%}
   {% if linklists[footer_linklist].links.size > 0 %}
     <ul>
@@ -48,7 +70,7 @@
   {% endif %}
 
   <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, MatchaBar, Inc. All Rights Reserved.</small>
   </div>
 </footer>
 
@@ -63,12 +85,25 @@
         "default": "footer"
       },
       {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram link"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter link"
+      },
+      {
+        "type": "text",
+        "id": "social_fb_link",
+        "label": "Facebook link"
       }
     ]
   }
-
 {% endschema %}

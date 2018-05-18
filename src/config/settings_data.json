@@ -22,6 +22,11 @@
             "collection-list-2"
           ]
         },
+        "footer": {
+          "social_twitter_link": "https://twitter.com/matchabarnyc",
+          "social_instagram_link": "https://www.instagram.com/matchabar",
+          "social_fb_link": "https://www.facebook.com/matchabarnyc"
+        },
         "featured-collection": {
           "type": "featured-collection",
           "settings": {
