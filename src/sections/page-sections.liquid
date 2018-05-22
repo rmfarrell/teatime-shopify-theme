@@ -1,22 +1,22 @@
 <div>
   {% for block in section.blocks %}
-  <div class="content-blocks" {{ block.shopify_attributes }}>
-    {% case block.type %}
+    <div class="content-blocks" {{ block.shopify_attributes }}>
+      {% case block.type %}
 
-      {% when 'promo' %}
-      {% include 'promo' %}
+        {% when 'promo' %}
+        {% include 'promo' %}
 
-      {% when 'video' %}
-      {% include 'video' %}
+        {% when 'video' %}
+        {% include 'video' %}
 
-      {% when 'richtext_block' %}
-      {% include 'richtext-block' %}
+        {% when 'richtext_block' %}
+        {% include 'richtext-block' %}
 
-      {% when 'image_with_text' %}
-      {% include 'image-with-text' %}
+        {% when 'image_with_text' %}
+        {% include 'image-with-text' %}
 
-    {% endcase %}
-  </div>
+      {% endcase %}
+    </div>
   {% endfor %}
 </div>
 

@@ -34,34 +34,15 @@
 
 <article role="article" itemscope itemtype="http://schema.org/Article">
 
-  {% if article.image %}
-    <div class="hero-banner hero-banner--article lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
-
-    <noscript>
-      {%- assign image_size = article.image.width | append: 'x' -%}
-      <div class="hero-banner hero-banner--article" style="background-image: {{ article.image | img_url: image_size }}"></div>
-    </noscript>
-  {% endif %}
-
   <header role="banner">
     <h1>{{ article.title }}</h1>
     {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
     <p>{{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}</p>
   </header>
 
-  <div class="rte" itemprop="articleBody">
+  {% comment %} <div class="rte" itemprop="articleBody">
     {{ article.content }}
-  </div>
-
-  {% if article.tags.size > 0 %}
-    <ul>
-      {% for tag in article.tags %}
-        <li>
-          <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  </div> {% endcomment %}
 
   {% if settings.social_sharing_blog %}
     {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
