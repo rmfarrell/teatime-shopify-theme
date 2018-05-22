@@ -1,5 +1,6 @@
 // Text colors
-$color-body-text: var(--color-body-text);
+$color-body-text: #717171;
+$color-dark-text: #2B2B2B;
 
 // Background colors
 $color-body: var(--color-main-background);
@@ -21,11 +22,9 @@ $color-success: #000000;
 $color-success-bg: #000000;
 
 // Typography
-$font-heading: var(--font-heading);
-$font-body: var(--font-body);
-$font-body-weight: var(--font-body-weight);
-$font-body-style: var(--font-body-style);
-$font-body-bold-weight: var(--font-body-bold-weight);
+$font-heading: 'Calibre-remote', sans-serif;
+$font-body: 'Calibre-remote', sans-serif;
+$font-body-weight: 400;
 
 // Transitions
 $transition-duration: 250ms;

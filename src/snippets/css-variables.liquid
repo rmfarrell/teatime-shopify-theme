@@ -13,11 +13,36 @@
     --color-body-text: {{ settings.color_body_text }};
     --color-main-background: {{ settings.color_main_bg }};
     --color-border: {{ settings.color_body_text | color_lighten: 50 }};
-
-    --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
-    --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
-    --font-body-weight: {{ settings.font_body.weight }};
-    --font-body-style: {{ settings.font_body.style }};
-    --font-body-bold-weight: {{ font_body_bold.weight | default: 'bold' }};
+  }
+  {% comment %} 
+    Slate is currently ignoring font files, they must be uploaded manually.
+    Go to theme > customize > edit code and add the files to the base of the assets folder.
+  {% endcomment %}
+  @font-face {
+    font-family: 'Calibre-remote';
+    src:url('{{ 'Calibre-Bold.otf' | asset_url }}');
+    font-weight: bold;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Calibre-remote';
+    src:url('{{ 'Calibre-Semibold.otf' | asset_url }}');
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Calibre-remote';
+    src:url('{{ 'Calibre-Regular.otf' | asset_url }}');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Calibre-remote';
+    src:url('{{ 'Calibre-RegularItalic.otf' | asset_url }}');
+    font-weight: normal;
+    font-style: italic;
+    font-display: block;
   }
 </style>

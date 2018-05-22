@@ -1,12 +1,17 @@
-html {
-  font-size: 62.5%;
+html, body {
+  font-size: 10px;
 }
+
+// @font-face {
+//   font-family: 'Calibre-Medium';
+//   src: url("//cdn.shopify.com/s/files/1/0580/8769/t/32/assets/Calibre-Medium.otf?13140506617749322225");
+//   font-weight: normal;
+//   font-style: normal
+// }
 
 body {
   font-family: $font-body;
-  font-weight: $font-body-weight;
-  font-style: $font-body-style;
-  font-size: 1.6rem;
+  font-weight: normal;
 }
 
 h1,
@@ -16,6 +21,7 @@ h4,
 h5,
 h6 {
   font-family: $font-heading;
+  color: $color-dark-text;
 }
 
 body,
