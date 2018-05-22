@@ -26,9 +26,13 @@ $font-heading: 'Calibre-remote', sans-serif;
 $font-body: 'Calibre-remote', sans-serif;
 $font-body-weight: 400;
 
-// Transitions
-$transition-duration: 250ms;
-$transition-timing: ease-in-out;
+/* 
+  Breakpoints
+  Usage: @media and ($small) {}
+*/
+$small: '(max-width: 499px)';
+$medium: '(min-width: 500px)';
+$large: '(min-width: 1200px)';
 
 // Grid
 $grid-medium: 46.85em;
