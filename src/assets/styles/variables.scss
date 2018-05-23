@@ -2,6 +2,7 @@
 $color-body-text: #717171;
 $color-dark-text: #2B2B2B;
 $color-light-gray: #979797;
+$color-very-light-gray: #F3F3F3;
 $color-green: #2EA170;
 
 // Background colors
@@ -28,16 +29,8 @@ $font-heading: 'Calibre-remote', sans-serif;
 $font-body: 'Calibre-remote', sans-serif;
 $font-body-weight: 400;
 
-/* 
-  Breakpoints
-  Usage: @media and ($small) {}
-*/
-$small: '(max-width: 499px)';
-$medium: '(min-width: 500px)';
-$large: '(min-width: 1200px)';
-
 // Grid
-$grid-medium: 46.85em;
+$grid-medium: 550px;
 $grid-large: 61.85em;
 $grid-widescreen: 87.5em;
 $grid-max-width: 73.75em;

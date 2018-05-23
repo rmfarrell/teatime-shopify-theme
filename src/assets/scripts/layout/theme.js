@@ -17,7 +17,7 @@ window.theme = window.theme || {};
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-// toggle header
+// -- Toggle header
 const $globalHeader = $('#global-header')
 const $navToggle = $globalHeader.querySelector('.hamburger')
 const $nav = $globalHeader.querySelector('nav')
@@ -27,7 +27,7 @@ $navToggle.addEventListener('click', () => {
   $nav.classList.toggle('is-active')
 })
 
-// open parent el if data-open-parent toggler present
+// -- Open targetd el if data-open directive present
 const $$parentTogglers = $$('[data-open]')
 each($$parentTogglers, (el) => {
   const targ = $(el.getAttribute('data-open'))
@@ -37,7 +37,7 @@ each($$parentTogglers, (el) => {
   })
 })
 
-// sliders
+// -- Sliders
 each($$('.accordion'), (el) => {
   const observer = new MutationObserver((ev) => {
     const targ = ev[0].target
@@ -55,7 +55,7 @@ each($$('.accordion'), (el) => {
   })
 })
 
-// set 'supports-no-cookies' / 'supports-cookies' class
+// -- Set 'supports-no-cookies' / 'supports-cookies' class
 if (cookiesEnabled()) {
   document.documentElement.className = document.documentElement.className.replace(
     'supports-no-cookies',

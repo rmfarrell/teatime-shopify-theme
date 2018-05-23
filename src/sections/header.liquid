@@ -48,17 +48,29 @@
               {% for block in section.blocks %}
                 {%- assign collection = collections[block.settings.collection] -%}
                 <li>
-                <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">{{collection.title}}</li>
+                  <a href="">
+                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+                    <h4>{{collection.title}}</h4>
+                  </a>
+                </li>
               {% endfor %}
               {% for block in section.blocks %}
                 {%- assign collection = collections[block.settings.collection] -%}
                 <li>
-                <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">{{collection.title}}</li>
+                  <a href="">
+                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+                    <h4>{{collection.title}}</h4>
+                  </a>
+                </li>
               {% endfor %}
               {% for block in section.blocks %}
                 {%- assign collection = collections[block.settings.collection] -%}
                 <li>
-                <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">{{collection.title}}</li>
+                  <a href="">
+                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+                    <h4>{{collection.title}}</h4>
+                  </a>
+                </li>
               {% endfor %}
             </ul>
           </li>

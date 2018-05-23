@@ -51,16 +51,20 @@
       color: $color-body-text;
     }
 
+    .collection-list {
+      background-color: $color-very-light-gray;
+    }
+
     > ul {
       
-      li:first-child {
-        border-top: 1px solid $color-light-gray;
+      > li:last-child a {
+        border-bottom: 1px solid $color-light-gray;
       }
 
-      a {
+      > li > a {
         display: block;
         padding: 1em 0;
-        border-bottom: 1px solid $color-light-gray;
+        border-top: 1px solid $color-light-gray;
         text-align: center;
         text-decoration: none;
         color: inherit;
@@ -79,6 +83,12 @@
             transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
           }
         }
+      }
+    }
+
+    ul.collection-list {
+      h4 {
+        font-size: 0.7em
       }
     }
   }

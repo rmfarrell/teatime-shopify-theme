@@ -1,17 +1,36 @@
 ul.collection-list {
-  background-color: pink;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 
   li {
-    display: flex;
     flex: 50% 0 0;
-    border: 1px dotted green;
     margin: 0;
-    padding: 0;
+    padding: 0 0 1em;
     text-align: center;
+    
+    @include media-query($medium) {
+      flex: 33.33333% 0 0;
+    }
+    
+    @media (min-width: 720px) {
+      flex: 20% 0 0;
+    }
+    
+    @include media-query($large) {
+      flex: 1;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 1em auto 1em;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
