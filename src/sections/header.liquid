@@ -11,7 +11,12 @@
   - Home page only: only s    hows on the home page
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header">
-  <header role="banner">
+  <header role="banner"  id="global-header">
+    <button class="hamburger hamburger--stand">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>  
     {% if template.name == 'index' %}
       <h1 itemscope itemtype="http://schema.org/Organization">
     {% else %}
@@ -38,8 +43,18 @@
     <nav role="navigation">
       <ul>
           <li>
-            <a>Shop *</a>
-            <ul class="collection-lineup">
+            <a data-open-parent>Shop <i class="fas fa-chevron-right"></i></a>
+            <ul class="collection-list">
+              {% for block in section.blocks %}
+                {%- assign collection = collections[block.settings.collection] -%}
+                <li>
+                <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">{{collection.title}}</li>
+              {% endfor %}
+              {% for block in section.blocks %}
+                {%- assign collection = collections[block.settings.collection] -%}
+                <li>
+                <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">{{collection.title}}</li>
+              {% endfor %}
               {% for block in section.blocks %}
                 {%- assign collection = collections[block.settings.collection] -%}
                 <li>
@@ -72,17 +87,14 @@
             </li>
           {% endif %}
         {% endfor %}
-        <li>
-          <a href="/cart">
-            {% include 'icon-cart' %}
-            {% if cart.item_count > 0 %}
-              ({{cart.item_count}})
-            {% endif %}
-          </a>
-        </li>
       </ul>
     </nav>
-    
+    <a href="/cart" class="cart-button" role="button" title="Shopping Cart">
+      <i class="fas fa-shopping-bag"></i>
+      {% if cart.item_count > 0 %}
+        ({{cart.item_count}})
+      {% endif %}
+    </a>
   </header>
 </section>
 

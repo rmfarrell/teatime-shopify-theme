@@ -1,0 +1,110 @@
+#global-header {
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  height: 90px;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding-top: 1em;
+  
+  // Hamburger menu
+  .hamburger {
+    outline: none;
+    opacity: 0.5;
+    margin: 0 0 0 2em;
+  }
+
+  .hamburger-inner, 
+  .hamburger-inner::before, 
+  .hamburger-inner::after {
+    width: 30px;
+    height:  2px;
+    border-radius: 0;
+  }
+
+  // Nav items
+  nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    overflow: auto;
+    background-color: white;
+    font-size: 2.4em;
+    transform: translateY(-100%);
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: -1;
+    opacity: 0;
+    
+    &.is-active {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    ul, li {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      color: $color-body-text;
+    }
+
+    > ul {
+      
+      li:first-child {
+        border-top: 1px solid $color-light-gray;
+      }
+
+      a {
+        display: block;
+        padding: 1em 0;
+        border-bottom: 1px solid $color-light-gray;
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+
+        .fas {
+          font-size: 0.5em;
+          transform: rotate(90deg) translate(-25%, -150%);
+          transition: transform 0.25s;
+        }
+      } 
+      
+      .open {
+
+        a {
+          color: $color-green;
+        }
+
+        .fas {
+          transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
+        }
+        
+        ul {
+          display: flex
+        }
+      }
+    }
+
+    ul ul {
+      display: none
+    }
+  }
+
+  h1 {
+    height: 100%;
+    margin: 0;
+  }
+
+  // shopping cart button
+  .cart-button {
+    color: black;
+    opacity: 0.4;
+    line-height: 1em;
+    font-size: 2.5em;
+    margin: 1em 2em 0 0;
+  }
+}

@@ -12,6 +12,9 @@
 @import './tools/mixins';
 @import './tools/functions';
 
+// Vendor
+@import '~hamburgers/dist/hamburgers.css';
+
 // Core
 @import './core/forms';
 @import './core/helpers';
@@ -21,15 +24,14 @@
 @import './core/rte';
 @import './core/typography';
 
-// Components
+// Components/Sections
 @import './components/buttons';
 @import './components/hero-banner';
 @import './components/icons';
 @import './components/placeholders';
 @import './components/responsive-images';
-
-// Sections
+@import './components/header';
+@import './components/collection-list';
 @import './sections/blog-posts';
-@import './sections/collection-list';
 @import './sections/featured-collection';
 @import './sections/image-with-text';
