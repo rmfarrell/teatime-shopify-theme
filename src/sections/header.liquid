@@ -43,8 +43,8 @@
     <nav role="navigation">
       <ul>
           <li>
-            <a data-open-parent>Shop <i class="fas fa-chevron-right"></i></a>
-            <ul class="collection-list">
+            <a data-open="#collection-list-header">Shop <i class="fas fa-chevron-right"></i></a>
+            <ul class="collection-list accordion" id="collection-list-header">
               {% for block in section.blocks %}
                 {%- assign collection = collections[block.settings.collection] -%}
                 <li>

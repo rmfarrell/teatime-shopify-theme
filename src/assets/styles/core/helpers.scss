@@ -69,3 +69,13 @@
 [tabindex='-1']:focus {
   outline: none;
 }
+
+.accordion {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+
+  &.open {
+    height: auto
+  }
+}

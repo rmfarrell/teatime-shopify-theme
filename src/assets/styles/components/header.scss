@@ -71,26 +71,15 @@
           transform: rotate(90deg) translate(-25%, -150%);
           transition: transform 0.25s;
         }
-      } 
-      
-      .open {
 
-        a {
+        &.open {
           color: $color-green;
-        }
 
-        .fas {
-          transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
-        }
-        
-        ul {
-          display: flex
+          .fas {
+            transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
+          }
         }
       }
-    }
-
-    ul ul {
-      display: none
     }
   }
 

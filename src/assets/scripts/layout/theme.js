@@ -28,9 +28,31 @@ $navToggle.addEventListener('click', () => {
 })
 
 // open parent el if data-open-parent toggler present
-const $$parentTogglers = $$('[data-open-parent]')
+const $$parentTogglers = $$('[data-open]')
 each($$parentTogglers, (el) => {
-  el.addEventListener('click', () => el.parentElement.classList.toggle('open'))
+  const targ = $(el.getAttribute('data-open'))
+  el.addEventListener('click', () => {
+    targ.classList.toggle('open')
+    el.classList.toggle('open')
+  })
+})
+
+// sliders
+each($$('.accordion'), (el) => {
+  const observer = new MutationObserver((ev) => {
+    const targ = ev[0].target
+    if (targ && targ.classList.contains('open')) {
+      console.log(targ.scrollHeight)
+      targ.style.height = `${targ.scrollHeight}px`
+      return;
+    }
+    targ.style.height = '0px'
+    return
+  })
+
+  observer.observe(el, {
+    attributeFilter: ['class']
+  })
 })
 
 // set 'supports-no-cookies' / 'supports-cookies' class
