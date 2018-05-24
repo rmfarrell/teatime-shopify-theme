@@ -20,79 +20,83 @@ TODO: hide on all but product pages
   </ul>
 {% endif %}
 
-<footer>
-  {% comment %} Logo {% endcomment %}
-  <a href="/" itemprop="url"{% if section.settings.logo != blank %} class="logo-image"{% endif %}>
-    {% if section.settings.logo != blank %}
-      <img src="{{ section.settings.logo | img_url: image_size }}"
-          srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-          alt="{{ section.settings.logo.alt | default: shop.name }}"
-          itemprop="logo">
-    {% endif %}
-  </a>
+<footer id="global-footer">
+  <div class="wrapper">
+    <div class="column">
+      {% comment %} Logo {% endcomment %}
+      <a href="/" itemprop="url"{% if section.settings.logo != blank %} class="logo-image"{% endif %}>
+        {% if section.settings.logo != blank %}
+          <img src="{{ section.settings.logo | img_url: image_size }}"
+              srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+              alt="{{ section.settings.logo.alt | default: shop.name }}"
+              itemprop="logo">
+        {% endif %}
+      </a>
 
-  {% comment %} Contact {% endcomment %}
-  {% form 'contact' %}
+      {% comment %} Contact {% endcomment %}
+      {% form 'contact' %}
 
-    {% if form.posted_successfully? %}
-      <p class="form-success">
-        {{ 'contact.form.post_success' | t }}
-      </p>
-    {% endif %}
+        {% if form.posted_successfully? %}
+          <p class="form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
 
-    {{ form.errors | default_errors }}
+        {{ form.errors | default_errors }}
 
-    <label for="ContactFormEmail">{{ 'contact.form.email' | t }}</label>
-    <input type="email"
-      name="contact[email]"
-      id="ContactFormEmail"
-      placeholder="{{ 'contact.form.email' | t }}"
-      value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-      spellcheck="false"
-      autocomplete="off"
-      autocapitalize="off">
+        <label for="ContactFormEmail">{{ section.settings.email_label }}</label>
+        <input type="email"
+          name="contact[email]"
+          id="ContactFormEmail"
+          placeholder="{{ 'contact.form.email' | t }}"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off">
 
-    <input hidden
-      name="contact[context]"
-      id="ContactFormEmail"
-      value="footer-email">
+        <input hidden
+          name="contact[context]"
+          id="ContactFormEmail"
+          value="footer-email">
 
-    <input type="submit" class="button" value="{{ 'contact.form.send' | t }}">
+        <input type="submit" class="button" value="&rarr;">
 
-  {% endform %}
+      {% endform %}
+    </div>
 
-  {% comment %} Social Links {% endcomment %}
-  <ul class="social-links">
-    {% if section.settings.social_instagram_link %}
-      <li>
-        <a href="{{section.settings.social_instagram_link}}">*</a>
-      </li>
-    {% endif %}
-    {% if section.settings.social_twitter_link %}
-      <li>
-        <a href="{{section.settings.social_twitter_link}}">*</a>
-      </li>
-    {% endif %}
-    {% if section.settings.social_fb_link %}
-      <li>
-        <a href="{{section.settings.social_fb_link}}">*</a>
-      </li>
-    {% endif %}
+    <div class="column">
+      {% comment %} Social Links {% endcomment %}
+      <ul class="social-links">
+        {% if section.settings.social_instagram_link %}
+          <li>
+            <a href="{{section.settings.social_instagram_link}}">*</a>
+          </li>
+        {% endif %}
+        {% if section.settings.social_twitter_link %}
+          <li>
+            <a href="{{section.settings.social_twitter_link}}">*</a>
+          </li>
+        {% endif %}
+        {% if section.settings.social_fb_link %}
+          <li>
+            <a href="{{section.settings.social_fb_link}}">*</a>
+          </li>
+        {% endif %}
+      </ul>
 
-  </ul>
-
-  {% comment %} Footer links {% endcomment %}
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, MatchaBar, Inc. All Rights Reserved.</small>
+      {% comment %} Footer links {% endcomment %}
+      {%- assign footer_linklist = section.settings.footer_linklist -%}
+      {% if linklists[footer_linklist].links.size > 0 %}
+        <ul>
+          {% for link in linklists[footer_linklist].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    <div>
+      <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, MatchaBar, Inc. All Rights Reserved.</small>
+    </div>
   </div>
 </footer>
 
@@ -123,6 +127,11 @@ TODO: hide on all but product pages
         "type": "image_picker",
         "id": "logo",
         "label": "Logo image"
+      },
+      {
+        "type": "text",
+        "id": "email_label",
+        "label": "Email label"
       },
       {
         "type": "text",
