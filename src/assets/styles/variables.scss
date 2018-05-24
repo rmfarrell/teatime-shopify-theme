@@ -30,7 +30,7 @@ $font-body: 'Calibre-remote', sans-serif;
 $font-body-weight: 400;
 
 // Grid
-$grid-medium: 550px;
+$grid-medium: 580px;
 $grid-large: 61.85em;
 $grid-widescreen: 87.5em;
 $grid-max-width: 73.75em;
@@ -56,3 +56,6 @@ $breakpoints: (
   $large-up '(min-width: #{$grid-large})',
   $widescreen '(min-width: #{$grid-widescreen})'
 );
+
+// Misc
+$header-height: 90px;

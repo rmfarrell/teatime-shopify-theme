@@ -2,12 +2,11 @@
   display: flex;
   justify-content: space-between;
   z-index: 100;
-  height: 90px;
+  height: $header-height;
   background-color: white;
   position: fixed;
   width: 100%;
   top: 0;
-  padding-top: 1em;
   
   // Hamburger menu
   .hamburger {
@@ -29,8 +28,8 @@
     display: block;
     position: absolute;
     width: 100%;
-    top: 90px;
-    overflow: auto;
+    top: $header-height;
+    overflow-y: auto;
     background-color: white;
     font-size: 2.4em;
     transform: translateY(-100%);
@@ -49,6 +48,7 @@
       margin: 0;
       padding: 0;
       color: $color-body-text;
+      list-style-type: none;
     }
 
     .collection-list {
@@ -94,16 +94,81 @@
   }
 
   h1 {
-    height: 100%;
     margin: 0;
+
+    a {
+      height: $header-height;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
   }
 
   // shopping cart button
   .cart-button {
     color: black;
     opacity: 0.4;
-    line-height: 1em;
-    font-size: 2.5em;
-    margin: 1em 2em 0 0;
+    line-height: $header-height;
+    font-size: 2em;
+    margin: 0 2em 0 0;
+  }
+
+  @media (min-width: 580px) {
+    align-items: center;
+
+    h1 {
+      flex: 1
+    }
+
+    .hamburger {
+      display: none
+    }
+
+    nav,
+    nav.is-active {
+      display: inline-block;
+      position: static;
+      width: auto;
+      font-size: 1em;
+      transform: none;
+      z-index: 0;
+      opacity: 1;
+      font-size: 1.6em;
+      background: transparent;
+      overflow: visible;
+      flex: 1 1 auto;
+
+      > ul {
+        display: flex;
+        justify-content: flex-end;
+
+        > li:last-child a {
+          border-bottom: none;
+        }
+  
+        > li {
+          flex: 1;
+
+          > a {
+            display: inline-block;
+            padding: 0;
+            border: none;
+          }
+        }
+      }
+    }
+
+    ul.collection-list {
+      position: fixed;
+      width: 100vw;
+      left: 0;
+      top: $header-height
+    }
+  }
+
+  .cart-button {
+    opacity: 1;
   }
 }

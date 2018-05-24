@@ -20,7 +20,7 @@ ul.collection-list {
       flex: 20% 0 0;
     }
     
-    @include media-query($large) {
+    @media (min-width: 900px) {
       flex: 1;
     }
   }
