@@ -2,8 +2,9 @@
   background-color: #20292F;
   color: white;
   text-align: center;
-  padding: 3rem 0 2rem;
+  padding: 3em 0 2rem;
   font-size: 1.7em;
+  margin-top: 2em;
   
   ul {
     list-style-type: none;
@@ -118,6 +119,10 @@
 
     small {
       flex: 1 1 100%;
+    }
+
+    .footer-links {
+      font-size: 0.85em
     }
 
     .social-links {

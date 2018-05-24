@@ -4,20 +4,9 @@ TODO: hide on all but product pages
 {% endcomment %}
 {% if true  %}
   {% comment %} Loop through product categories {% endcomment %}
-  <ul class="collection-lineup">
-    {% for block in section.blocks %}
-      {%- assign collection = collections[block.settings.collection] -%}
-      <li>
-        <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
-        <h4>{{collection.title}}</h4>
-        <ul>
-          {% for product in collection.products %}
-            <li>{{ product.title }}</li>
-          {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="wrapper">
+    {% include 'collection-list' with include_products: true %}
+  </div>
 {% endif %}
 
 <footer id="global-footer">

@@ -4,7 +4,7 @@
   position: fixed;
   width: 100%;
   
-
+  // TODO: this is too deeply-nested
   header {
     display: flex;
     justify-content: space-between;
@@ -86,12 +86,6 @@
               transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
             }
           }
-        }
-      }
-
-      ul.collection-list {
-        h4 {
-          font-size: 0.7em
         }
       }
     }

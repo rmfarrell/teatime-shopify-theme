@@ -1,0 +1,32 @@
+{%- comment -%}
+    It creates a collection list
+    Expects a block of collections in the parent section
+    
+    Accepts:
+    - css_class: {String} decorate with CSS classes
+    - id: {String} an id for the container element
+    - include_products: {Bool} include all products listed below
+
+    Usage:
+    In your liquid template file, copy the following line
+    - {% include 'collection-list' with css_class: 'bigger' %}
+{%- endcomment -%}
+
+<ul class="collection-list {{ css_class }} includes-products-{{ include_products }}" id="{{ id }}">
+  {% for block in section.blocks %}
+    {%- assign collection = collections[block.settings.collection] -%}
+    <li>
+      <a href="">
+        <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+        <h4>{{collection.title}}</h4>
+        {% if include_products %}
+          <ul>
+            {% for product in collection.products %}
+              <li>{{ product.title }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

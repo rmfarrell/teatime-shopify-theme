@@ -8,7 +8,7 @@
   - Link: link of the announcement bar
 
   Theme Store optional settings
-  - Home page only: only s    hows on the home page
+  - Home page only: only shows on the home page
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header">
   <header role="banner"  id="global-header">
@@ -39,41 +39,12 @@
       </div>
     {% endif %}
 
-
     <nav role="navigation">
       <ul>
         <li>
-          <a data-open="#collection-list-header">Shop <i class="fas fa-chevron-right"></i></a>
+          <a data-open="#collection-list-header">shop <i class="fas fa-chevron-right"></i></a>
           <div class="collection-list-container">
-            <ul class="collection-list accordion" id="collection-list-header">
-              {% for block in section.blocks %}
-                {%- assign collection = collections[block.settings.collection] -%}
-                <li>
-                  <a href="">
-                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
-                    <h4>{{collection.title}}</h4>
-                  </a>
-                </li>
-              {% endfor %}
-              {% for block in section.blocks %}
-                {%- assign collection = collections[block.settings.collection] -%}
-                <li>
-                  <a href="">
-                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
-                    <h4>{{collection.title}}</h4>
-                  </a>
-                </li>
-              {% endfor %}
-              {% for block in section.blocks %}
-                {%- assign collection = collections[block.settings.collection] -%}
-                <li>
-                  <a href="">
-                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
-                    <h4>{{collection.title}}</h4>
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
+            {% include 'collection-list' with css_class: 'accordion' id: 'collection-list-header' %}
           </li>
           {% for link in linklists[section.settings.menu].links %}
             {% if link.links != blank %}
