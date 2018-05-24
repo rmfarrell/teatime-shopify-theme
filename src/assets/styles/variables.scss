@@ -57,6 +57,10 @@ $breakpoints: (
   $widescreen '(min-width: #{$grid-widescreen})'
 );
 
+
+// Simple Breakpoints
+$mq-medium: 'min-width: 625px';
+
 // Misc
 $header-height: 9rem;
 $gutter: 2rem;

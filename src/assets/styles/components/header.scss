@@ -3,6 +3,7 @@
   height: $header-height;
   position: fixed;
   width: 100%;
+  
 
   header {
     display: flex;
@@ -68,6 +69,10 @@
           color: inherit;
           cursor: pointer;
 
+          &:hover {
+            color: $color-green;
+          }
+
           .fas {
             font-size: 0.5em;
             transform: rotate(90deg) translate(-25%, -150%);
@@ -113,7 +118,7 @@
       padding: 0 1em;
     }
 
-    @media (min-width: 625px) {
+    @media ($mq-medium) {
       align-items: center;
       @include constrain;
 

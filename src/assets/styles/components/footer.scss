@@ -70,17 +70,19 @@
   }
 
   .social-links {
-    margin: 1em auto 0.5em;
+    margin: 1em auto 2em;
     font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    max-width: 10em;
 
     li {
-      display: inline;
+      flex: 0;
     }
 
     a {
       display: inline-block;
       padding: 1em;
-      margin: 0 0.2em;
     }
   }
 
@@ -90,6 +92,44 @@
 
     li {
       margin: 0 0 1em;
+    }
+  }
+
+  @media ($mq-medium) {
+    text-align: left;
+
+    .logo-image {
+      margin: 0 auto 3rem;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .column {
+      margin: 0 0 2em;
+    }
+
+    .column:nth-of-type(2) {
+      text-align: right;
+    }
+
+    small {
+      flex: 1 1 100%;
+    }
+
+    .social-links {
+      margin-bottom: 1em;
+
+      a {
+        padding: 0 0.5em;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
   }
 }
