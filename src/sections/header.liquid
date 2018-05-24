@@ -44,52 +44,54 @@
       <ul>
         <li>
           <a data-open="#collection-list-header">Shop <i class="fas fa-chevron-right"></i></a>
-          <ul class="collection-list accordion" id="collection-list-header">
-            {% for block in section.blocks %}
-              {%- assign collection = collections[block.settings.collection] -%}
+          <div class="collection-list-container">
+            <ul class="collection-list accordion" id="collection-list-header">
+              {% for block in section.blocks %}
+                {%- assign collection = collections[block.settings.collection] -%}
+                <li>
+                  <a href="">
+                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+                    <h4>{{collection.title}}</h4>
+                  </a>
+                </li>
+              {% endfor %}
+              {% for block in section.blocks %}
+                {%- assign collection = collections[block.settings.collection] -%}
+                <li>
+                  <a href="">
+                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+                    <h4>{{collection.title}}</h4>
+                  </a>
+                </li>
+              {% endfor %}
+              {% for block in section.blocks %}
+                {%- assign collection = collections[block.settings.collection] -%}
+                <li>
+                  <a href="">
+                    <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+                    <h4>{{collection.title}}</h4>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% for link in linklists[section.settings.menu].links %}
+            {% if link.links != blank %}
               <li>
-                <a href="">
-                  <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
-                  <h4>{{collection.title}}</h4>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                  {% include 'icon-arrow-down' %}
                 </a>
-              </li>
-            {% endfor %}
-            {% for block in section.blocks %}
-              {%- assign collection = collections[block.settings.collection] -%}
-              <li>
-                <a href="">
-                  <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
-                  <h4>{{collection.title}}</h4>
-                </a>
-              </li>
-            {% endfor %}
-            {% for block in section.blocks %}
-              {%- assign collection = collections[block.settings.collection] -%}
-              <li>
-                <a href="">
-                  <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
-                  <h4>{{collection.title}}</h4>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </li>
-        {% for link in linklists[section.settings.menu].links %}
-          {% if link.links != blank %}
-            <li>
-              <a href="{{ link.url }}">
-                {{ link.title }}
-                {% include 'icon-arrow-down' %}
-              </a>
-              <ul>
-                {% for childlink in link.links %}
-                  <li>
-                    <a href="{{ childlink.url }}">
-                      {{ childlink.title }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
+                <ul>
+                  {% for childlink in link.links %}
+                    <li>
+                      <a href="{{ childlink.url }}">
+                        {{ childlink.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
             </li>
           {% else %}
             <li>
@@ -99,7 +101,7 @@
             </li>
           {% endif %}
         {% endfor %}
-      </ul>
+        </ul>
     </nav>
     <a href="/cart" class="cart-button" role="button" title="Shopping Cart">
       <i class="fas fa-shopping-bag"></i>

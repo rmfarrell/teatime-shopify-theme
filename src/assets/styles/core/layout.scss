@@ -13,3 +13,10 @@ body,
 html {
   height: 100%;
 }
+
+.wrapper {
+  padding-left: $gutter;
+  padding-right: $gutter;
+  max-width: 1200px;
+  margin: 0 auto;
+}

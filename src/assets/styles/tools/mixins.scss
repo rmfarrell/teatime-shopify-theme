@@ -107,3 +107,10 @@
   margin: 0;
   clip: auto;
 }
+
+@mixin constrain {
+  max-width: $max-width;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  margin: auto;
+}

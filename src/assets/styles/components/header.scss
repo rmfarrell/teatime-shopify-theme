@@ -1,174 +1,179 @@
-#global-header {
-  display: flex;
-  justify-content: space-between;
-  z-index: 100;
-  height: $header-height;
+#shopify-section-header {
   background-color: white;
+  height: $header-height;
   position: fixed;
   width: 100%;
-  top: 0;
-  
-  // Hamburger menu
-  .hamburger {
-    outline: none;
-    opacity: 0.5;
-    margin: 0 0 0 2em;
-  }
 
-  .hamburger-inner, 
-  .hamburger-inner::before, 
-  .hamburger-inner::after {
-    width: 30px;
-    height:  2px;
-    border-radius: 0;
-  }
-
-  // Nav items
-  nav {
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: $header-height;
-    overflow-y: auto;
-    background-color: white;
-    font-size: 2.4em;
-    transform: translateY(-100%);
-    transition: opacity 0.4s, transform 0.4s;
-    z-index: -1;
-    opacity: 0;
+  header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    top: 0;
     
-    &.is-active {
-      display: block;
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    ul, li {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      color: $color-body-text;
-      list-style-type: none;
-    }
-
-    .collection-list {
-      background-color: $color-very-light-gray;
-    }
-
-    > ul {
-      
-      > li:last-child a {
-        border-bottom: 1px solid $color-light-gray;
-      }
-
-      > li > a {
-        display: block;
-        padding: 1em 0;
-        border-top: 1px solid $color-light-gray;
-        text-align: center;
-        text-decoration: none;
-        color: inherit;
-        cursor: pointer;
-
-        .fas {
-          font-size: 0.5em;
-          transform: rotate(90deg) translate(-25%, -150%);
-          transition: transform 0.25s;
-        }
-
-        &.open {
-          color: $color-green;
-
-          .fas {
-            transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
-          }
-        }
-      }
-    }
-
-    ul.collection-list {
-      h4 {
-        font-size: 0.7em
-      }
-    }
-  }
-
-  h1 {
-    margin: 0;
-
-    a {
-      height: $header-height;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-  }
-
-  // shopping cart button
-  .cart-button {
-    color: black;
-    opacity: 0.4;
-    line-height: $header-height;
-    font-size: 2em;
-    margin: 0 2em 0 0;
-  }
-
-  @media (min-width: 580px) {
-    align-items: center;
-
-    h1 {
-      flex: 1
-    }
-
+    // Hamburger menu
     .hamburger {
-      display: none
+      outline: none;
+      opacity: 0.5;
+      margin: 0 0 0 2em;
     }
 
-    nav,
-    nav.is-active {
-      display: inline-block;
-      position: static;
-      width: auto;
-      font-size: 1em;
-      transform: none;
-      z-index: 0;
-      opacity: 1;
-      font-size: 1.6em;
-      background: transparent;
-      overflow: visible;
-      flex: 1 1 auto;
+    .hamburger-inner, 
+    .hamburger-inner::before, 
+    .hamburger-inner::after {
+      width: 30px;
+      height:  2px;
+      border-radius: 0;
+    }
+
+    // Nav items
+    nav {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: $header-height;
+      overflow-y: auto;
+      background-color: white;
+      font-size: 2.4em;
+      transform: translateY(-100%);
+      transition: opacity 0.4s, transform 0.4s;
+      z-index: -1;
+      opacity: 0;
+      
+      &.is-active {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      ul, li {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        color: $color-body-text;
+        list-style-type: none;
+      }
 
       > ul {
-        display: flex;
-        justify-content: flex-end;
-
+        
         > li:last-child a {
-          border-bottom: none;
+          border-bottom: 1px solid $color-light-gray;
         }
-  
-        > li {
-          flex: 1;
 
-          > a {
-            display: inline-block;
-            padding: 0;
-            border: none;
+        > li > a {
+          display: block;
+          padding: 1em 0;
+          border-top: 1px solid $color-light-gray;
+          text-align: center;
+          text-decoration: none;
+          color: inherit;
+          cursor: pointer;
+
+          .fas {
+            font-size: 0.5em;
+            transform: rotate(90deg) translate(-25%, -150%);
+            transition: transform 0.25s;
           }
+
+          &.open {
+            color: $color-green;
+
+            .fas {
+              transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
+            }
+          }
+        }
+      }
+
+      ul.collection-list {
+        h4 {
+          font-size: 0.7em
         }
       }
     }
 
-    ul.collection-list {
-      position: fixed;
-      width: 100vw;
-      left: 0;
-      top: $header-height
-    }
-  }
+    h1 {
+      margin: 0;
 
-  .cart-button {
-    opacity: 1;
+      a {
+        height: $header-height;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+
+    // shopping cart button
+    .cart-button {
+      color: black;
+      opacity: 0.4;
+      line-height: $header-height;
+      font-size: 2em;
+      padding: 0 1em;
+    }
+
+    @media (min-width: 625px) {
+      align-items: center;
+      @include constrain;
+
+      h1 {
+        width: 140px;
+      }
+
+      .hamburger {
+        display: none
+      }
+
+      nav,
+      nav.is-active {
+        display: inline-block;
+        position: static;
+        width: auto;
+        font-size: 1em;
+        transform: none;
+        z-index: 0;
+        opacity: 1;
+        font-size: 1.6em;
+        background: transparent;
+        overflow: visible;
+        flex: 1 1 auto;
+
+        > ul {
+          text-align: right;
+
+          > li:last-child a {
+            border-bottom: none;
+          }
+    
+          > li {
+            display: inline-block;
+            width: auto;
+            margin: 0 5% 0 0;
+
+            > a {
+              display: inline-block;
+              padding: 0;
+              border: none;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .collection-list-container {
+        position: fixed;
+        width: 100vw;
+        left: 0;
+        top: $header-height;
+        background-color: $color-very-light-gray;
+      }
+
+      ul.collection-list {
+        @include constrain
+      }
+    }
+    .cart-button {
+      opacity: 1;
+    }
   }
 }
