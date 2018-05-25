@@ -1,0 +1,29 @@
+<section>
+
+  {{ hero.content }}
+  {% section 'hero' %}
+
+  {% if collection.description != blank %}
+    <div class="rte">
+      {{ collection.description }}
+    </div>
+  {% endif %}
+
+  <!-- tabs -->
+  <ul class="tabs">
+  <ul>
+    {% for product in collection.products %}
+      <li>
+        <a href="product-{{product.id}}">{{product.title}}</a>
+      </li>
+      {% comment %} <div data-load-page="{{product.url}}"></div> {% endcomment %}
+    {% endfor %}
+  </ul>
+  
+  <!-- content -->
+  {% for product in collection.products %}
+    <div class="product.container">
+      {% include 'product' with product: product  %}
+    </div>
+  {% endfor %}
+</section>

@@ -1,0 +1,148 @@
+<div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+  <meta itemprop="brand" content="{{ product.vendor }}">
+  <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
+  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+  <div class="wrapper">
+    <div class="img-container column">
+      {% if featured_image != blank %}
+        {% include 'responsive-image' with
+          image: featured_image,
+          max_width: 700,
+          max_height: 800
+        %}
+      {% endif %}
+      {% if product.images.size > 1 %}
+        {% comment %} TODO {% endcomment %}
+      {% endif %}
+    </div>
+    <div class="text-container column">
+      {% if product.metafields.decorators.tagline %}
+        <h5>{{ product.metafields.decorators.tagline }}</h5>
+      {% endif %}
+      <h1>{{ product.title }}</h1>
+      {% if product.description != blank %}
+        <div class="description rte">{{ product.description }}</div>
+      {% endif %}
+      {% if product.metafields.pack.size != blank and product.metafields.pack.quanitity != blank %}
+        <div class="pack-info">
+          <strong>{{ product.metafields.pack.quanitity }}</strong>
+          <span>{{ product.metafields.pack.size }}</span>
+        </div>
+
+        <div class="price" data-price-wrapper>
+          <span data-product-price>
+            {{ current_variant.price | money }}
+          </span>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if product.metafields.external_vendor.amazon != blank %}
+      <a href="{{product.metafields.external_vendor.amazon}}" target="_blank">{{ 'product.amazon_cta' | t }}</a>
+    {% else %}
+      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+        <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+        <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          {% unless product.has_only_default_variant %}
+            {% for option in product.options_with_values %}
+              <div class="selector-wrapper js">
+                <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                  {{ option.name }}
+                </label>
+
+                <select
+                  id="SingleOptionSelector-{{ forloop.index0 }}"
+                  data-single-option-selector
+                  data-index="option{{ option.position }}">
+                  {% for value in option.values %}
+                    <option
+                      value="{{ value | escape }}"
+                      {% if option.selected_value == value %}selected="selected"{% endif %}>
+                        {{ value }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+            {% endfor %}
+          {% endunless %}
+
+          <select name="id" class="no-js" data-product-select>
+            {% for variant in product.variants %}
+              <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}">
+                  {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
+
+          <button
+            type="submit"
+            name="add"
+            data-add-to-cart
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {{ 'products.product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+          </button>
+
+          <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+          <input type="number" id="Quantity" name="quantity" value="1" min="1">
+        </form>
+
+      </div>
+    {% endif %}
+
+    {% unless product == empty %}
+      <script type="application/json" data-product-json>
+        {{ product | json }}
+      </script>
+    {% endunless %}
+  </div>
+
+  <div class="secondary-callouts">
+    <aside section="includes">
+      {% assign snippets = product.metafields.snippet.page_snippet | split: '|' %}
+      {% for snippet in snippets %}
+        {% assign page = pages[snippet] %}
+        <div class="snippet">
+          {{page.content}}
+        </div>
+      {% endfor %}
+      {% comment %} {% assign snippets = product.metafields.accentuate.snippets | split: '|' %}
+      {% for snippet in snippets %}
+        {% case snippet %}
+
+          {% when "Our mom's favorite matcha" %}
+          {% include 'static_mom' %}
+
+          {% when 'Get the tools' %}
+          <h1>tools</h1>
+
+          {% when 'The perfect cup' %}
+          <h1>cup</h1>
+
+        {% endcase %}
+      {% endfor %} {% endcomment %}
+    </aside>
+
+    <!-- Nutrition Information -->
+    <div class="nutrition-information">
+    </div>
+  </div>
+</div>

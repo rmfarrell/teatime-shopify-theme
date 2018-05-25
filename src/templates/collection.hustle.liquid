@@ -10,7 +10,7 @@
 
 
   {% for product in collection.products %}
-    {% include product with product: product %}
+    <div data-load-page="{{product.url}}"></div>
   {% endfor %}
 </section>
 

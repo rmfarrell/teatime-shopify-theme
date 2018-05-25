@@ -61,7 +61,7 @@ each($$('[data-load-page]'), (el) => {
   return fetch(pageUrl)
     .then((res) => res.text())
     .then((txt) => parseHtml(txt))
-    .then((html) => el.replaceWith(html.querySelector('[data-section-type="product"]')))
+    .then((html) => el.replaceWith(html.querySelector('.product-container')))
     .catch(e => console.log(e))
 })
 
