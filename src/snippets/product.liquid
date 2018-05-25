@@ -9,7 +9,7 @@
   <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
-  <div class="wrapper">
+  <div class="wrapper flex-column">
     <div class="img-container column">
       {% if featured_image != blank %}
         {% include 'responsive-image' with
@@ -115,34 +115,33 @@
     {% endunless %}
   </div>
 
-  <div class="secondary-callouts">
+  <div class="secondary-callouts wrapper">
     <aside section="includes">
-      {% assign snippets = product.metafields.snippet.page_snippet | split: '|' %}
-      {% for snippet in snippets %}
-        {% assign page = pages[snippet] %}
-        <div class="snippet">
-          {{page.content}}
+      {% include 'page-content-snippets', with handles: product.metafields.snippet.page_snippet %}
+    </aside>
+
+    <aside class="ancillary-image-text flex-column">
+      {% assign is_img_class = product.metafields.extra.image == blank ? 'no-img' : '' %}
+      {% if product.metafields.extra.image == blank %}
+      {% assign is_img_class = 'no-img' %}
+      {% else %}
+      {% assign is_img_class = '' %}
+      {% endif %}
+      {% if product.metafields.extra.copy != blank %}
+        <div class="text-container column {{is_img_class}}">
+          {{ product.metafields.extra.copy }}
         </div>
-      {% endfor %}
-      {% comment %} {% assign snippets = product.metafields.accentuate.snippets | split: '|' %}
-      {% for snippet in snippets %}
-        {% case snippet %}
-
-          {% when "Our mom's favorite matcha" %}
-          {% include 'static_mom' %}
-
-          {% when 'Get the tools' %}
-          <h1>tools</h1>
-
-          {% when 'The perfect cup' %}
-          <h1>cup</h1>
-
-        {% endcase %}
-      {% endfor %} {% endcomment %}
+      {% endif %}
+      {% if product.metafields.extra.image != blank %}
+        <div class="img-container column">
+          <img src="{{product.metafields.extra.image}}" alt="{{product.title}}" />
+        </div>
+      {% endif %}
     </aside>
 
     <!-- Nutrition Information -->
     <div class="nutrition-information">
+
     </div>
   </div>
 </div>
