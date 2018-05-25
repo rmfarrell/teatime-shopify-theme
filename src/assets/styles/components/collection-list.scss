@@ -16,10 +16,6 @@ ul.collection-list {
       flex: 33.33333% 0 0;
     }
     
-    @media (min-width: 720px) {
-      flex: 20% 0 0;
-    }
-    
     @media (min-width: 900px) {
       flex: 1;
     }
@@ -40,7 +36,7 @@ ul.collection-list {
     color: inherit;
     display: block;
     height: 100%;
-    padding: 1em 0;
+    padding: 1em 5%;
     transition: box-shadow 0.4s;
 
     &:hover {

@@ -14,6 +14,10 @@ html {
   height: 100%;
 }
 
+main {
+  padding-top: $header-height;
+}
+
 .wrapper {
   padding-left: $gutter;
   padding-right: $gutter;

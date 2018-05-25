@@ -350,6 +350,10 @@
     htmllint "^0.6.0"
     lodash "^4.15.0"
 
+"@shopify/theme-product@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-product/-/theme-product-1.0.0-alpha.3.tgz#62a8cce3c1fbaf2284fcaafd426798ac58c6b6d9"
+
 "@shopify/theme-rte@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@shopify/theme-rte/-/theme-rte-1.0.0-alpha.3.tgz#41090cb675896469298028adf264be6cb6b707f1"
@@ -10071,6 +10075,10 @@ unbzip2-stream@^1.0.9:
   dependencies:
     buffer "^3.0.1"
     through "^2.3.6"
+
+unfetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/unfetch/-/unfetch-3.0.0.tgz#8d1e0513a4ecd0e5ff2d41a6ba77771aae8b6482"
 
 unherit@^1.0.4:
   version "1.1.0"

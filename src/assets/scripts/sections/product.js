@@ -8,8 +8,8 @@
 
 import $ from 'jquery';
 import Variants from '@shopify/theme-variants';
-import {imageSize, preload, getSizedImageUrl} from '@shopify/theme-images';
-import {formatMoney} from '@shopify/theme-currency';
+import { imageSize, preload, getSizedImageUrl } from '@shopify/theme-images';
+import { formatMoney } from '@shopify/theme-currency';
 import sections from '@shopify/theme-sections';
 
 const selectors = {

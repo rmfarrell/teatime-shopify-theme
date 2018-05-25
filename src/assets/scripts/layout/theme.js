@@ -1,12 +1,12 @@
-import 'lazysizes/plugins/object-fit/ls.object-fit';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import 'lazysizes/plugins/rias/ls.rias';
-import 'lazysizes/plugins/bgset/ls.bgset';
-import 'lazysizes';
-import 'lazysizes/plugins/respimg/ls.respimg';
-
-import '../../styles/theme.scss';
-import '../../styles/theme.scss.liquid';
+import fetch from 'unfetch'
+import 'lazysizes/plugins/object-fit/ls.object-fit'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
+import 'lazysizes/plugins/rias/ls.rias'
+import 'lazysizes/plugins/bgset/ls.bgset'
+import 'lazysizes'
+import 'lazysizes/plugins/respimg/ls.respimg'
+import '../../styles/theme.scss'
+import '../../styles/theme.scss.liquid'
 
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
@@ -55,6 +55,16 @@ each($$('.accordion'), (el) => {
   })
 })
 
+// -- Load pages with Ajax
+each($$('[data-load-page]'), (el) => {
+  const pageUrl = el.getAttribute('data-load-page')
+  return fetch(pageUrl)
+    .then((res) => res.text())
+    .then((txt) => parseHtml(txt))
+    .then((html) => el.replaceWith(html.querySelector('[data-section-type="product"]')))
+    .catch(e => console.log(e))
+})
+
 // -- Set 'supports-no-cookies' / 'supports-cookies' class
 if (cookiesEnabled()) {
   document.documentElement.className = document.documentElement.className.replace(
@@ -97,4 +107,13 @@ function each(els, cb = function () { }) {
   for (let x = 0; x < els.length; x++) {
     cb(els[x], x)
   }
+}
+
+/**
+ * Parse a string into HTML
+ * @param {*} str 
+ */
+function parseHtml(str = '') {
+  const parser = new DOMParser()
+  return parser.parseFromString(str, 'text/html')
 }

@@ -289,5 +289,8 @@
   },
   "date_formats": {
     "month_day_year": "%B %d, %Y"
+  },
+  "nutrition_facts": {
+    "key": "Percent Daily Value is based on a 2,000 calorie diet"
   }
 }

@@ -1,0 +1,66 @@
+<div class="nutrition-facts">
+  {% if section.settings.show_facts == true %}
+    <h2>Nutrition Facts</h2>
+    <table>
+      <tr>
+        <th colspan="2">Amount Per Serving</th>
+        <th>% of Daily Value</th>
+      </tr>
+      {% for block in section.blocks %}
+        {%- assign fact = block.settings -%}
+        <tr>
+          <td>{{ fact.title }}</td>
+          <td>{{ fact.amount }}</td>
+          <td>{{ fact.percent }}%</td>
+        </tr>
+      {% endfor %}
+    </table>
+    {{ section.settings.additional_info }}
+    <p> {{ 'nutrition_facts.key' | t }} </p>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Nutrition Facts",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_facts",
+        "label": "Show nutrition facts"
+      },
+      {
+        "type": "richtext",
+        "id": "additional_info",
+        "label": "Additional info",
+        "info": "Rich text at the end of the table"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Fact",
+        "type": "fact",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Name",
+            "info": "e.g., Sugars"
+          },
+          {
+            "type": "text",
+            "id": "amount",
+            "label": "Amount per serving",
+            "info": "e.g., 8g"
+          },
+          {
+            "type": "number",
+            "id": "percent",
+            "label": "% of Daily Value",
+            "info": "e.g., 0"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

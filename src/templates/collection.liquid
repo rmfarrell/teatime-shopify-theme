@@ -1,3 +1,21 @@
+<section>
+  {% if collection.description != blank %}
+    <div class="rte">
+      {{ collection.description }}
+    </div>
+  {% endif %}
+
+  {{ hero.content }}
+  {% section 'hero' %}
+
+
+  {% for product in collection.products %}
+    <div data-load-page="{{product.url}}"></div>
+  {% endfor %}
+</section>
+
+{% comment %} 
+
 {% paginate collection.products by 12 %}
   <header role="banner">
     <h1>{{ collection.title }}</h1>
@@ -99,4 +117,6 @@
   {% if paginate.pages > 1 %}
     {% include 'pagination' %}
   {% endif %}
-{% endpaginate %}
+{% endpaginate %} 
+
+{% endcomment %}
