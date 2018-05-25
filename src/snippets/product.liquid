@@ -141,7 +141,25 @@
 
     <!-- Nutrition Information -->
     <div class="nutrition-information">
-
+      {% if product.metafields.nutrition_info.show == 'true' %}
+        <h2>{{ 'nutrition_facts.headline' | t }}</h2>
+        <table>
+          <tr>
+            <th colspan="2">{{ 'nutrition_facts.amount_per_serving' | t }}</th>
+            <th>{{ 'nutrition_facts.percent_daily_value' | t }}</th>
+          </tr>
+          {% for field in product.metafields.nutrition_facts %}
+            {% assign values = field | last | split: '|' %}
+            <tr>
+              <td>{{ field | first }}<td>
+              <td>{{ values[0] }}<td>
+              <td>{{ values[1] }}<td>
+            </tr>
+          {% endfor %}
+        </table>
+        <p>{{ 'nutrition_facts.additional_info' | t }}</p>
+        <p><strong>{{ 'nutrition_facts.key' | t }}</strong></p>
+      {% endif %}
     </div>
   </div>
 </div>
