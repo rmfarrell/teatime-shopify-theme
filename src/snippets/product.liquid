@@ -46,11 +46,11 @@
 
       {% if product.metafields.external_vendor.amazon != blank %}
         <a href="{{product.metafields.external_vendor.amazon}}" 
-          class="cta"
+          class="cta external-vendor"
           style="background-color: {{product.metafields.product.color}}"
           target="_blank">{{ 'product.amazon_cta' | t }}</a>
       {% else %}
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="add-to-cart">
           <meta itemprop="priceCurrency" content="{{ shop.currency }}">
           <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
           <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
@@ -90,10 +90,17 @@
               {% endfor %}
             </select>
 
+            <div class="quanitity-selector">
+              <button class="increment" type="button">-</button>
+              <input type="number" id="Quantity" name="quantity" value="1" min="1">
+              <button class="decrement" type="button">+</button>
+            </div>
+
             <button
               type="submit"
               name="add"
               data-add-to-cart
+              class="cta"
               {% unless current_variant.available %}disabled="disabled"{% endunless %}>
                 <span data-add-to-cart-text>
                   {% if current_variant.available %}
@@ -103,9 +110,6 @@
                   {% endif %}
                 </span>
             </button>
-
-            <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
-            <input type="number" id="Quantity" name="quantity" value="1" min="1">
           </form>
 
         </div>

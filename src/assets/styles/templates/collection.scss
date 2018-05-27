@@ -28,6 +28,7 @@
       height: 3em;
       font-weight: 500;
       border-bottom: 2px solid transparent;
+      line-height: 1.1em;
 
       &.active {
         border-bottom: 2px solid $color-green;
