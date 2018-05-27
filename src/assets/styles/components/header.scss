@@ -113,6 +113,10 @@
       padding: 0 1em;
     }
 
+    .collection-list {
+      font-size: 0.5em;
+    }
+
     @media ($mq-medium) {
       align-items: center;
       @include constrain;
@@ -168,7 +172,12 @@
       }
 
       ul.collection-list {
-        @include constrain
+        font-size: 0.65em;
+        @include constrain;
+
+        h4 {
+          margin-bottom: 2em;
+        }
       }
     }
     .cart-button {

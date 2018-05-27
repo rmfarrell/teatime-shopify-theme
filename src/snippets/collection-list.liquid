@@ -17,7 +17,14 @@
     {%- assign collection = collections[block.settings.collection] -%}
     <li>
       <a href="">
-        <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
+        <div class="img-container">
+          {% include 'responsive-image' with
+            image: collection.image,
+            max_width: 200,
+            max_height: 160,
+            alt="{{ collection.image.alt | escape }}"
+          %}
+        </div>
         <h4>shop {{collection.title}}</h4>
         {% if include_products %}
           <ul>

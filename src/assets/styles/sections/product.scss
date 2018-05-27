@@ -3,7 +3,8 @@
   p, 
   .tagline, 
   .pack-info span, 
-  ul {
+  ul,
+  td {
     opacity: 0.5
   }
 
@@ -103,5 +104,14 @@
 
   .snippet {
     margin: 0 0 5em;
+  }
+
+  .nutrition-information {
+    font-size: 1.1em;
+    max-width: 30em;
+
+    @media ($mq-medium) {
+      font-size: 1.3em;
+    }
   }
 }

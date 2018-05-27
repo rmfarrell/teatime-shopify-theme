@@ -1,0 +1,14 @@
+table {
+  border-collapse: collapse;
+}
+
+th {
+  color: $color-dark-text;
+  font-weight: 500;
+}
+
+td, th {
+  padding: 0.6em 0;
+  border-top: 1px solid rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
