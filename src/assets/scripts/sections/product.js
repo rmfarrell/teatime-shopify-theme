@@ -24,6 +24,9 @@ const selectors = {
   productPrice: '[data-product-price]',
   productThumbs: '[data-product-single-thumbnail]',
   singleOptionSelector: '[data-single-option-selector]',
+  decrementQuantity: '[data-decrement-quantity]',
+  incrementQuantity: '[data-increment-quantity]',
+  quantity: '[data-quantity-selector]'
 };
 
 /**
@@ -43,7 +46,6 @@ sections.register('product', {
     this.productSingleObject = JSON.parse(
       $(selectors.productJson, this.$container).html(),
     );
-
     const options = {
       $container: this.$container,
       enableHistoryState: this.$container.data('enable-history-state') || false,
@@ -74,6 +76,19 @@ sections.register('product', {
         this.updateProductImage.bind(this),
       );
     }
+
+    console.log(selectors.incrementQuantity.constructor.name)
+
+    // attach increment/decrement handlers
+    const $quantity = this.$container.find(selectors.quantity)
+    this.$container.find(selectors.incrementQuantity).on('click', () => {
+      $quantity.val(Number($quantity.val()) + 1)
+    })
+    this.$container.find(selectors.decrementQuantity).on('click', () => {
+      const v = Math.max(Number($quantity.attr('min')),
+        Number($quantity.val()) - 1)
+      $quantity.val(v)
+    })
   },
 
   /**

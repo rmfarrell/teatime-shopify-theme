@@ -7,6 +7,7 @@ import 'lazysizes'
 import 'lazysizes/plugins/respimg/ls.respimg'
 import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
+import '../templates/product'
 
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';

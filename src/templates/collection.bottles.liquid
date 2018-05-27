@@ -30,7 +30,7 @@
   <!-- content -->
   {% for product in collection.products %}
     <div class="product-container">
-      {% include 'product' with product: product  %}
+      {% include 'product' with product: product, section_id: forloop.index  %}
     </div>
   {% endfor %}
 </article>
