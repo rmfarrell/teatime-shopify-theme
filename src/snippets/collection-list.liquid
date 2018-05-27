@@ -16,7 +16,7 @@
   {% for block in section.blocks %}
     {%- assign collection = collections[block.settings.collection] -%}
     <li>
-      <a href="">
+      <a href="{{collection.url}}">
         <div class="img-container">
           {% include 'responsive-image' with
             image: collection.image,
