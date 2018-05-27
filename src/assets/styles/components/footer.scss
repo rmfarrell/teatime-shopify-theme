@@ -3,7 +3,6 @@
   color: white;
   text-align: center;
   padding: 3em 0 2rem;
-  font-size: 1.7em;
   margin-top: 2em;
   
   ul {
@@ -71,8 +70,8 @@
   }
 
   .social-links {
-    margin: 1em auto 2em;
-    font-size: 1.2em;
+    margin: 1em auto 1.5em;
+    font-size: 2.2em;
     display: flex;
     justify-content: space-between;
     max-width: 10em;
@@ -90,10 +89,15 @@
   .footer-links {
     font-weight: 500;
     margin: 0 0 2em;
+    font-size: 1.4em;
 
     li {
       margin: 0 0 1em;
     }
+  }
+
+  small {
+    font-size: 1.2em;
   }
 
   @media ($mq-medium) {
@@ -120,13 +124,14 @@
     small {
       flex: 1 1 100%;
     }
-
+    
     .footer-links {
-      font-size: 0.85em
+      font-size: 1.4em;
     }
 
     .social-links {
       margin-bottom: 1em;
+      font-size: 1.8em;
 
       a {
         padding: 0 0.5em;

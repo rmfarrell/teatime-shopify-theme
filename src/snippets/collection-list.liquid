@@ -18,7 +18,7 @@
     <li>
       <a href="">
         <img src="{{ collection.image | img_url: '160x160' }}" alt="{{ collection.image.alt | escape }}">
-        <h4>{{collection.title}}</h4>
+        <h4>shop {{collection.title}}</h4>
         {% if include_products %}
           <ul>
             {% for product in collection.products %}

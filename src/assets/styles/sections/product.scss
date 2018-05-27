@@ -1,0 +1,107 @@
+.product-container {
+  
+  p, 
+  .tagline, 
+  .pack-info span, 
+  ul {
+    opacity: 0.5
+  }
+
+  .product-main {
+    margin: 0 auto 10em
+  }
+
+  .product-img {
+    img {
+      filter: drop-shadow(-20px 22px 25px rgba(0, 0, 0, 0.25));
+    }
+  }
+  
+  .product-main {
+    font-size: 1.1em;
+    text-align: center;
+
+    h1 {
+      font-size: 3.333em;
+      margin: 0 0 0.5em;
+    }
+
+    h5 {
+      color: inherit;
+      margin: 0 0 1em;
+    }
+
+    .description {
+      margin: 0 0 2em
+    }
+
+    .cta {
+      margin-top: 0.5em;
+    }
+
+    @media ($mq-medium) {
+      font-size: 1.3em;
+      text-align: left;
+    }
+  }
+
+  .pack-info {
+    font-size: 1.2em;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+
+    strong, span {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    strong {
+      font-size: 3em;
+      line-height: 1em;
+      margin: 0 0.1em 0 0;
+    }
+
+    span {
+      width: 6em;
+    }
+  }
+
+  .price {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0.1em;
+    padding-left: 0.4em;
+    font-size: 3em;
+    font-weight: 500;
+    border-left: 1px solid $color-light-gray;
+    line-height: 1em;
+  }
+
+  .cta {
+    font-size: 1.35em;
+  }
+
+  .secondary-callouts {
+    background-color: #F6FAF6;
+    box-shadow: -1200px 0px 0px 0px #F6FAF6;
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+
+  // Content called in here is from page.includes
+  .includes {
+    text-align: center;
+    margin: 0 0 8em;
+    font-size: 1.1em;
+
+    @media ($mq-medium) {
+      text-align: left;
+      font-size: 1.3em;
+    }
+  }
+
+  .snippet {
+    margin: 0 0 5em;
+  }
+}

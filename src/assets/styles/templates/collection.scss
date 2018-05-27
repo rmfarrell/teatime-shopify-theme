@@ -1,0 +1,43 @@
+.template-collection {
+  
+  .tabs {
+    border-top: 1px solid $color-light-gray;
+    border-bottom: 1px solid $color-light-gray;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0 0 5em;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: auto;
+      padding: 0;
+    }
+
+    li {
+      flex: 16em 0 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 3em;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+
+      &.active {
+        border-bottom: 2px solid $color-green;
+      }
+    }
+
+    span {
+      width: 80%;
+      text-align: center;
+      margin: 0 auto
+    }
+  }
+}
