@@ -1,4 +1,12 @@
-<article>
+{% if collection.products.size > 1 %}
+  {% assign is_tabbed = true %} 
+{% endif %}
+
+{% if is_tabbed %}
+  <article class="tabbed">
+{% else %}
+  <article>
+{% endif %}
 
   {{ hero.content }}
   {% section 'hero' %}
@@ -10,27 +18,29 @@
   {% endif %}
 
   <!-- tabs -->
-  <nav class="tabs">
-    <ul class="wrapper">
-      {% assign active_class = 'active' %}
-      {% for product in collection.products %}
-        <li>
-          <a href="#product-{{product.id}}"  
-             class="{{active_class}}" 
-             data-active-style="color: {{product.metafields.product.color}}; 
-                                border-bottom-color: {{product.metafields.product.color}}">
-            <span>{{product.title}}</span>
-          </a>
-        </li>
-        {% assign is_first_class = '' %}
-      {% endfor %}
-    </ul>
-  </nav>
+  {% if is_tabbed %}
+    <nav class="tabs">
+      <ul class="wrapper">
+        {% assign active_class = 'active' %}
+        {% for product in collection.products %}
+          <li>
+            <a href="#product-{{product.id}}"  
+              class="{{active_class}}" 
+              data-active-style="color: {{product.metafields.product.color}}; 
+                                  border-bottom-color: {{product.metafields.product.color}}">
+              <span>{{product.title}}</span>
+            </a>
+          </li>
+          {% assign is_first_class = '' %}
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
   
   <!-- content -->
   {% for product in collection.products %}
     <div class="product-container">
-      {% include 'product' with product: product  %}
+      {% include 'product' with product: product, section_id: forloop.index  %}
     </div>
   {% endfor %}
 </article>

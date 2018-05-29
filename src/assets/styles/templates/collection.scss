@@ -29,9 +29,12 @@
       font-weight: 500;
       border-bottom: 2px solid transparent;
       line-height: 1.1em;
+      color: $color-light-gray;
+      transition: border-color 0.45s, color 0.3s;
 
       &.active {
         border-bottom: 2px solid $color-green;
+        color: $color-green;
       }
     }
 
@@ -41,4 +44,13 @@
       margin: 0 auto
     }
   }
+
+  // Hide products when not activated by tabs on a tabbed layout
+  article.tabbed .product-container {
+    display: none;
+
+    &.active {
+      display: inherit;
+    }
+  }  
 }

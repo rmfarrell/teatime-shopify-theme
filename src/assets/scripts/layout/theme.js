@@ -11,12 +11,10 @@ import '../templates/product'
 
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
+import { $, $$, each } from '../utlities';
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};
-
-const $ = document.querySelector.bind(document)
-const $$ = document.querySelectorAll.bind(document)
 
 // -- Toggle header
 const $globalHeader = $('#global-header')
@@ -43,7 +41,6 @@ each($$('.accordion'), (el) => {
   const observer = new MutationObserver((ev) => {
     const targ = ev[0].target
     if (targ && targ.classList.contains('open')) {
-      console.log(targ.scrollHeight)
       targ.style.height = `${targ.scrollHeight}px`
       return;
     }
@@ -98,17 +95,6 @@ if (cookiesEnabled()) {
 // });
 
 // -- Utilities
-
-/**
- * Safely iterate through elements
- * @param {HTMLNodeList} els
- * @param {Function} cb callback passes current element and index as args
- */
-function each(els, cb = function () { }) {
-  for (let x = 0; x < els.length; x++) {
-    cb(els[x], x)
-  }
-}
 
 /**
  * Parse a string into HTML

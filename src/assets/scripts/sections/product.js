@@ -77,8 +77,6 @@ sections.register('product', {
       );
     }
 
-    console.log(selectors.incrementQuantity.constructor.name)
-
     // attach increment/decrement handlers
     const $quantity = this.$container.find(selectors.quantity)
     this.$container.find(selectors.incrementQuantity).on('click', () => {

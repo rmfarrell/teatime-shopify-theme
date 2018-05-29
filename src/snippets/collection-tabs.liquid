@@ -1,0 +1,16 @@
+<nav class="tabs">
+  <ul class="wrapper">
+    {% for product in collection.products %}
+      {% if forloop.index == 1 %}
+        {% assign active_class = 'active' %}
+      {% else %}
+        {% assign active_class = '' %}
+      {% endif %}
+      <li>
+        <a href="#product-{{product.id}}" class="{{active_class}}">
+          <span>{{product.title}}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
