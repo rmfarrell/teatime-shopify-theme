@@ -9,12 +9,13 @@ import jq from 'jquery';
 function Tabs() {
   const activeClassName = 'active'
   const expandMobileClass = 'expanded'
+  const animationTime = 400
   const $tabbedContainer = $('article.tabbed')
-  let $$tabs, $$products
+  let $$tabs, $$pages, $newPage, $oldPage
 
   if ($tabbedContainer) {
     $$tabs = $tabbedContainer.querySelectorAll('.tabs li > a')
-    $$products = $$('.product-container')
+    $$pages = $$('.product-container')
 
     // Attach pushState trigger to tabs
     each($$tabs, ($tab) => {
@@ -58,7 +59,22 @@ function Tabs() {
   function update(hash = '') {
     if (hash === '') return
     _updateTabs(hash)
-    _updateProducts(hash)
+    _updatePage(hash)
+  }
+
+  function init(hash = '') {
+    _updateTabs(hash)
+    _initPages(hash)
+  }
+
+  function _initPages(hash = '') {
+    each($$pages, ($p) => {
+      if (hash === `#${$p.id}`) {
+        $newPage = $p
+        return $p.classList.add(activeClassName)
+      }
+      $p.classList.remove(activeClassName)
+    })
   }
 
   /**
@@ -70,7 +86,7 @@ function Tabs() {
       if (hash === $t.getAttribute('href')) {
         return $t.classList.add(activeClassName)
       }
-      $t.classList.remove(activeClassName)
+      return $t.classList.remove(activeClassName)
     })
   }
 
@@ -78,16 +94,46 @@ function Tabs() {
    * Set the active class on the current the section content
    * @param {String} hash 
    */
-  function _updateProducts(hash = '') {
-    each($$products, ($p) => {
-      if (hash === `#${$p.id}`) {
-        return $p.classList.add(activeClassName)
-      }
-      $p.classList.remove(activeClassName)
+  function _updatePage(hash = '') {
+    $oldPage = $newPage
+    each($$pages, ($p) => {
+      if (hash === `#${$p.id}`) { $newPage = $p }
     })
+    return _animate($newPage, $oldPage, animationTime)
   }
 
-  return { update }
+  function _animate($new, $old, t) {
+    $old.classList.add('out')
+    return new Promise((resolve) => {
+      return setTimeout(() => {
+        $old.classList.remove('out', activeClassName);
+        resolve()
+      }, animationTime)
+    })
+      .then(() => {
+        $new.classList.add('in', activeClassName)
+        return setTimeout(() => {
+          $new.classList.remove('in')
+        }, animationTime)
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+  }
+  return { update, init }
 }
 
-Tabs().update(window.location.hash)
+Tabs().init(window.location.hash)
+
+function scrollToTarget($el, offset = 0) {
+  var elementPosition = $el.getBoundingClientRect().top;
+  var offsetPosition = elementPosition + offset;
+
+  console.log(offsetPosition)
+  console.log(window.pageYOffset)
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
+}
