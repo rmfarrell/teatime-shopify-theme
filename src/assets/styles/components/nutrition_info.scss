@@ -1,0 +1,26 @@
+.nutrition-information {
+
+  table {
+    width: 100%;
+  }
+
+  td {
+    &:first-of-type {
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+
+  th {
+    border: none;
+    text-align: right;
+    
+    &:first-of-type {
+      text-align: left;
+    }
+  }
+}

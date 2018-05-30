@@ -14,9 +14,63 @@ html {
   height: 100%;
 }
 
+main {
+  padding-top: $header-height;
+}
+
 .wrapper {
   padding-left: $gutter;
   padding-right: $gutter;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.intro-text {
+  text-align: center;
+  margin: 0 auto 7em;
+  max-width: 30em;
+
+  h1, h2, h3, h4, h5 {
+    width: 50%
+  }
+}
+
+.flex-columns {
+
+  .column {
+    margin-bottom: 2em;
+  }
+
+  @media ($mq-medium) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .column {
+      flex: 49% 0 1;
+
+      &.one-third {
+        flex: 30% 0 1;
+      }
+
+      &.two-thirds {
+        flex: 65% 0 1;
+      }
+    }
+  }
+
+  &.narrow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    .column {
+      flex: 40% 0 0;
+
+      @media ($mq-medium) {
+        flex: 16% 0 0;
+      }
+    }
+  }
 }

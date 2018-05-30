@@ -269,7 +269,7 @@
       "on_sale_from_html": "On Sale from {{ price }}",
       "from_text_html": "From {{ price }}",
       "quantity": "Quantity",
-      "add_to_cart": "Add to Cart"
+      "add_to_cart": "add to cart"
     }
   },
   "gift_cards": {
@@ -289,5 +289,15 @@
   },
   "date_formats": {
     "month_day_year": "%B %d, %Y"
+  },
+  "nutrition_facts": {
+    "headline": "Nutrition Facts",
+    "amount_per_serving": "Amount Per Serving",
+    "percent_daily_value": "% of Daily Value",
+    "additional_info": "Not a significant source of calories from fat, saturated fat, trans fat, cholersterol, vitamin A, and calcium.",
+    "key": "Percent Daily Value is based on a 2,000 calorie diet"
+  },
+  "product": {
+    "amazon_cta": "buy on Amazon"
   }
 }

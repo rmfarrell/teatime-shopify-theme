@@ -17,7 +17,7 @@ $color-accent: var(--color-accent);
 $color-border: var(--color-border);
 
 // Helper colors for form error states
-$color-disabled: #000000;
+$color-disabled: $color-light-gray;
 $color-disabled-border: #000000;
 $color-error: #ff6d6d;
 $color-error-bg: #ffffff;

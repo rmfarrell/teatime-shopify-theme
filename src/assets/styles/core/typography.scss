@@ -2,13 +2,6 @@ html, body {
   font-size: 10px;
 }
 
-// @font-face {
-//   font-family: 'Calibre-Medium';
-//   src: url("//cdn.shopify.com/s/files/1/0580/8769/t/32/assets/Calibre-Medium.otf?13140506617749322225");
-//   font-weight: normal;
-//   font-style: normal
-// }
-
 body {
   font-family: $font-body;
   font-weight: normal;
@@ -23,6 +16,15 @@ h6 {
   font-family: $font-heading;
   color: $color-dark-text;
   margin: 0 auto 1em;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.9em;
+}
+
+h5 {
+  font-size: 1.4em;
 }
 
 body,
@@ -36,4 +38,42 @@ select {
 
 a:focus {
   color: inherit;
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  color: $color-green;
+  text-decoration: none;
+}
+
+p, table, ul, blockquote {
+  font-size: 1.4em;
+  margin: 0 0 1em;
+}
+
+p, ul {
+  line-height: 1.9em;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  margin: 0 0 0;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.7em 2em 0.5em;
+  background-color: $color-green;
+  border-radius: 2em;
+  color: white;
+  line-height: 1.5em;
+  white-space: nowrap;
+  font-weight: 500;
 }

@@ -111,10 +111,6 @@
     {{ product.description }}
   </div>
 
-  {% if section.settings.show_share_buttons %}
-    {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
-  {% endif %}
-
   {% unless product == empty %}
     <script type="application/json" data-product-json>
       {{ product | json }}
@@ -127,10 +123,26 @@
     "name": "Product pages",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "show_share_buttons",
-        "label": "Show social sharing buttons",
-        "default": true
+        "type": "text",
+        "id": "title",
+        "label": "Product Title (overrides title)"
+      },
+      {
+        "type": "text",
+        "id": "subhead",
+        "label": "Subhead (above title)"
+      },
+      {
+        "type": "richtext",
+        "id": "packinfo",
+        "label": "Package info",
+        "info": "e.g., 12 pack of 10oz Bottles. Bold text will appear floated to left"
+      },
+      {
+        "type": "url",
+        "id": "amazon_link",
+        "label": "Amazon Link",
+        "info": "If this product is sold on Amazon, link here."
       }
     ]
   }

@@ -23,8 +23,9 @@
 @import './core/responsive-tables';
 @import './core/rte';
 @import './core/typography';
+@import './core/table';
 
-// Components/Sections
+// Components
 @import './components/buttons';
 @import './components/hero-banner';
 @import './components/icons';
@@ -33,6 +34,13 @@
 @import './components/header';
 @import './components/footer';
 @import './components/collection-list';
+@import './components/nutrition_info';
+
+// Sections
 @import './sections/blog-posts';
 @import './sections/featured-collection';
 @import './sections/image-with-text';
+@import './sections/product';
+
+// Templates
+@import './templates/collection';

@@ -1,0 +1,172 @@
+.product-container {
+  padding-top: 6em;
+  
+  p, 
+  .tagline, 
+  .pack-info span, 
+  ul,
+  td {
+    opacity: 0.5
+  }
+
+  .product-main {
+    margin: 0 auto 10em
+  }
+
+  .product-img {
+    img {
+      filter: drop-shadow(-20px 22px 25px rgba(0, 0, 0, 0.25));
+    }
+  }
+  
+  .product-main {
+    font-size: 1.1em;
+    text-align: center;
+
+    h1 {
+      font-size: 3.333em;
+      margin: 0 0 0.5em;
+    }
+
+    h5 {
+      color: inherit;
+      margin: 0 0 1em;
+    }
+
+    .description {
+      margin: 0 0 2em
+    }
+
+    @media ($mq-medium) {
+      font-size: 1.3em;
+      text-align: left;
+    }
+  }
+
+  .cta {
+    font-size: 1.3em;
+
+    &.external-vendor {
+      font-size: 1.35em;
+      margin-top: 0.5em;
+    }
+  }
+
+  .pack-info {
+    font-size: 1.2em;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    border-right: 1px solid $color-light-gray;
+    margin-right: 1em;
+
+    strong, span {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    strong {
+      font-size: 3em;
+      line-height: 1em;
+      margin: 0 0.1em 0 0;
+    }
+
+    span {
+      width: 6em;
+    }
+  }
+
+  .price {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 3em;
+    font-weight: 500;
+    line-height: 1em;
+  }
+
+  .secondary-callout {
+    background-color: #F6FAF6;
+    box-shadow: -1200px 0px 0px 0px #F6FAF6;
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+
+  // Content called in here is from page.includes
+  .includes {
+    text-align: center;
+    font-size: 1.1em;
+
+    @media ($mq-medium) {
+      text-align: left;
+      font-size: 1.3em;
+    }
+  }
+
+  .nutrition-information {
+    font-size: 1.1em;
+    max-width: 30em;
+
+    @media ($mq-medium) {
+      font-size: 1.3em;
+    }
+  }
+
+  .add-to-cart form {
+
+    font-size: 1.2em;
+
+    .cta {
+      width: 14rem;
+    }
+
+    @media ($mq-medium) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      font-size: inherit;
+      align-items: flex-start;
+
+      .cta {
+        width: auto;
+      }
+    }
+  }
+
+  .quanitity-selector {
+    background-color: #F8F8F8;
+    box-shadow: inset 0 0 1px $color-light-gray;
+    border-radius: 3em;
+    width: 14rem;
+    margin: 0 auto 1em;
+    white-space: nowrap;
+
+    button {
+      appearance: none;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      margin: 0 0.75em;
+      height: 100%;
+      font-weight: 500;
+      font-size: 1.5em;
+      padding: 0.75em 0 0.5em;
+    }
+
+    input[type=number] {
+      background-color: transparent;
+      text-align: center;
+      width: 2em;
+      font-size: 1.5em;
+      font-weight: 500;
+      font-family: inherit;
+      line-height: 1em;
+      padding: 1.35em 0 1.1em;
+      text-align: right;
+    }
+
+    @media ($mq-medium) {
+      width: auto;
+      margin: 0 0 0 1em;
+    }
+  }
+}

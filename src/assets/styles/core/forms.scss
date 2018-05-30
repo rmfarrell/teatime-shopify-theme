@@ -14,14 +14,23 @@ textarea {
   touch-action: manipulation;
 }
 
+input {
+  outline: none;
+  padding: 0 1em;
+  margin: 0;
+  vertical-align: top;
+  border: none;
+  font-size: 1.5rem;
+  height: 4rem;
+  line-height: 4rem;
+  appearance: none;
+}
+
 input,
 textarea,
-select {
-  font-size: 1.6rem;
-  max-width: 100%;
-  border: 1px solid $color-border;
-  border-radius: 0;
-
+select,
+button {
+  
   &[disabled] {
     border-color: $color-disabled-border;
     background-color: $color-disabled;
@@ -30,9 +39,22 @@ select {
 }
 
 button,
-input[type='submit'],
+input[type=submit],
 label[for] {
   cursor: pointer;
+  outline: none;
+  appearance: none;
+  font-family: inherit;
+  border: none;
+}
+
+input[type=submit] {
+  padding: 0.8em 2em 0.4em;
+  background-color: $color-green;
+  color: white;
+  line-height: 1.5em;
+  white-space: nowrap;
+  font-weight: 500;
 }
 
 textarea {

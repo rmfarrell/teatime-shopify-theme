@@ -3,6 +3,7 @@
   height: $header-height;
   position: fixed;
   width: 100%;
+  z-index: 100;
   
   // TODO: this is too deeply-nested
   header {
@@ -34,7 +35,7 @@
       top: $header-height;
       overflow-y: auto;
       background-color: white;
-      font-size: 2.4em;
+      font-size: 1.6em;
       transform: translateY(-100%);
       transition: opacity 0.4s, transform 0.4s;
       z-index: -1;
@@ -112,6 +113,10 @@
       padding: 0 1em;
     }
 
+    .collection-list {
+      font-size: 0.5em;
+    }
+
     @media ($mq-medium) {
       align-items: center;
       @include constrain;
@@ -129,11 +134,10 @@
         display: inline-block;
         position: static;
         width: auto;
-        font-size: 1em;
+        font-size: 1.2em;
         transform: none;
         z-index: 0;
         opacity: 1;
-        font-size: 1.6em;
         background: transparent;
         overflow: visible;
         flex: 1 1 auto;
@@ -168,7 +172,12 @@
       }
 
       ul.collection-list {
-        @include constrain
+        font-size: 0.65em;
+        @include constrain;
+
+        h4 {
+          margin-bottom: 2em;
+        }
       }
     }
     .cart-button {

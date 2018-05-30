@@ -1,0 +1,133 @@
+.template-collection {
+  
+  .tabs {
+    position: sticky;
+    top: $header-height;
+    z-index: 90;
+    border-top: 1px solid $color-light-gray;
+    border-bottom: 1px solid $color-light-gray;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: white;
+
+    ul {
+      list-style-type: none;
+      margin: auto;
+      padding: 0;
+
+      @media ($mq-medium) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    li {
+      flex: 16em 0 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 3em;
+      font-weight: 500;
+      line-height: 1.1em;
+      color: $color-light-gray;
+      transition: border-color 0.45s, color 0.3s, max-height 0.3s;
+      max-height: 0;
+      overflow: hidden;
+
+      &.active {
+        max-height: 3em;
+        color: $color-green;
+
+        &:after {
+          content: '\203A';
+          font-size: 1.75em;
+          font-weight: normal;
+        }
+      }
+
+      @media ($mq-medium) {
+        max-height: none;
+        border-bottom: 2px solid transparent;
+
+        &.active {
+          border-bottom: 2px solid $color-green;
+        }
+        
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    span {
+      text-align: left;
+      margin: 0 $gutter;
+
+      @media ($mq-medium) {
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+      }
+    }
+  }
+
+  // Hide products when not activated by tabs on a tabbed layout
+  article.tabbed .product-container {
+    display: none;
+    position: relative;
+    padding-top: 5em;
+    overflow: hidden;
+
+    &:after, 
+    &:before {
+      content: '';
+      background-color: $color-green;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      opacity: 0;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    &:before {
+      transform: translate3d(25vw, 0, 0);
+    }
+
+    &:after {
+      transform: translate3d(-125vw, 0, 0);
+    }
+
+    &.active {
+      display: inherit;
+    }
+
+    &.in::before {
+      transform: translate3d(0, 0, 0) scaleX(1);
+      opacity: 1
+    }
+
+    &.out::after {
+      transform: translate3d(0, 0, 0) scaleX(1);
+      opacity: 1
+    }
+  }
+
+  // expanded inactive tabs if menu is toggled.
+  .tabbed.expanded .tabs a {
+    max-height: 3em;
+
+    &:active::after {
+      transform: rotate(-90deg);
+      color: red;
+    }
+  }
+}

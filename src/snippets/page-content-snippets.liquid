@@ -1,0 +1,15 @@
+{% comment %} 
+  Given a `|`-separated list of page handles, loops through their content and print them out.
+  - handles {String} page handles separated by `|`
+  
+  Example: {% include 'page-content-snippet' with: handles: 'page-one|page-two' %}
+{% endcomment %}
+{% assign snippets = handles | split: '|' %}
+{% for snippet in snippets %}
+  {% assign page = pages[snippet] %}
+  <div class="secondary-callout wrapper">
+    <div class="snippet" id="{{page.handle}}">
+      {{ page.content }}
+    </div>
+  </div>
+{% endfor %}
