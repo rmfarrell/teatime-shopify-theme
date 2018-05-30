@@ -9,7 +9,7 @@ import jq from 'jquery';
 function Tabs() {
   const activeClassName = 'active'
   const expandMobileClass = 'expanded'
-  const animationTime = 400
+  const animationTime = 250
   const $tabbedContainer = $('article.tabbed')
   let $$tabs, $$pages, $newPage, $oldPage
 

@@ -83,7 +83,8 @@
     padding-top: 5em;
     overflow: hidden;
 
-    &:after {
+    &:after, 
+    &:before {
       content: '';
       background-color: $color-green;
       width: 100%;
@@ -93,25 +94,30 @@
       top: 0;
       left: 0;
       z-index: 10;
-      transform: translateX(-101%);
-      transition: transform 0.25s;
+      opacity: 0;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    &:before {
+      transform: translate3d(25vw, 0, 0);
+    }
+
+    &:after {
+      transform: translate3d(-125vw, 0, 0);
     }
 
     &.active {
       display: inherit;
     }
 
-    &.in {
-      &:after {
-        transform: translateX(0);
-      }
+    &.in::before {
+      transform: translate3d(0, 0, 0) scaleX(1);
+      opacity: 1
     }
 
-    &.out {
-
-      &:after {
-        transform: translateX(0%);
-      }
+    &.out::after {
+      transform: translate3d(0, 0, 0) scaleX(1);
+      opacity: 1
     }
   }
 
