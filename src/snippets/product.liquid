@@ -11,7 +11,7 @@
     In your liquid template file, copy the following line
     - {% include 'product' with css_class: 'active', product: product %}
 {%- endcomment -%}
-<div class="product-container {{css_class}}" id="product-{{product.id}}" data-section-id="{{ section_id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
+<div class="product-container {{css_class}}" id="{{product.handle}}" data-section-id="{{ section_id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
 
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
@@ -136,12 +136,13 @@
     </div>
   </div>
 
-  <div class="secondary-callouts wrapper">
-    <aside class="includes">
-      {% include 'page-content-snippets', with handles: product.metafields.snippet.page_snippet %}
-    </aside>
+  <!-- Page Includes -->
+  <aside class="includes">
+    {% include 'page-content-snippets', with handles: product.metafields.snippet.page_snippet %}
+  </aside>
 
-    <!-- Nutrition Information -->
+  <!-- Nutrition Information -->
+  <div class="secondary-callout wrapper">
     <div class="nutrition-information">
       {% if product.metafields.nutrition_info.show == 'true' %}
         <h3>{{ 'nutrition_facts.headline' | t }}</h3>

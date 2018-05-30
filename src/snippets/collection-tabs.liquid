@@ -7,7 +7,7 @@
         {% assign active_class = '' %}
       {% endif %}
       <li>
-        <a href="#product-{{product.id}}" class="{{active_class}}">
+        <a href="#{{product.handle}}" class="{{active_class}}">
           <span>{{product.title}}</span>
         </a>
       </li>

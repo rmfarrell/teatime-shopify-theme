@@ -7,7 +7,9 @@
 {% assign snippets = handles | split: '|' %}
 {% for snippet in snippets %}
   {% assign page = pages[snippet] %}
-  <div class="snippet" id="{{page.handle}}">
-    {{ page.content }}
+  <div class="secondary-callout wrapper">
+    <div class="snippet" id="{{page.handle}}">
+      {{ page.content }}
+    </div>
   </div>
 {% endfor %}
