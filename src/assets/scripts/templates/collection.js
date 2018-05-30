@@ -8,6 +8,7 @@ import jq from 'jquery';
  */
 function Tabs() {
   const activeClassName = 'active'
+  const expandMobileClass = 'expanded'
   const $tabbedContainer = $('article.tabbed')
   let $$tabs, $$products
 
@@ -18,6 +19,8 @@ function Tabs() {
     // Attach pushState trigger to tabs
     each($$tabs, ($tab) => {
       $tab.addEventListener('click', (ev) => {
+
+        // update pushstate
         if (!window.history.pushState) {
           return true;
         }
@@ -25,6 +28,12 @@ function Tabs() {
         history.pushState({ tab: $tab.getAttribute('href') },
           null,
           $tab.getAttribute('href'));
+
+        // handle mobile nav expanding/collapsing
+        if ($tab.classList.contains(activeClassName)) {
+          $tabbedContainer.classList.toggle(expandMobileClass)
+        }
+
         return false;
       })
     });

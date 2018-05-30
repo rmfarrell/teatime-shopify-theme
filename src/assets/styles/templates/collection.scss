@@ -12,11 +12,14 @@
     background-color: white;
 
     ul {
-      display: flex;
-      justify-content: center;
       list-style-type: none;
       margin: auto;
       padding: 0;
+
+      @media ($mq-medium) {
+        display: flex;
+        justify-content: center;
+      }
     }
 
     li {
@@ -31,21 +34,46 @@
       width: 100%;
       height: 3em;
       font-weight: 500;
-      border-bottom: 2px solid transparent;
       line-height: 1.1em;
       color: $color-light-gray;
-      transition: border-color 0.45s, color 0.3s;
+      transition: border-color 0.45s, color 0.3s, max-height 0.3s;
+      max-height: 0;
+      overflow: hidden;
 
       &.active {
-        border-bottom: 2px solid $color-green;
+        max-height: 3em;
         color: $color-green;
+
+        &:after {
+          content: '\203A';
+          font-size: 1.75em;
+          font-weight: normal;
+        }
+      }
+
+      @media ($mq-medium) {
+        max-height: none;
+        border-bottom: 2px solid transparent;
+
+        &.active {
+          border-bottom: 2px solid $color-green;
+        }
+        
+        &:after {
+          display: none;
+        }
       }
     }
 
     span {
-      width: 80%;
-      text-align: center;
-      margin: 0 auto
+      text-align: left;
+      margin: 0 $gutter;
+
+      @media ($mq-medium) {
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+      }
     }
   }
 
@@ -56,5 +84,15 @@
     &.active {
       display: inherit;
     }
-  }  
+  }
+
+  // expanded inactive tabs if menu is toggled.
+  .tabbed.expanded .tabs a {
+    max-height: 3em;
+
+    &:active::after {
+      transform: rotate(-90deg);
+      color: red;
+    }
+  }
 }

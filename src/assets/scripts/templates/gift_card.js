@@ -23,7 +23,7 @@ $(config.printButton).on('click', () => {
 });
 
 // Auto-select gift card code on click, based on ID passed to the function
-$(config.giftCardCode).on('click', {element: 'GiftCardDigits'}, selectText);
+$(config.giftCardCode).on('click', { element: 'GiftCardDigits' }, selectText);
 
 function selectText(evt) {
   const text = document.getElementById(evt.data.element);

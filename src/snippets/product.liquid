@@ -137,14 +137,16 @@
   </div>
 
   <!-- Page Includes -->
-  <aside class="includes">
-    {% include 'page-content-snippets', with handles: product.metafields.snippet.page_snippet %}
-  </aside>
+  {% if product.metafields.snippet.page_snippet.size > 0 %}
+    <aside class="includes">
+      {% include 'page-content-snippets', with handles: product.metafields.snippet.page_snippet %}
+    </aside>
+  {% endif  %}
 
   <!-- Nutrition Information -->
-  <div class="secondary-callout wrapper">
-    <div class="nutrition-information">
-      {% if product.metafields.nutrition_info.show == 'true' %}
+  {% if product.metafields.nutrition_info.show == 'true' %}
+    <div class="secondary-callout wrapper">
+      <div class="nutrition-information">
         <h3>{{ 'nutrition_facts.headline' | t }}</h3>
         <table>
           <tr>
@@ -162,7 +164,7 @@
         </table>
         <p>{{ 'nutrition_facts.additional_info' | t }}</p>
         <p><strong>{{ 'nutrition_facts.key' | t }}</strong></p>
-      {% endif %}
+      </div>
     </div>
-  </div>
+  {% endif %}
 </div>
