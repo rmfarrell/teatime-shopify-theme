@@ -12,8 +12,24 @@ function each(els, cb = function () { }) {
   }
 }
 
+/**
+ * Smooth scroll to a target
+ * Optionally pass offest (in px) as second argument.
+ * @param {HTMLElement} $el  
+ * @param {Number} offset 
+ */
+function scrollToTarget($el, offset = 0) {
+  var elementPosition = $el.getBoundingClientRect().top;
+  var offsetPosition = elementPosition + offset;
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
+}
+
 module.exports = {
   $,
   $$,
-  each
+  each,
+  scrollToTarget
 }

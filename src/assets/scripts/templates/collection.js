@@ -4,18 +4,21 @@ import jq from 'jquery';
 /**
  * Attach a pushstate handler to tabs and products.
  * Show/apply active state to each
- * @return {Object.Function} update state pass in hash
+ * @return {Object.Function} update update state pass in hash
+ * @return {Object.Function} init initialize with a hash string
  */
 function Tabs() {
   const activeClassName = 'active'
   const expandMobileClass = 'expanded'
   const animationTime = 250
   const $tabbedContainer = $('article.tabbed')
-  let $$tabs, $$pages, $newPage, $oldPage
+  let $$tabs, $$pages, $currentPage, $oldPage
 
   if ($tabbedContainer) {
     $$tabs = $tabbedContainer.querySelectorAll('.tabs li > a')
     $$pages = $$('.product-container')
+    $currentPage = Array.prototype.find.call($$pages,
+      ($p) => $p.classList.contains(activeClassName));
 
     // Attach pushState trigger to tabs
     each($$tabs, ($tab) => {
@@ -63,14 +66,16 @@ function Tabs() {
   }
 
   function init(hash = '') {
+    if (!hash) return;
     _updateTabs(hash)
     _initPages(hash)
+    console.log($currentPage)
   }
 
   function _initPages(hash = '') {
     each($$pages, ($p) => {
       if (hash === `#${$p.id}`) {
-        $newPage = $p
+        $currentPage = $p
         return $p.classList.add(activeClassName)
       }
       $p.classList.remove(activeClassName)
@@ -95,11 +100,11 @@ function Tabs() {
    * @param {String} hash 
    */
   function _updatePage(hash = '') {
-    $oldPage = $newPage
+    $oldPage = $currentPage
     each($$pages, ($p) => {
-      if (hash === `#${$p.id}`) { $newPage = $p }
+      if (hash === `#${$p.id}`) { $currentPage = $p }
     })
-    return _animate($newPage, $oldPage, animationTime)
+    return _animate($currentPage, $oldPage, animationTime)
   }
 
   function _animate($new, $old, t) {
@@ -124,16 +129,3 @@ function Tabs() {
 }
 
 Tabs().init(window.location.hash)
-
-function scrollToTarget($el, offset = 0) {
-  var elementPosition = $el.getBoundingClientRect().top;
-  var offsetPosition = elementPosition + offset;
-
-  console.log(offsetPosition)
-  console.log(window.pageYOffset)
-
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: 'smooth'
-  });
-}
