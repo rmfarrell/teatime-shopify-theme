@@ -2,10 +2,15 @@ import { cart as cartEvents } from './events'
 import { $, $$, each, delegate } from './utilities';
 import fetch from 'unfetch';
 
-export function Cart(onUpdate = function () { }) {
+/**
+ * Shopping cart
+ * @param {Function} afterUpdate callback for when cart update occurs
+ */
+export function Cart(afterUpdate = function () { }) {
   const $container = $('#shopping-cart');
   const $tray = $('#shopping-cart-tray');
   const openClass = 'open';
+  const shoppingCartEmpty = '<p class="empty">Your shopping cart is currently empty.</p>'
   let itemCount = 0;
 
   window.addEventListener('matchabar:cart:update', _onUpdate)
@@ -25,7 +30,7 @@ export function Cart(onUpdate = function () { }) {
 
         // render html
         $container.innerHTML = _render(res);
-        return onUpdate(res);
+        return afterUpdate(res);
       })
 
       // redirect to cart page
@@ -75,9 +80,11 @@ export function Cart(onUpdate = function () { }) {
     return (`
       <h1>My Cart</h1>
       <form action="/cart" method="post" novalidate>
-        ${$$items.join('')}
-        <h2>Subtotal $${totalPrice}</h2>
-        <input type="submit" name="checkout" class="cta" value="checkout">
+        ${$$items.length ? $$items.join('') : shoppingCartEmpty}
+        <div class="total">
+          <h2>Subtotal $${totalPrice}</h2>
+          <input type="submit" name="checkout" class="cta" value="checkout">
+        </div>
       </form>
     `)
 
@@ -85,13 +92,13 @@ export function Cart(onUpdate = function () { }) {
     function __renderItem(item) {
       const { id, title, image, quantity } = item
       return (`
-        <div class="product">
-          <div class="img-container">
+        <div class="product flex-columns">
+          <div class="img-container column">
             <img src="${image}" />
           </div>
-          <div class="text-container">
+          <div class="text-container column">
             <h3>${title}</h3>
-            <p>QTY: ${quantity}</p>
+            <p class="qty">QTY: ${quantity}</p>
             <a class="remove-product" data-remove-id="${id}" >Remove</a>
           </div>
         </div>

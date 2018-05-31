@@ -45,7 +45,7 @@ each($$parentTogglers, (el) => {
 })
 
 // -- Shopping cart
-const $closeCartButton = $('[close-shopping-cart-tray]')
+const $closeCartButton = $('[data-close-shopping-cart-tray]')
 const $shoppingCartIcon = $('[data-shopping-cart-icon]')
 const $cartItemCounter = $shoppingCartIcon.querySelector('[data-cart-item-counter]');
 const shoppingCart = Cart((c) => {
