@@ -1,4 +1,4 @@
-import { $, $$, each } from '../utlities';
+import { $, $$, each } from '../utilities';
 import jq from 'jquery';
 
 /**
@@ -40,9 +40,7 @@ function Tabs() {
         }
 
         // push to pushState
-        history.pushState({ tab: $tab.getAttribute('href') },
-          null,
-          $tab.getAttribute('href'));
+        history.pushState({}, null, $tab.getAttribute('href'));
 
         return false;
       })
@@ -69,13 +67,15 @@ function Tabs() {
     if (hash === '') return
     _updateTabs(hash)
     _updatePage(hash)
+
+    // collapse menu on mobile
+    $tabbedContainer.classList.remove(expandMobileClass);
   }
 
   function init(hash = '') {
     if (!hash) return;
     _updateTabs(hash)
     _initPages(hash)
-    console.log($currentPage)
   }
 
   function _initPages(hash = '') {

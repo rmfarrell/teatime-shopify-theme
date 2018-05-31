@@ -27,9 +27,25 @@ function scrollToTarget($el, offset = 0) {
   });
 }
 
+/**
+ * Delay callback on an event listener
+ * @param {Function} func 
+ * @param {Number} wait 
+ */
+function debounce(func, wait = 100) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(this, args);
+    }, wait);
+  };
+}
+
 module.exports = {
   $,
   $$,
   each,
-  scrollToTarget
+  scrollToTarget,
+  debounce,
 }

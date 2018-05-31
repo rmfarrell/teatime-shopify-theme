@@ -8,13 +8,27 @@ import 'lazysizes/plugins/respimg/ls.respimg'
 import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
 import '../templates/product'
+import '../sections/hero'
+import textFit from 'textfit';
 
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
-import { $, $$, each } from '../utlities';
+import { $, $$, each, debounce } from '../utilities';
+import { windowWhen } from 'rxjs/operator/windowWhen';
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};
+
+// -- Resize events
+// Fires event `matchabar:resize`
+const debouncedResize = debounce(onResize, 250);
+const resizeEvent = document.createEvent('Event');
+
+resizeEvent.initEvent('matchabar:resize', true, true);
+window.addEventListener('resize', debouncedResize);
+function onResize() {
+  window.dispatchEvent(resizeEvent)
+}
 
 // -- Toggle header
 const $globalHeader = $('#global-header')
@@ -22,9 +36,9 @@ const $navToggle = $globalHeader.querySelector('.hamburger')
 const $nav = $globalHeader.querySelector('nav')
 
 $navToggle.addEventListener('click', () => {
-  $navToggle.classList.toggle('is-active')
-  $nav.classList.toggle('is-active')
-})
+  $navToggle.classList.toggle('is-active');
+  $nav.classList.toggle('is-active');
+});
 
 // -- Open targetd el if data-open directive present
 const $$parentTogglers = $$('[data-open]')
@@ -62,6 +76,18 @@ each($$('[data-load-page]'), (el) => {
     .then((html) => el.replaceWith(html.querySelector('.product-container')))
     .catch(e => console.log(e))
 })
+
+// -- Textfit
+const textFitOptions = {
+  widthOnly: true,
+  maxFontSize: 280, alignVertWithFlexbox:
+    true
+}
+textFit($$('.text-fit'), textFitOptions)
+window.addEventListener('matchabar:resize', () => {
+  console.log('resize')
+  textFit($$('.text-fit'), textFitOptions)
+});
 
 // -- Set 'supports-no-cookies' / 'supports-cookies' class
 if (cookiesEnabled()) {
