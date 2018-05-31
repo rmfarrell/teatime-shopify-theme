@@ -42,10 +42,38 @@ function debounce(func, wait = 100) {
   };
 }
 
+/**
+ * delagate an event
+ * @param {HTMLElement} element 
+ * @param {String} eventName 
+ * @param {String} selector html selector
+ * @param {Function} fn 
+ */
+function delegate(element, eventName, selector, fn) {
+  element.addEventListener(eventName, function (event) {
+    var possibleTargets = element.querySelectorAll(selector);
+    var target = event.target;
+
+    for (var i = 0, l = possibleTargets.length; i < l; i++) {
+      var el = target;
+      var p = possibleTargets[i];
+
+      while (el && el !== element) {
+        if (el === p) {
+          return fn.call(p, event);
+        }
+
+        el = el.parentNode;
+      }
+    }
+  });
+}
+
 module.exports = {
   $,
   $$,
   each,
   scrollToTarget,
   debounce,
+  delegate,
 }

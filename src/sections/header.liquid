@@ -74,11 +74,11 @@
         {% endfor %}
         </ul>
     </nav>
-    <a href="/cart" class="cart-button" role="button" title="Shopping Cart">
+    <a href="/cart" class="cart-button" role="button" title="Shopping Cart" data-shopping-cart-icon>
       <i class="fas fa-shopping-bag"></i>
-      {% if cart.item_count > 0 %}
+      <span data-cart-item-counter>
         ({{cart.item_count}})
-      {% endif %}
+      </span>
     </a>
   </header>
 </section>

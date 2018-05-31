@@ -1,2 +1,18 @@
-.template-cart {
+
+#shopping-cart {
+}
+
+#shopping-cart-tray {
+  background-color: white;
+  position: fixed;
+  width: 30rem;
+  z-index: 110;
+  height: 100%;
+  right: -30em;
+  top: 0;
+  transition: transform 0.3s;
+  
+  &.open {
+    transform: translate3d(-30rem, 0, 0);
+  }
 }
