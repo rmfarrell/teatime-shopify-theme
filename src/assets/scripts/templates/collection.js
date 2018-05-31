@@ -1,4 +1,4 @@
-import { $, $$, each } from '../utlities';
+import { $, $$, each } from '../utilities';
 import jq from 'jquery';
 
 /**
@@ -8,11 +8,14 @@ import jq from 'jquery';
  * @return {Object.Function} init initialize with a hash string
  */
 function Tabs() {
-  const activeClassName = 'active'
-  const expandMobileClass = 'expanded'
-  const animationTime = 250
-  const $tabbedContainer = $('article.tabbed')
-  let $$tabs, $$pages, $currentPage, $oldPage
+  const activeClassName = 'active';
+  const expandMobileClass = 'expanded';
+  const animationTime = 250;
+  const $tabbedContainer = $('article.tabbed');
+  let $$tabs;
+  let $$pages;
+  let $currentPage;
+  let $oldPage;
 
   if ($tabbedContainer) {
     $$tabs = $tabbedContainer.querySelectorAll('.tabs li > a')
@@ -29,14 +32,15 @@ function Tabs() {
           return true;
         }
         ev.preventDefault();
-        history.pushState({ tab: $tab.getAttribute('href') },
-          null,
-          $tab.getAttribute('href'));
 
         // handle mobile nav expanding/collapsing
         if ($tab.classList.contains(activeClassName)) {
-          $tabbedContainer.classList.toggle(expandMobileClass)
+          $tabbedContainer.classList.toggle(expandMobileClass);
+          return false;
         }
+
+        // push to pushState
+        history.pushState({}, null, $tab.getAttribute('href'));
 
         return false;
       })
@@ -63,13 +67,15 @@ function Tabs() {
     if (hash === '') return
     _updateTabs(hash)
     _updatePage(hash)
+
+    // collapse menu on mobile
+    $tabbedContainer.classList.remove(expandMobileClass);
   }
 
   function init(hash = '') {
     if (!hash) return;
     _updateTabs(hash)
     _initPages(hash)
-    console.log($currentPage)
   }
 
   function _initPages(hash = '') {

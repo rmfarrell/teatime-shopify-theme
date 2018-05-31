@@ -1,31 +1,29 @@
-<div class='hero'>
-  <h1>{{section.settings.title}}</h1>
-  <div class='description rte'>{{section.settings.description}}</div>
-  {% for block in section.blocks %}
-    <div class="content-blocks" {{ block.shopify_attributes }}>
-      {% case block.type %}
+<h1>{{section.settings.title}}</h1>
+<div class='description rte'>{{section.settings.description}}</div>
+{% for block in section.blocks %}
+  <div class="content-blocks" {{ block.shopify_attributes }}>
+    {% case block.type %}
 
-        {% when 'hero_image' %}
+      {% when 'hero_image' %}
+      {% include 'responsive-image' with
+          image: block.settings.image,
+          max_width: 400,
+          max_height: 400 %}
+
+      {% when 'floating_image' %}
+      <a href="{{block.settings.product_link}}">
         {% include 'responsive-image' with
-            image: block.settings.image,
-            max_width: 400,
-            max_height: 400 %}
+          image: block.settings.image,
+          max_width: 400,
+          max_height: 400 %}
+      </a>
 
-        {% when 'floating_image' %}
-        <a href="{{block.settings.product_link}}">
-          {% include 'responsive-image' with
-            image: block.settings.image,
-            max_width: 400,
-            max_height: 400 %}
-        </a>
+      {% when 'call_to_action' %}
+      <a href="{{block.settings.url}}" class="cta">{{block.settings.title}}</a>
 
-        {% when 'call_to_action' %}
-        <a href="{{block.settings.url}}" class="cta">{{block.settings.title}}</a>
-
-      {% endcase %}
-    </div>
-  {% endfor %}
-</div>
+    {% endcase %}
+  </div>
+{% endfor %}
 
 {% schema %}
   {

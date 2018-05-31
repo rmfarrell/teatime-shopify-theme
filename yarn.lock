@@ -9813,9 +9813,19 @@ test-exclude@^4.1.1, test-exclude@^4.2.1:
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
 
+text-fit@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/text-fit/-/text-fit-1.0.1.tgz#812a0bc3d05f4ae67bc639af01784165c6ed6dd8"
+  dependencies:
+    xtend "^4.0.1"
+
 text-table@0.2.0, text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
+
+textfit@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/textfit/-/textfit-2.3.1.tgz#5896db48ea70a767b97a73f28556406875ca208f"
 
 throat@^4.0.0:
   version "4.1.0"

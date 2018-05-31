@@ -96,14 +96,18 @@
       z-index: 10;
       opacity: 0;
       transition: transform 0.25s, opacity 0.25s;
+      visibility: hidden;
+      pointer-events: none;
     }
 
     &:before {
       transform: translate3d(25vw, 0, 0);
+      visibility: visible;
     }
 
     &:after {
       transform: translate3d(-125vw, 0, 0);
+      visibility: visible;
     }
 
     &.active {
