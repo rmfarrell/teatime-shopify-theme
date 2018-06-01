@@ -77,13 +77,14 @@ export function Cart(afterUpdate = function () { }) {
     res.items.forEach((item) => {
       $$items.push(__renderItem(item))
     })
+    const checkout = res.items.length ? `<input type="submit" name="checkout" class="cta" value="checkout">` : ''
     return (`
       <h1>My Cart</h1>
       <form action="/cart" method="post" novalidate>
         ${$$items.length ? $$items.join('') : shoppingCartEmpty}
         <div class="total">
           <h2>Subtotal $${totalPrice}</h2>
-          <input type="submit" name="checkout" class="cta" value="checkout">
+          ${checkout}
         </div>
       </form>
     `)

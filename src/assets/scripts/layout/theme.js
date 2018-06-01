@@ -49,7 +49,7 @@ const $closeCartButton = $('[data-close-shopping-cart-tray]')
 const $shoppingCartIcon = $('[data-shopping-cart-icon]')
 const $cartItemCounter = $shoppingCartIcon.querySelector('[data-cart-item-counter]');
 const shoppingCart = Cart((c) => {
-  $cartItemCounter.innerText = `(${c.item_count})`;
+  $cartItemCounter.innerText = `${c.item_count}`;
 })
 $closeCartButton.addEventListener('click', shoppingCart.close)
 $shoppingCartIcon.addEventListener('click', (e) => {
