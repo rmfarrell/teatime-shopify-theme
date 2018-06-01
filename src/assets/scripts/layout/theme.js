@@ -1,4 +1,3 @@
-import fetch from 'unfetch'
 import 'lazysizes/plugins/object-fit/ls.object-fit'
 import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 import 'lazysizes/plugins/rias/ls.rias'
@@ -14,21 +13,16 @@ import textFit from 'textfit';
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
 import { $, $$, each, debounce } from '../utilities';
+import { resizeEvent, cart } from '../events';
 import { windowWhen } from 'rxjs/operator/windowWhen';
+import { Cart } from '../cart'
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 
-// -- Resize events
-// Fires event `matchabar:resize`
-const debouncedResize = debounce(onResize, 250);
-const resizeEvent = document.createEvent('Event');
-
-resizeEvent.initEvent('matchabar:resize', true, true);
+// -- Resize handler
+const debouncedResize = debounce(() => window.dispatchEvent(resizeEvent), 250);
 window.addEventListener('resize', debouncedResize);
-function onResize() {
-  window.dispatchEvent(resizeEvent)
-}
 
 // -- Toggle header
 const $globalHeader = $('#global-header')
@@ -50,6 +44,19 @@ each($$parentTogglers, (el) => {
   })
 })
 
+// -- Shopping cart
+const $closeCartButton = $('[data-close-shopping-cart-tray]')
+const $shoppingCartIcon = $('[data-shopping-cart-icon]')
+const $cartItemCounter = $shoppingCartIcon.querySelector('[data-cart-item-counter]');
+const shoppingCart = Cart((c) => {
+  $cartItemCounter.innerText = `${c.item_count}`;
+})
+$closeCartButton.addEventListener('click', shoppingCart.close)
+$shoppingCartIcon.addEventListener('click', (e) => {
+  e.preventDefault();
+  shoppingCart.open()
+});
+
 // -- Sliders
 each($$('.accordion'), (el) => {
   const observer = new MutationObserver((ev) => {
@@ -65,16 +72,6 @@ each($$('.accordion'), (el) => {
   observer.observe(el, {
     attributeFilter: ['class']
   })
-})
-
-// -- Load pages with Ajax
-each($$('[data-load-page]'), (el) => {
-  const pageUrl = el.getAttribute('data-load-page')
-  return fetch(pageUrl)
-    .then((res) => res.text())
-    .then((txt) => parseHtml(txt))
-    .then((html) => el.replaceWith(html.querySelector('.product-container')))
-    .catch(e => console.log(e))
 })
 
 // -- Textfit

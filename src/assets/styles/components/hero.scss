@@ -86,12 +86,12 @@
       }
       
       &:before {
-        transform: scale(1.2, 0.1);
+        transform: scale(1.2, 0.1) translateY(-100%);
         opacity: 0.2;
       }
   
       &:after {
-        transform: scale(0.75, 0.05) translateY(-50%);
+        transform: scale(0.75, 0.05) translateY(-200%);
         opacity: 0;
       }
     }

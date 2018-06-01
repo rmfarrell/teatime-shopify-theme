@@ -1,5 +1,32 @@
 import { $, $$, each } from '../utilities';
+import fetch from 'unfetch';
+import serialize from 'form-serialize'
 import jq from 'jquery';
+import { cart } from '../events';
+
+// AJAX-ify the form
+each($$('form[action="/cart/add"]'), ($form) => {
+  $form.addEventListener('submit', (ev) => {
+    ev.preventDefault()
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(serialize($form, { hash: true }))
+    })
+      .then((res) => res.json())
+      // TODO: handle error
+      .then(r => console.log(r))
+      .then(() => window.dispatchEvent(cart.update))
+      .catch(e => $form.submit())
+
+
+    return false;
+  })
+})
 
 /**
  * Attach a pushstate handler to tabs and products.
