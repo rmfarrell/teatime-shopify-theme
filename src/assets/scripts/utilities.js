@@ -69,6 +69,16 @@ function delegate(element, eventName, selector, fn) {
   });
 }
 
+function wrap(el, wrapper) {
+  el.parentNode.insertBefore(wrapper, el);
+  wrapper.appendChild(el);
+}
+
+function remove(el) {
+  el.parentNode.removeChild(el);
+}
+
+
 module.exports = {
   $,
   $$,
@@ -76,4 +86,6 @@ module.exports = {
   scrollToTarget,
   debounce,
   delegate,
+  wrap,
+  remove
 }

@@ -30,6 +30,7 @@
     "@shopify/theme-rte": "^1.0.0-alpha.3",
     "@shopify/theme-sections": "^1.0.0-alpha.4",
     "@shopify/theme-variants": "^1.0.0-alpha.5",
+    "closest": "^0.0.1",
     "fastclick": "^1.0.6",
     "form-serialize": "^0.7.2",
     "hamburgers": "^0.9.3",

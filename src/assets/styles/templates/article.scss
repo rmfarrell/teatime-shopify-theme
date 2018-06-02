@@ -1,0 +1,35 @@
+.template-article,
+.page-article {
+
+  .rte {
+    margin-bottom: 6em;
+  }
+
+  .timestamp {
+    font-weight: 500;
+  }
+
+  .article-header {
+    max-width: 40em;
+    margin: 4em 5%;
+    font-size: 1.3em;
+
+    h1 {
+      font-size: 4em;
+      margin: 0 0 0.5em;
+    }
+  }
+
+  h1, h2, h3, h4, h5, p, ul, ol, blockquote {
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p {
+    &.media-container {
+      max-width: none;
+      display: inline;
+    }
+  }
+}

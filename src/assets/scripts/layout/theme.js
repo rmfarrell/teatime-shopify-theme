@@ -9,6 +9,7 @@ import '../../styles/theme.scss.liquid'
 import '../templates/product'
 import '../sections/hero'
 import textFit from 'textfit';
+import 'closest'
 
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
@@ -16,6 +17,9 @@ import { $, $$, each, debounce } from '../utilities';
 import { resizeEvent, cart } from '../events';
 import { windowWhen } from 'rxjs/operator/windowWhen';
 import { Cart } from '../cart'
+
+// partials
+import '../rte'
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};
@@ -93,29 +97,6 @@ if (cookiesEnabled()) {
     'supports-cookies',
   );
 }
-
-// $(document).ready(() => {
-
-// // Target tables to make them scrollable
-// const tableSelectors = '.rte table';
-
-// wrapTable({
-//   $tables: $(tableSelectors),
-//   tableWrapperClass: 'rte__table-wrapper',
-// });
-
-// // Target iframes to make them responsive
-// const iframeSelectors =
-//   '.rte iframe[src*="youtube.com/embed"],' +
-//   '.rte iframe[src*="player.vimeo"]';
-
-// wrapIframe({
-//   $iframes: $(iframeSelectors),
-//   iframeWrapperClass: 'rte__video-wrapper',
-// });
-
-// Apply a specific class to the html element for browser support of cookies.
-// });
 
 // -- Utilities
 

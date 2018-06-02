@@ -1,5 +1,6 @@
 .rte {
   margin: 0;
+  font-size: 1.3em;
 
   img {
     height: auto;
@@ -12,6 +13,56 @@
   strong {
     font-weight: bold;
   }
+
+  p, ul, ol {
+    color: $color-light-gray;
+  }
+
+  ul, ol {
+    padding: 0 0 0 3.5em;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  strong {
+    color: $color-dark-text;
+  }
+
+  h1 {
+    font-size: 4em;
+    margin: 0 0 0.4em;
+  }
+
+  h2 {
+    font-size: 3.2em;
+    margin: 0 0 0.4em;
+  }
+
+  h3 {
+    font-size: 2em;
+    margin: 0 0 0.75em;
+  }
+
+  h4 {
+    font-size: 1.4em;
+    margin: 0 0 1em;
+  }
+  
+  iframe, video, img {
+    display: block;
+    margin: 0 0 1em;
+  }
+}
+
+
+p.media-container {
+
 }
 
 // Allow table to scroll for tables in the RTE since we don't know
@@ -31,6 +82,7 @@
   height: 0;
   height: auto;
   padding-bottom: 56.25%;
+  margin-bottom: 1em;
 
   iframe {
     position: absolute;
