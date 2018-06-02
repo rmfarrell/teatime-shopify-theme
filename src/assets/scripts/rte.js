@@ -4,10 +4,11 @@
  */
 
 import { $, $$, each, wrap } from './utilities';
+import Macy from 'Macy'
 
 // apply full-width class to p with media tags parents from media tags
-const mediaSelectors = ['iframe', 'img', 'video']
-const mediaClass = 'media-container'
+const mediaSelectors = ['iframe', 'img', 'video'];
+const mediaClass = 'media-container';
 
 
 // Handle images
@@ -40,6 +41,21 @@ each($$('.rte'), ($rte) => {
     // subsequent images are placed in a gallery at the bottom of the page
     gallery.forEach(($img) => {
       $gallery.appendChild($img)
+      console.log($img)
+    });
+
+    console.log(Object.keys(Macy))
+
+    const macy = Macy({
+      container: '.rte__gallery',
+      trueOrder: false,
+      waitForImages: false,
+      margin: 12,
+      columns: 2,
+      breakAt: {
+        520: 2,
+        400: 1
+      }
     });
   }
 });

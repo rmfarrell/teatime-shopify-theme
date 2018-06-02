@@ -8,8 +8,10 @@ import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
 import '../templates/product'
 import '../sections/hero'
-import textFit from 'textfit';
+
+// Polyfills
 import 'closest'
+import 'promise-polyfill/src/polyfill';
 
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
@@ -17,6 +19,7 @@ import { $, $$, each, debounce } from '../utilities';
 import { resizeEvent, cart } from '../events';
 import { windowWhen } from 'rxjs/operator/windowWhen';
 import { Cart } from '../cart'
+import textFit from 'textfit';
 
 // partials
 import '../rte'
