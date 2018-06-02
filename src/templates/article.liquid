@@ -1,10 +1,11 @@
-<article role="article" itemscope itemtype="http://schema.org/Article" class="wrapper">
-
+<article role="article" itemscope itemtype="http://schema.org/Article" class="article-container wrapper">
 
   <header role="banner" class="article-header">
     <p class="timestamp">{{ article.published_at | date: "%D" }}</p>
     <h1>{{ article.title }}</h1>
-    <p class="excerpt">{{article.excerpt}}</p>
+    <div class="rte">
+      <p class="excerpt">{{article.excerpt}}</p>
+    </div>
   </header>
   
   <div class="rte" itemprop="articleBody">

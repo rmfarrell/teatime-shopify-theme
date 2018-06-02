@@ -21,9 +21,6 @@ import { windowWhen } from 'rxjs/operator/windowWhen';
 import { Cart } from '../cart'
 import textFit from 'textfit';
 
-// partials
-import '../rte'
-
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 
@@ -88,10 +85,7 @@ const textFitOptions = {
     true
 }
 textFit($$('.text-fit'), textFitOptions)
-window.addEventListener('matchabar:resize', () => {
-  console.log('resize')
-  textFit($$('.text-fit'), textFitOptions)
-});
+window.addEventListener('matchabar:resize', () => textFit($$('.text-fit'), textFitOptions));
 
 // -- Set 'supports-no-cookies' / 'supports-cookies' class
 if (cookiesEnabled()) {

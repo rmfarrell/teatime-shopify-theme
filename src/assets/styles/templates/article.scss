@@ -1,5 +1,4 @@
-.template-article,
-.page-article {
+.article-container {
 
   .rte {
     margin-bottom: 6em;
@@ -7,15 +6,16 @@
 
   .timestamp {
     font-weight: 500;
+    color: $color-light-gray;
+    font-size: 1.8em;
   }
 
   .article-header {
-    max-width: 40em;
+    max-width: 55em;
     margin: 4em 5%;
-    font-size: 1.3em;
 
     h1 {
-      font-size: 4em;
+      font-size: 5.2em;
       margin: 0 0 0.5em;
     }
   }

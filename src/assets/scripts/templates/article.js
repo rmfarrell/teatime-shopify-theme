@@ -2,9 +2,8 @@
 /**
  * Automatically style rich text editor content
  */
-
-import { $, $$, each, wrap } from './utilities';
-import Macy from 'Macy'
+import { $, $$, each, wrap } from '../utilities';
+import Macy from 'Macy';
 
 // apply full-width class to p with media tags parents from media tags
 const mediaSelectors = ['iframe', 'img', 'video'];
@@ -12,8 +11,6 @@ const mediaClass = 'media-container';
 
 
 // Handle images
-// Annoyingly, the rich text editor wraps every thing in a <p> tag be default.
-// Much of the below is a workaround for this.
 each($$('.rte'), ($rte) => {
 
   // apply mediaClass to containers that have media
@@ -24,7 +21,19 @@ each($$('.rte'), ($rte) => {
   })
 
   // collect all images
-  const gallery = Array.prototype.slice.call($rte.querySelectorAll('img'));
+  const $$imgs = Array.prototype.slice.call($rte.querySelectorAll('img'));
+
+  // Annoyingly, the rich text editor wraps every thing in a <p> tag be default.
+  // Much of the below is a workaround for this.
+  if ($$imgs.length) createGallery($rte, $$imgs)
+});
+
+/**
+ * Create a hero image and a gallery from the remaing images
+ * @param {HTMLElement} $container
+ * @param {Array.HTMLElement} gallery images
+ */
+function createGallery($container, gallery = []) {
 
   // The first image gets the hero class 
   const $hero = gallery.shift();
@@ -33,23 +42,16 @@ each($$('.rte'), ($rte) => {
   wrap($hero, $heroWrapper);
 
   // Create a gallery at the bottom of the page
-  if (gallery.length) {
+  if (gallery.length > 1) {
     const $gallery = document.createElement('div')
     $gallery.className = 'rte__gallery';
-    $rte.appendChild($gallery);
+    $container.appendChild($gallery);
 
     // subsequent images are placed in a gallery at the bottom of the page
-    gallery.forEach(($img) => {
-      $gallery.appendChild($img)
-      console.log($img)
-    });
-
-    console.log(Object.keys(Macy))
+    gallery.forEach(($img) => $gallery.appendChild($img));
 
     const macy = Macy({
       container: '.rte__gallery',
-      trueOrder: false,
-      waitForImages: false,
       margin: 12,
       columns: 2,
       breakAt: {
@@ -58,7 +60,8 @@ each($$('.rte'), ($rte) => {
       }
     });
   }
-});
+
+}
 
 // Target iframes to make them responsive
 const iframeSelectors = [
