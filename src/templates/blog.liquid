@@ -1,7 +1,11 @@
-{% paginate blog.articles by 6 %}
+{% paginate blog.articles by 4 %}
   <div class="teaser-container">
     {% for article in blog.articles %}
-      <a href="{{ article.url }}" class="teaser">        
+      {% if forloop.index == 1 %}
+        <a href="{{ article.url }}" class="teaser initial">
+      {% else %}
+        <a href="{{ article.url }}" class="teaser">
+      {% endif %}       
         <div class="featured-img">
           {% if article.image %}
             {% include 'responsive-image' with
