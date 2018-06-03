@@ -30,6 +30,7 @@
     "@shopify/theme-rte": "^1.0.0-alpha.3",
     "@shopify/theme-sections": "^1.0.0-alpha.4",
     "@shopify/theme-variants": "^1.0.0-alpha.5",
+    "closest": "^0.0.1",
     "fastclick": "^1.0.6",
     "form-serialize": "^0.7.2",
     "hamburgers": "^0.9.3",
@@ -37,7 +38,10 @@
     "jquery": "^3.2.1",
     "lazysizes": "^4.0.2",
     "lodash-es": "^4.17.4",
+    "macy": "^2.3.0",
     "normalize.css": "^7.0.0",
+    "object-fit-images": "^3.2.3",
+    "promise-polyfill": "^8.0.0",
     "text-fit": "^1.0.1",
     "textfit": "^2.3.1",
     "unfetch": "^3.0.0"

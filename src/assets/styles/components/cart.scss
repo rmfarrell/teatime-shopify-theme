@@ -3,12 +3,6 @@ $cart-gutter: 2em;
 #shopping-cart {
   padding: 2.5em 0 2em;
 
-  .img-container {
-  }
-  .text-container {
-  
-  }
-
   h1, h3 {
     font-size: 2.2em;
   }
@@ -33,16 +27,20 @@ $cart-gutter: 2em;
   .product {
     border-bottom: 1px solid $color-very-light-gray;
     padding: 2em $cart-gutter;
-  }
-
-  .qty {
-    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .column {
     margin-bottom: 0;
     flex: 48% 0 1;
   }
+
+  .qty {
+    margin-bottom: 0;
+  }
+
 
   .remove-product {
     color: $color-light-gray;

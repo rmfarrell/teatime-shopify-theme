@@ -2,6 +2,9 @@
   padding-top: 6em;
   font-size: 1.3em;
 
+  .rte {
+    font-size: inherit;
+  }
 
   h1 {
     color: $color-green;
@@ -26,7 +29,7 @@
 
   p {
     font-weight: 500;
-    opacity: 0.35;
+    opacity: 0.5;
   }
 
   .hero-images-container {

@@ -1,0 +1,65 @@
+<div class="wrapper">
+  <h2>{{section.settings.title}}</h2>
+  <div class="rte description">{{section.settings.description}}</div>
+  <ul>
+    {% for partner in section.blocks %}
+      <li>
+        {% if partner.settings.url != blank %}
+          <a href="{{partner.settings.url}}" target="_blank">
+        {% endif %}
+          <div class="img-container">
+            {% include 'responsive-image' with
+              image: partner.settings.image,
+              max_width: 200,
+              max_height: 200
+            %}
+          </div>
+          <h4>{{partner.settings.name}}</h4>
+        {% if partner.settings.url != blank %}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+  {
+    "name": "Featured Partners",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Partner",
+        "type": "partner",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Partner site url"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

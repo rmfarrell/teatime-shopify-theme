@@ -49,9 +49,21 @@ a {
   text-decoration: none;
 }
 
-p, table, ul, blockquote {
+p, table, ul, ol, blockquote {
   font-size: 1.4em;
   margin: 0 0 1em;
+}
+
+blockquote {
+  padding-left: 2em;
+  border-left: 4px solid $color-green;
+  margin: 0 4em 1em;
+  font-style: italic;
+}
+
+p blockquote,
+blockquote p {
+  font-size: 1em;
 }
 
 p, ul {

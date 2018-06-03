@@ -1,0 +1,136 @@
+.template-blog {
+
+  #MainContent {
+    background-color: #F8F8F8;
+    overflow: hidden; // TODO slight bug here?
+  }
+
+  // -- Teasers
+  .teaser-container {
+    max-width: $max-width;
+    margin: 6em auto;
+
+    @media (min-width: 480px) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      padding-left: calc(#{$gutter} / 2);
+      padding-right: calc(#{$gutter} / 2);
+    }
+
+    h3 {
+      font-size: 3.2em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .timestamp {
+    font-weight: 500;
+    color: $color-light-gray;
+    margin-bottom: 0.25em;
+  }
+
+  .text-container {
+    padding: 2em 10% 1em;
+  }
+
+  .teaser {
+    color: inherit;
+    display: block;
+    flex: 100% 0 0;
+    max-width: 40rem $gutter;
+    margin: 0 $gutter $gutter;
+    background-color: white;
+    transition: box-shadow 0.3s;
+
+    @media (min-width: 480px) {
+      flex: calc(50% - #{$gutter}) 0 0;
+      margin-left: calc(#{$gutter} / 2);
+      margin-right: calc(#{$gutter} / 2);
+
+      &:hover {
+        box-shadow: 0 0.5em 2em rgba(0,0,0,0.25)
+      }
+
+      &.initial {
+        flex: 100% 1 1;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: calc(#{$gutter} / 2);
+        margin-right: $gutter;
+      }
+      
+      .featured-img .responsive-image__wrapper {
+        height: auto;
+        object-fit: initial;
+      }
+    }
+
+    @media (min-width: 900px) {
+      flex: calc(33% - #{$gutter}) 0 0;
+
+      &.initial {
+        min-height: 50rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+
+        .text-container {
+          width: 50%;
+        }
+
+        .featured-img {
+          width: 50%;
+          height: 100%;
+
+          .responsive-image__wrapper {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .featured-img {
+
+    .responsive-image__wrapper {
+      height: 255px;
+      overflow: hidden;
+      
+    }
+
+    img {
+      @include object_fit(cover);
+      object-position: 50% 50%;
+    }
+  }
+
+  // -- Pagination
+  .pagination {
+    margin: 0 auto 6em;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 500;
+
+    .page {
+      display: inline-block;
+      margin: 0 0.5em;
+      height: 2em;
+      width: 2em;
+      text-align: center;
+      line-height: 2.3em;;
+
+      &.current {
+        background-color: $color-green;
+        color: white;
+        border-radius: 50%;
+        box-shadow: 0 1px 0.2em rgba(0,0,0,0.25)
+      }
+    }
+
+    a:hover {
+      color: black;
+    }
+  }
+}

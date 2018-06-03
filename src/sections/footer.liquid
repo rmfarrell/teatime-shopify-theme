@@ -54,30 +54,7 @@ TODO: hide on all but product pages
     </div>
 
     <div class="column">
-      {% comment %} Social Links {% endcomment %}
-      <ul class="social-links">
-        {% if section.settings.social_instagram_link %}
-          <li>
-            <a href="{{section.settings.social_instagram_link}}" title="instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-        {% endif %}
-        {% if section.settings.social_twitter_link %}
-          <li>
-            <a href="{{section.settings.social_twitter_link}}">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-        {% endif %}
-        {% if section.settings.social_fb_link %}
-          <li>
-            <a href="{{section.settings.social_fb_link}}">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-        {% endif %}
-      </ul>
+      {% include 'social-links' %}
 
       {% comment %} Footer links {% endcomment %}
       {%- assign footer_linklist = section.settings.footer_linklist -%}

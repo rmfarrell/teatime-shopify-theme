@@ -8,7 +8,11 @@ import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
 import '../templates/product'
 import '../sections/hero'
-import textFit from 'textfit';
+import 'object-fit-images'
+
+// Polyfills
+import 'closest'
+import 'promise-polyfill/src/polyfill';
 
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
@@ -16,6 +20,7 @@ import { $, $$, each, debounce } from '../utilities';
 import { resizeEvent, cart } from '../events';
 import { windowWhen } from 'rxjs/operator/windowWhen';
 import { Cart } from '../cart'
+import textFit from 'textfit';
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};
@@ -81,10 +86,7 @@ const textFitOptions = {
     true
 }
 textFit($$('.text-fit'), textFitOptions)
-window.addEventListener('matchabar:resize', () => {
-  console.log('resize')
-  textFit($$('.text-fit'), textFitOptions)
-});
+window.addEventListener('matchabar:resize', () => textFit($$('.text-fit'), textFitOptions));
 
 // -- Set 'supports-no-cookies' / 'supports-cookies' class
 if (cookiesEnabled()) {
@@ -94,28 +96,10 @@ if (cookiesEnabled()) {
   );
 }
 
-// $(document).ready(() => {
+// -- Instagram feed
+each($$('[data-instagram-feed]'), ($ig) => {
 
-// // Target tables to make them scrollable
-// const tableSelectors = '.rte table';
-
-// wrapTable({
-//   $tables: $(tableSelectors),
-//   tableWrapperClass: 'rte__table-wrapper',
-// });
-
-// // Target iframes to make them responsive
-// const iframeSelectors =
-//   '.rte iframe[src*="youtube.com/embed"],' +
-//   '.rte iframe[src*="player.vimeo"]';
-
-// wrapIframe({
-//   $iframes: $(iframeSelectors),
-//   iframeWrapperClass: 'rte__video-wrapper',
-// });
-
-// Apply a specific class to the html element for browser support of cookies.
-// });
+})
 
 // -- Utilities
 

@@ -1,0 +1,23 @@
+<ul class="social-links">
+  {% if settings.social_instagram_link != blank %}
+    <li>
+      <a href="{{settings.social_instagram_link}}" title="Instagram" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </li>
+  {% endif %}
+  {% if settings.social_twitter_link != blank %}
+    <li>
+      <a href="{{settings.social_twitter_link}}"  title="Twitter" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  {% endif %}
+  {% if settings.social_facebook_link != blank %}
+    <li>
+      <a href="{{settings.social_fb_link}}"  title="Facebook" target="_blank">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </li>
+  {% endif %}
+</ul>

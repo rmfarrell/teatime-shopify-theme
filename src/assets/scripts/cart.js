@@ -93,7 +93,7 @@ export function Cart(afterUpdate = function () { }) {
     function __renderItem(item) {
       const { id, title, image, quantity } = item
       return (`
-        <div class="product flex-columns">
+        <div class="product">
           <div class="img-container column">
             <img src="${image}" />
           </div>
