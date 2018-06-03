@@ -40,6 +40,7 @@
     "lodash-es": "^4.17.4",
     "macy": "^2.3.0",
     "normalize.css": "^7.0.0",
+    "object-fit-images": "^3.2.3",
     "promise-polyfill": "^8.0.0",
     "text-fit": "^1.0.1",
     "textfit": "^2.3.1",

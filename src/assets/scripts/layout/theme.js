@@ -8,6 +8,7 @@ import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
 import '../templates/product'
 import '../sections/hero'
+import 'object-fit-images'
 
 // Polyfills
 import 'closest'
