@@ -1,0 +1,54 @@
+#shopify-section-instagram-feed {
+  background-color: white;
+  padding: 6em 0;
+
+  .intro {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    font-size: 3.2em;
+    flex: auto 1 0;
+    padding-right: 1em;
+    margin: 0 0 0.5em;
+  }
+
+  .social-links {
+    font-size: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    flex: 5em 0 1;
+  }
+}
+
+#insta-feed {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > * {
+    flex: 50% 0 0;
+  }
+
+  // reset this app's inline CSS
+  .container,
+  .container img {
+    width: 100%!important;
+    height: auto!important;
+    margin: 0 !important;
+  }
+
+  img {
+    display: block;
+  }
+
+  @media ($mq-medium) {
+    flex-wrap: nowrap;
+
+    > * {
+      flex: 24% 0 0;
+    }
+  }
+}

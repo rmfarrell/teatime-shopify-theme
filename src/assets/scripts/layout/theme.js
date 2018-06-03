@@ -96,6 +96,11 @@ if (cookiesEnabled()) {
   );
 }
 
+// -- Instagram feed
+each($$('[data-instagram-feed]'), ($ig) => {
+
+})
+
 // -- Utilities
 
 /**
