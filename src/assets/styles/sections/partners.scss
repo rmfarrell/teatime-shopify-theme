@@ -21,6 +21,11 @@
   li {
     flex: 12em 0 1;
     padding: 0 1em;
+
+    a:hover h4 {
+      color: $color-green;
+      text-decoration: underline;
+    }
   }
 
   .img-container {
