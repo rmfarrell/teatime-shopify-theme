@@ -40,6 +40,8 @@
        transition: background-color 0.3s;
        color: white;
        padding: 0 1em;
+       border: 1px solid transparent;
+       width: auto;
 
        &:focus {
         background-color: rgba(0,0,0,0.8);

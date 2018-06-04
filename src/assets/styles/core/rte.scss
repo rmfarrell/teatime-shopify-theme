@@ -14,10 +14,6 @@
     table-layout: fixed;
   }
 
-  strong {
-    font-weight: bold;
-  }
-
   p, ul, ol {
     color: $color-light-gray;
   }
@@ -52,6 +48,10 @@
 
   strong {
     color: $color-dark-text;
+
+    small {
+      color: $color-light-gray;
+    }
   }
 
   h1 {
