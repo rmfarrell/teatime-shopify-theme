@@ -1,0 +1,17 @@
+.template-page {
+
+  main {
+    padding: 15em 0 6em;
+  }
+}
+
+// -- Styles for the Contact page
+#contact-page {
+  align-items: start;
+  
+  input,
+  select,
+  textarea {
+    margin: 0 0 2.5em;
+  }
+}

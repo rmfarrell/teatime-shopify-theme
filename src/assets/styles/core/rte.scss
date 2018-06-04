@@ -1,6 +1,10 @@
 .rte {
   margin: 0;
-  font-size: 1.3em;
+  font-size: 1.2em;
+
+  @media ($mq-medium) {
+    font-size: 1.3em;
+  }
 
   img {
     height: auto;
@@ -8,10 +12,6 @@
 
   table {
     table-layout: fixed;
-  }
-
-  strong {
-    font-weight: bold;
   }
 
   p, ul, ol {
@@ -48,6 +48,10 @@
 
   strong {
     color: $color-dark-text;
+
+    small {
+      color: $color-light-gray;
+    }
   }
 
   h1 {
@@ -74,11 +78,6 @@
     display: block;
     margin: 0 0 1em;
   }
-}
-
-
-p.media-container {
-
 }
 
 // Allow table to scroll for tables in the RTE since we don't know

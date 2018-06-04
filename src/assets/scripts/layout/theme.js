@@ -82,7 +82,7 @@ each($$('.accordion'), (el) => {
 // -- Textfit
 const textFitOptions = {
   widthOnly: true,
-  maxFontSize: 280, alignVertWithFlexbox:
+  maxFontSize: 400, alignVertWithFlexbox:
     true
 }
 textFit($$('.text-fit'), textFitOptions)
@@ -96,9 +96,18 @@ if (cookiesEnabled()) {
   );
 }
 
-// -- Instagram feed
-each($$('[data-instagram-feed]'), ($ig) => {
+// -- Dynamic handlers
 
+// apply class on load
+// move data-src to src on load
+// applies data-onload as class
+each($$('[data-onload]'), ($el) => {
+  const className = $el.getAttribute('data-onload')
+  const url = $el.getAttribute('data-onload-src')
+  preloadImage(url, ($img) => {
+    $el.setAttribute('src', url)
+    $el.classList.add(className)
+  })
 })
 
 // -- Utilities
@@ -110,4 +119,15 @@ each($$('[data-instagram-feed]'), ($ig) => {
 function parseHtml(str = '') {
   const parser = new DOMParser()
   return parser.parseFromString(str, 'text/html')
+}
+
+/**
+ * Preload an image and apply callback
+ * @param {String} url 
+ * @param {Function} fn callback after loaded
+ */
+function preloadImage(url = '', fn = function () { }) {
+  const img = new Image();
+  img.src = url;
+  img.onload = () => { fn(img) }
 }

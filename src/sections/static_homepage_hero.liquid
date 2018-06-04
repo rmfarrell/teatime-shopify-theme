@@ -4,7 +4,6 @@
 {%- endcomment -%}
 <section class="homepage-hero">
   <h1>{{section.settings.headline}}</h1>
-  {% comment %} Rolling can {% endcomment %}
   {% for cta in linklists[section.settings.calls_to_action].links %}
     <a href="" class="cta">{{cta.title}}</a>
   {% endfor %}

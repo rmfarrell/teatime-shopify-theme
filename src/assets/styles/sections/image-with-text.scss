@@ -1,13 +1,22 @@
 .image-with-text {
-  display: flex;
-  flex-wrap: wrap;
-}
+  text-align: center;
+  padding-top: 6em;
+  padding-bottom: 6em;
 
-.image-with-text__image {
-  flex: 0 1 50%;
-  min-width: 320px;
-}
+  .img-container {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
 
-.image-with-text__text {
-  flex: 1 1 50%;
+  .text-container {
+    margin-bottom: 1em;
+  }
+
+  img {
+    display: block;
+  }
+
+  @media ($mq-medium) {
+    text-align: initial;
+  }
 }

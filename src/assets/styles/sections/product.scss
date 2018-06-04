@@ -85,8 +85,8 @@
   }
 
   .secondary-callout {
-    background-color: #F6FAF6;
-    box-shadow: -1200px 0px 0px 0px #F6FAF6;
+    background-color: $color-pale-green;
+    box-shadow: -1200px 0px 0px 0px $color-pale-green;
     padding-top: 5em;
     padding-bottom: 5em;
   }
@@ -162,6 +162,7 @@
       line-height: 1em;
       padding: 1.35em 0 1.1em;
       text-align: right;
+      border: none;
     }
 
     @media ($mq-medium) {
