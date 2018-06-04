@@ -1,0 +1,113 @@
+#introducing-hustle {
+  overflow: hidden;
+
+  h1 {
+    color: $color-green;
+    width: 100%;
+    font-weight: bold;
+    font-size: 10em;
+    line-height: 1em;
+
+    @media(min-width: 500px) {
+      font-size: 14em;
+    }
+
+    @media(min-width: 700px) {
+      font-size: 16em;
+    }
+
+    @media(min-width: 800px) {
+      font-size: 18em;
+    }
+
+    @media(min-width: 920px) {
+      font-size: 22em;
+    }
+
+    @media(min-width: 1000px) {
+      font-size: 24em;
+    }
+
+    @media(min-width: 1200px) {
+      font-size: 28em;
+    }
+  }
+
+  h2 {
+    color: black;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1em;
+  }
+
+  .hustle-bottle-container {
+    font-size: 0.75em;
+    width: 42em;
+    position: absolute;
+    top: 3em;
+    right: 50%;
+    transition: transform 1s, opacity 0.5s;
+    opacity: 0;
+    transform: translate(42em, 0);
+    pointer-events: none;
+
+    &.loaded {
+      transform: translate3d(14em, 0, 0);
+      opacity: 1;
+    }
+
+    @media ($mq-medium) {
+      font-size: 1em;
+      top: -4em;
+      // width: 42em;
+      // top: -4em;
+      // transform: translate(42em, 0);
+    }
+  }
+
+  .cta-container  {
+    text-align: center;
+    margin-top: 7em;
+
+    @media ($mq-medium) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .cta {
+    font-size: 1.2em;
+    display: block;
+    max-width: 12em;
+    margin: 0 auto 1em;
+    position: relative;
+    z-index: 10;
+    transition: background-color 0.3s;
+
+    &:nth-of-type(2) {
+      background: transparent;
+      color: $color-green;
+    }
+  }
+
+  @media ($mq-medium) {
+    .cta {
+      background: $color-dark-text;
+      color: white;
+      margin: 0 0 0 1em;
+      
+      &:hover {
+        background-color: $color-green;
+      }
+  
+      &:nth-of-type(2) {
+        background: $color-dark-text;
+        color: white;
+
+        &:hover {
+          background-color: $color-green;
+        }
+      }
+    }
+  }
+}

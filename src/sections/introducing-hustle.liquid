@@ -1,0 +1,25 @@
+<div class="banner hero" id="introducing-hustle">
+  <div class="wrapper">
+    <h2>introducing</h2>
+    <h1>Hustle</h1>
+    <div class="cta-container">
+      <a href="/collections/hustle" class="cta">get some</a>
+      <a href="/collections/hustle" class="cta">give some</a>
+    <div>
+  </div>
+  <img class="hustle-bottle-container" 
+    data-onload="loaded" 
+    data-onload-src="{{ '../assets/images/hustle-animated.png' | asset_url }}"/>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "presets": [
+      {
+        "name": "Introducing Hustle",
+        "category": "Static"
+      }
+    ]
+  }
+{% endschema %}

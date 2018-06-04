@@ -277,11 +277,7 @@
         }
       }
     },
-    "content_for_index": [
-      "collection-list",
-      "featured-collection",
-      "featured-product"
-    ]
+    "content_for_index": []
   },
   "presets": {
     "Default": {
@@ -320,11 +316,7 @@
           "settings": {}
         }
       },
-      "content_for_index": [
-        "collection-list",
-        "featured-collection",
-        "featured-product"
-      ]
+      "content_for_index": []
     }
   }
 }
