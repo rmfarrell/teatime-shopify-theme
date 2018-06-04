@@ -67,14 +67,37 @@ input[type=submit] {
   white-space: nowrap;
   font-weight: 500;
   border: none;
+  border-radius: 2em;
+  transition: background-color 0.3s
+
+  &:hover {
+    background-color: $color-dark-text;
+  }
 }
 
 textarea {
   min-height: 100px;
 }
 
-select::-ms-expand {
-  display: none;
+.select-wrapper {
+  position: relative;
+
+  i {
+    position: absolute;
+    right: 1em;
+    top: 0.75em;
+    pointer-events: none;
+    font-size: 1.5em;
+    transform: rotate(90deg);
+    opacity: 0.5;
+  }
+}
+
+select {
+
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 // Force option color (affects IE only)
@@ -87,4 +110,18 @@ option {
   border-color: $color-error;
   background-color: $color-error-bg;
   color: $color-body-text;
+}
+
+// -- Not a robot challenger
+.shopify-challenge__container {
+  padding: 6em 0;
+
+  input[type=submit] {
+    margin: 2em auto 0;
+    width: auto;
+  }
+}
+
+.shopify-challenge__message {
+  font-size: 1.8em;
 }

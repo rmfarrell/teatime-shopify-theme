@@ -15,15 +15,18 @@
       {{ form.errors | default_errors }}
 
       <label for="ContactFormName">{{ 'contact.form.name' | t }}</label>
-      <select
-        name="contact[context]"
-        id="ContactFormContext"
-        required>
-        <option value="">Choose One</option>
-        <option value="contact page: wholesale">Wholesale</option>
-        <option value="contact page: pr">Public Relations</option>
-        <option value="contact page: general/other">Other</option>
-      </select>
+      <div class="select-wrapper">
+        <i class="fa fa-chevron-right"></i>
+        <select
+          name="contact[context]"
+          id="ContactFormContext"
+          required>
+          <option value="">Choose One</option>
+          <option value="contact page: wholesale">Wholesale</option>
+          <option value="contact page: pr">Public Relations</option>
+          <option value="contact page: general/other">Other</option>
+        </select>
+      </div>
 
       <label for="ContactFormName">{{ 'contact.form.name' | t }}</label>
       <input type="text"
