@@ -299,5 +299,8 @@
   },
   "product": {
     "amazon_cta": "buy on Amazon"
+  },
+  "blog_index": {
+    "see_more": "See more from the"
   }
 }

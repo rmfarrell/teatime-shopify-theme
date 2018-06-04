@@ -1,20 +1,29 @@
 <div class="banner hero" id="introducing-hustle">
+  {% assign cta = section.settings.calls_to_action %}
   <div class="wrapper">
     <h2>introducing</h2>
     <h1>Hustle</h1>
-    <div class="cta-container">
-      <a href="/collections/hustle" class="cta">get some</a>
-      <a href="/collections/hustle" class="cta">give some</a>
-    <div>
+    {% if linklists[cta].links.size > 0 %}
+      <div class="cta-container">
+        {% for link in linklists[cta].links %}
+          <a href="{{ link.url }}" class="cta">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
-  <img class="hustle-bottle-container" 
-    data-onload="loaded" 
-    data-onload-src="{{ '../assets/images/hustle-animated.png' | asset_url }}"/>
+  <img class="hustle-bottle-container" data-onload="loaded" data-onload-src="{{ '../assets/images/hustle-animated.png' | asset_url }}"/>
 </div>
 
 {% schema %}
   {
-    "name": "Banner",
+    "name": "Introding Hustle",
+    "settings": [
+      {
+        "id": "calls_to_action",
+        "type": "link_list",
+        "label": "Calls to action"
+      }
+    ],
     "presets": [
       {
         "name": "Introducing Hustle",
