@@ -1,0 +1,52 @@
+// Includes within Know your matcha
+#know-your-matcha {
+  position: relative;
+
+  .text-container {
+    padding: 0 0 4em 0;
+    
+    @media ($mq-medium) {
+      padding: 0 5em 0 0;
+    }
+  }
+
+  h1 {
+    font-size: 6em;
+    margin: 0 0 0.4em;
+  }
+  
+  .bf-play-button {
+    display: block;
+    position: absolute;
+    font-size: 4em;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    padding: 0.9em 0.9em 0.75em 1.1em;
+    margin: 0;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0.25em 1em rgba(0,0,0,0.15);
+    display: none;
+    
+    @media ($mq-medium) {
+      display: block;
+    }
+  }
+
+  .play-link {
+    font-weight: 500;
+    // TODO fix font sizes globally
+    font-size: 1.4em;
+    margin-top: 2em;
+
+    i {
+      margin: 0 0.5em 0 0;
+    }
+    
+    @media ($mq-medium) {
+      font-size: 1.8em;
+    }
+  }
+}

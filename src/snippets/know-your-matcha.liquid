@@ -1,0 +1,37 @@
+{% comment %} 
+  Know your matcha  video callout
+  used in /sections/page.matcha101.liquid
+
+  Params
+  - headline (text)
+  - description (richtext)
+  - thumbnail (image)
+  - link_text (text)
+  - link_url (url)
+
+{% endcomment %}
+<section id="know-your-matcha">
+  <a class="bf-play-button" href="{{link_url}}" title="{{link_text}}">
+    <i class="fa fa-play"></i>
+  </a>
+  <div class="flex-columns wrapper">
+    <div class="column text-container">
+      <h1>{{ headline }}</h1>
+      <div class="description rte">{{ description }}</div>
+      <p class="play-link" >
+        <a href="{{link_url}}" target="_blank">
+          <i class="fa fa-play"></i>  {{ link_text }}
+        </a>
+      </p>
+    </div>
+    <div class="column">
+      <div class="img-container">
+        {% include "responsive-image" with
+          image: thumbnail,
+          max_width: 800,
+          max_height: 800
+        %}
+      </div>
+    </div>
+  </div>
+</section>

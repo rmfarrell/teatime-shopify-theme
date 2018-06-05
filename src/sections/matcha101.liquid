@@ -1,0 +1,111 @@
+<article id="matcha101">
+  {% for block in section.blocks %}
+    <div class="content-blocks" {{ block.shopify_attributes }}>
+      {% case block.type %}
+
+        {% when 'banner' %}
+        {% include 'page-content-snippets' with
+          handles: block.settings.page
+        %}
+
+        {% when 'know_ur_matcha' %}
+        {% include 'know-your-matcha' with 
+          headline: block.settings.headline,
+          description: block.settings.description,
+          thumbnail: block.settings.thumbnail,
+          link_text: block.settings.link_text,
+          link_url: block.settings.link_url
+        %}
+
+        {% when 'stacks_up' %}
+        {% include 'stacks-up' %}
+
+        {% when 'ceremonial_vs_culinary' %}
+        {% include 'about-ceremonial' %}
+
+      {% endcase %}
+    </div>
+  {% endfor %}
+</article>
+{% schema %}
+  {
+    "name": "Matcha 101",
+    "settings": [],
+    "blocks": [
+      {
+        "name": "Know Your Matcha",
+        "type": "know_ur_matcha",
+        "settings": [
+          {
+            "type": "text",
+            "id": "headline",
+            "label": "Headline"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "thumbnail",
+            "label": "Thumbnail"
+          }
+        ]
+      },
+      {
+        "name": "Banner",
+        "type": "banner",
+        "settings": [
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Banner include"
+          }
+        ]
+      },
+      {
+        "name": "How it Stacks Up",
+        "type": "stacks_up",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Headline"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      },
+      {
+        "name": "Ceremonial vs. Culinary",
+        "type": "ceremonial_vs_culinary",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Headline"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }      
+    ]
+  }
+{% endschema %}
