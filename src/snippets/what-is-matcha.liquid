@@ -3,19 +3,6 @@
   Params
   - headline
   - description
-  - basics_headline
-  - basics_1_icon
-  - basics_1_title
-  - basics_1_description
-  - basics_2_icon
-  - basics_2_title
-  - basics_2_description
-  - basics_3_icon
-  - basics_3_title
-  - basics_3_description
-  - basics_4_icon
-  - basics_4_title
-  - basics_4_description
 {% endcomment %}
 <section id="what-is-matcha">
   <div class="wrapper pale-green" style="background-image: url({{'ice-matcha.jpg' | asset_url }})">
@@ -24,55 +11,4 @@
       <div class="rte">{{ description }}</div>
     </div>
   <div>
-</section>
-<section id="the-basics">
-  <div class="wrapper pale-green">
-    <h2>{{ basics_headline }}</h2>
-    <div class="flex-columns">
-      {% if basics_1_icon != blank and basics_1_title != blank and basics_1_description != blank %}
-        <div class="column">
-          <div class="img-container icon">
-            <img src="{{ basics_1_icon | img_url }}">
-          </div>
-          <div class="text-container">
-            <h4>{{ basics_1_title }}</h4>
-            <div class="description rte">{{ basics_1_description }}</div>
-          </div>
-        </div>
-      {% endif %}
-      {% if basics_2_icon != blank and basics_2_title != blank and basics_2_description != blank %}
-        <div class="column">
-          <div class="img-container icon">
-            <img src="{{ basics_2_icon | img_url }}">
-          </div>
-          <div class="text-container">
-            <h4>{{ basics_2_title }}</h4>
-            <div class="description rte">{{ basics_1_description }}</div>
-          </div>
-        </div>
-      {% endif %}
-      {% if basics_3_icon != blank and basics_3_title != blank and basics_3_description != blank %}
-        <div class="column">
-          <div class="img-container icon">
-            <img src="{{ basics_3_icon | img_url }}">
-          </div>
-          <div class="text-container">
-            <h4>{{ basics_3_title }}</h4>
-            <div class="description rte">{{ basics_1_description }}</div>
-          </div>
-        </div>
-      {% endif %}
-      {% if basics_4_icon != blank and basics_4_title != blank and basics_4_description != blank %}
-        <div class="column">
-          <div class="img-container icon">
-            <img src="{{ basics_4_icon | img_url }}">
-          </div>
-          <div class="text-container">
-            <h4>{{ basics_4_title }}</h4>
-            <div class="description rte">{{ basics_1_description }}</div>
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  </div>
 </section>

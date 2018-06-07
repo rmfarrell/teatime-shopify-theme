@@ -25,7 +25,7 @@
         </div>
 
         {% when 'know_ur_matcha' %}
-        {% include 'know-your-matcha' with 
+        {% include 'video-tout' with 
           headline: block.settings.headline,
           description: block.settings.description,
           thumbnail: block.settings.thumbnail,
@@ -36,20 +36,24 @@
         {% when 'what_is_matcha' %}
         {% include 'what-is-matcha' with 
           headline: block.settings.headline,
-          description: block.settings.description,
-          basics_headline: block.settings.basics_headline,
-          basics_1_icon: block.settings.basics_1_icon,
-          basics_1_title: block.settings.basics_1_title,
-          basics_1_description: block.settings.basics_1_description,
-          basics_2_icon: block.settings.basics_2_icon,
-          basics_2_title: block.settings.basics_2_title,
-          basics_2_description: block.settings.basics_2_description,
-          basics_3_icon: block.settings.basics_3_icon,
-          basics_3_title: block.settings.basics_3_title,
-          basics_3_description: block.settings.basics_3_description,
-          basics_4_icon: block.settings.basics_4_icon,
-          basics_4_title: block.settings.basics_4_title,
-          basics_4_description: block.settings.basics_4_description
+          description: block.settings.description
+        %}
+
+        {% when 'icon_list' %}
+        {% include 'icon-list' with,
+          icon_list_headline: block.settings.icon_list_headline,
+          icon_list_1_icon: block.settings.icon_list_1_icon,
+          icon_list_1_title: block.settings.icon_list_1_title,
+          icon_list_1_description: block.settings.icon_list_1_description,
+          icon_list_2_icon: block.settings.icon_list_2_icon,
+          icon_list_2_title: block.settings.icon_list_2_title,
+          icon_list_2_description: block.settings.icon_list_2_description,
+          icon_list_3_icon: block.settings.icon_list_3_icon,
+          icon_list_3_title: block.settings.icon_list_3_title,
+          icon_list_3_description: block.settings.icon_list_3_description,
+          icon_list_4_icon: block.settings.icon_list_4_icon,
+          icon_list_4_title: block.settings.icon_list_4_title,
+          icon_list_4_description: block.settings.icon_list_4_descriptionn
         %}
 
         {% when 'stacks_up' %}
@@ -162,71 +166,77 @@
             "type": "richtext",
             "id": "description",
             "label": "Description"
-          },
+          }
+        ]
+      },
+      {
+        "name": "Icon List",
+        "type": "icon_list",
+        "settings": [
           {
             "type": "text",
-            "id": "basics_headline",
-            "label": "Basics Headline"
+            "id": "icon_list_headline",
+            "label": "Headline"
           },
           {
             "type": "image_picker",
-            "id": "basics_1_icon",
-            "label": "Basics 1 icon"
+            "id": "icon_list_1_icon",
+            "label": "Icon 1"
           },
           {
             "type": "text",
-            "id": "basics_1_title",
-            "label": "Basics 1 title"
+            "id": "icon_list_1_title",
+            "label": "Title 1"
           },
           {
             "type": "richtext",
-            "id": "basics_1_description",
-            "label": "Basics 1 description"
+            "id": "icon_list_1_description",
+            "label": "Description 1"
           },
           {
             "type": "image_picker",
-            "id": "basics_2_icon",
-            "label": "Basics 2 icon"
+            "id": "icon_list_2_icon",
+            "label": "Icon 2"
           },
           {
             "type": "text",
-            "id": "basics_2_title",
-            "label": "Basics 2 title"
+            "id": "icon_list_2_title",
+            "label": "Title 2"
           },
           {
             "type": "richtext",
-            "id": "basics_2_description",
-            "label": "Basics 2 description"
+            "id": "icon_list_2_description",
+            "label": "Description 2"
           },
           {
             "type": "image_picker",
-            "id": "basics_3_icon",
-            "label": "Basics 3 icon"
+            "id": "icon_list_3_icon",
+            "label": "Icon 3"
           },
           {
             "type": "text",
-            "id": "basics_3_title",
-            "label": "Basics 3 title"
+            "id": "icon_list_3_title",
+            "label": "Title 3"
           },
           {
             "type": "richtext",
-            "id": "basics_3_description",
-            "label": "Basics 3 description"
+            "id": "icon_list_3_description",
+            "label": "Description 3"
           },
           {
             "type": "image_picker",
-            "id": "basics_4_icon",
-            "label": "Basics 4 icon"
+            "id": "icon_list_4_icon",
+            "label": "Icon 4"
           },
           {
             "type": "text",
-            "id": "basics_4_title",
-            "label": "Basics 4 title"
+            "id": "icon_list_4_title",
+            "label": "Title 4"
           },
           {
             "type": "richtext",
-            "id": "basics_4_description",
-            "label": "Basics 4 description"
+            "id": "icon_list_4_description",
+            "label": "Description 4"
           }
         ]
       },
