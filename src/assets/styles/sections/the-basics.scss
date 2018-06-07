@@ -1,0 +1,38 @@
+#the-basics {
+
+  .wrapper {
+    padding-bottom: 7em;
+    margin-bottom: 7em;
+  }
+
+  h2 {
+    font-size: 3.2em;
+    text-align: center;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 0 4%;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 1.8em;
+    font-weight: 500;
+  }
+
+  .img-container {
+    height: 10em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 1.5em;
+    
+    img {
+      display: block;
+      margin: auto;
+      max-height: 8em;
+      max-width: 6em;
+    }
+  }
+}

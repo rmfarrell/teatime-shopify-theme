@@ -6,8 +6,7 @@ import 'lazysizes'
 import 'lazysizes/plugins/respimg/ls.respimg'
 import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
-import '../templates/product'
-import '../sections/hero'
+
 import 'object-fit-images'
 
 // Polyfills
@@ -21,6 +20,11 @@ import { resizeEvent, cart } from '../events';
 import { windowWhen } from 'rxjs/operator/windowWhen';
 import { Cart } from '../cart'
 import textFit from 'textfit';
+
+// Sections
+import '../templates/product'
+import '../sections/hero'
+import '../sections/matcha101'
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};

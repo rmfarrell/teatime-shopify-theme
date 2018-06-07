@@ -4,9 +4,11 @@
       {% case block.type %}
 
         {% when 'banner' %}
-        {% include 'page-content-snippets' with
-          handles: block.settings.page
-        %}
+        <div class='wrapper pale-green'>
+          {% include 'page-content-snippets' with
+            handles: block.settings.page
+          %}
+        </div>
 
         {% when 'know_ur_matcha' %}
         {% include 'know-your-matcha' with 
@@ -17,8 +19,32 @@
           link_url: block.settings.link_url
         %}
 
+        {% when 'what_is_matcha' %}
+        {% include 'what-is-matcha' with 
+          headline: block.settings.headline,
+          description: block.settings.description,
+          basics_headline: block.settings.basics_headline,
+          basics_1_icon: block.settings.basics_1_icon
+          basics_1_title: block.settings.basics_1_title,
+          basics_1_description: block.settings.basics_1_description,
+          basics_2_icon: block.settings.basics_2_icon,
+          basics_2_title: block.settings.basics_2_title,
+          basics_2_description: block.settings.basics_2_description,
+          basics_3_icon: block.settings.basics_3_icon,
+          basics_3_title: block.settings.basics_3_title,
+          basics_3_description: block.settings.basics_3_description,
+          basics_4_icon: block.settings.basics_4_icon,
+          basics_4_title: block.settings.basics_4_title,
+          basics_4_description: block.settings.basics_4_description
+        %}
+
         {% when 'stacks_up' %}
-        {% include 'stacks-up' %}
+        {% include 'stacks-up' with
+          title: block.settings.title,
+          description: block.settings.description,
+          hustle_img: block.settings.hustle_img,
+          bottle_img: block.settings.bottle_img
+        %}
 
         {% when 'ceremonial_vs_culinary' %}
         {% include 'about-ceremonial' %}
@@ -64,6 +90,87 @@
         ]
       },
       {
+        "name": "What is Matcha?",
+        "type": "what_is_matcha",
+        "settings": [
+          {
+            "type": "text",
+            "id": "headline",
+            "label": "Headline"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "basics_headline",
+            "label": "Basics Headline"
+          },
+          {
+            "type": "image_picker",
+            "id": "basics_1_icon",
+            "label": "Basics 1 icon"
+          },
+          {
+            "type": "text",
+            "id": "basics_1_title",
+            "label": "Basics 1 title"
+          },
+          {
+            "type": "richtext",
+            "id": "basics_1_description",
+            "label": "Basics 1 description"
+          },
+          {
+            "type": "image_picker",
+            "id": "basics_2_icon",
+            "label": "Basics 2 icon"
+          },
+          {
+            "type": "text",
+            "id": "basics_2_title",
+            "label": "Basics 2 title"
+          },
+          {
+            "type": "richtext",
+            "id": "basics_2_description",
+            "label": "Basics 2 description"
+          },
+          {
+            "type": "image_picker",
+            "id": "basics_3_icon",
+            "label": "Basics 3 icon"
+          },
+          {
+            "type": "text",
+            "id": "basics_3_title",
+            "label": "Basics 3 title"
+          },
+          {
+            "type": "richtext",
+            "id": "basics_3_description",
+            "label": "Basics 3 description"
+          },
+          {
+            "type": "image_picker",
+            "id": "basics_4_icon",
+            "label": "Basics 4 icon"
+          },
+          {
+            "type": "text",
+            "id": "basics_4_title",
+            "label": "Basics 4 title"
+          },
+          {
+            "type": "richtext",
+            "id": "basics_4_description",
+            "label": "Basics 4 description"
+          }
+        ]
+      },
+      {
         "name": "Banner",
         "type": "banner",
         "settings": [
@@ -87,6 +194,16 @@
             "type": "richtext",
             "id": "description",
             "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "bottle_img",
+            "label": "Bottle Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "hustle_img",
+            "label": "Hustle Image"
           }
         ]
       },
