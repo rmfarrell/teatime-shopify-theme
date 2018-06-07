@@ -1,56 +1,11 @@
-{%- comment -%}
-  This is a required section for the Shopify Theme Store.
-  It is available when you add the "Image with text" section in the theme editor.
-
-  Theme Store required settings
-  - Image
-  - Heading: title of the block
-  - Text: description of the block
-
-  Theme Store optional settings
-  - Button label: label associated with the button
-  - Button link: link of the button
-{%- endcomment -%}
-
-<section class="image-with-text wrapper flex-columns">
-  {% capture image_layout %}
-    <div class="img-container column">
-      {% if section.settings.image != blank %}
-        {% include 'responsive-image' with
-          image: section.settings.image,
-          max_width: 700,
-          max_height: 700
-        %}
-      {% else %}
-        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-      {% endif %}
-    </div>
-  {% endcapture %}
-
-  {% if section.settings.layout == 'left' %}
-    {{ image_layout }}
-  {% endif %}
-
-  <div class="text-container column rte">
-    {% if section.settings.title != blank %}
-      <h2>{{ section.settings.title | escape }}</h2>
-    {% endif %}
-    {% if section.settings.text != blank %}
-      <div>{{ section.settings.text }}</div>
-    {% endif %}
-    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-      <p>
-        <a href="{{ section.settings.button_link }}" class="text-cta">
-          {{ section.settings.button_label | escape }}
-        </a>
-      </p>
-    {% endif %}
-  </div>
-
-  {% if section.settings.layout == 'right' %}
-    {{ image_layout }}
-  {% endif %}
-</section>
+{% include 'image-with-text' with
+  image: section.settings.image,
+  layout: section.settings.layout,
+  title: section.settings.title,
+  text: section.settings.text,
+  button_label: section.settings.button_label,
+  button_link: section.settings.button_link
+%}
 
 {% schema %}
   {

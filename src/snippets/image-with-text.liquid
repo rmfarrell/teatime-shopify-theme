@@ -1,37 +1,42 @@
-<section class="image-with-text">
-  {% capture image_layout %}
-    <div class="image-with-text__image">
-      {% if block.settings.image != blank %}
-        {% include 'responsive-image' with
-          image: block.settings.image,
-          max_width: 545,
-          max_height: 545
-        %}
-      {% else %}
-        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-      {% endif %}
-    </div>
-  {% endcapture %}
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add the "Image with text" section in the theme editor.
 
-  {% if block.settings.layout == 'left' %}
-    {{ image_layout }}
-  {% endif %}
+  Settings
+  - image
+  - heading: title of the block
+  - text: description of the block
+  - button label: label associated with the button
+  - button link: link of the button
+  - layout
+{%- endcomment -%}
 
-  <div class="image-with-text__text">
-    {% if block.settings.title != blank %}
-      <h2>{{ block.settings.title | escape }}</h2>
-    {% endif %}
-    {% if block.settings.text != blank %}
-      <div>{{ block.settings.text }}</div>
-    {% endif %}
-    {% if block.settings.button_label != blank and block.settings.button_link != blank %}
-      <a href="{{ block.settings.button_link }}">
-        {{ block.settings.button_label | escape }}
-      </a>
+<section class="image-with-text dir-{{layout}} flex-columns wrapper">
+  <div class="img-container column">
+    {% if image != blank %}
+      {% include 'responsive-image' with
+        image: image,
+        max_width: 545,
+        max_height: 545
+      %}
+    {% else %}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
     {% endif %}
   </div>
 
-  {% if block.settings.layout == 'right' %}
-    {{ image_layout }}
-  {% endif %}
+  <div class="text-container column">
+    {% if title != blank %}
+      <h2>{{ title | escape }}</h2>
+    {% endif %}
+    {% if text != blank %}
+      <div class="rte">{{ text }}</div>
+    {% endif %}
+    {% if button_label != blank and button_link != blank %}
+      <p class="cta-container">
+        <a href="{{ button_link }}" class="text-cta">
+          {{ button_label | escape }}
+        </a>
+      </p>
+    {% endif %}
+  </div>
 </section>

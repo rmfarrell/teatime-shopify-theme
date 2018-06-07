@@ -3,6 +3,20 @@
     <div class="content-blocks" {{ block.shopify_attributes }}>
       {% case block.type %}
 
+        {% comment %} 
+          I realize this is misspelled but it's impossible to change this in Slate
+          because it is terrible software.
+        {% endcomment %}
+        {% when 'imgage_with_text' %}
+        {% include 'image-with-text' with
+          image: block.settings.image,
+          layout: block.settings.layout,
+          title: block.settings.title,
+          text: block.settings.text,
+          button_label: block.settings.button_label,
+          button_link: block.settings.button_link 
+        %}
+
         {% when 'banner' %}
         <div class='wrapper pale-green'>
           {% include 'page-content-snippets' with
@@ -24,7 +38,7 @@
           headline: block.settings.headline,
           description: block.settings.description,
           basics_headline: block.settings.basics_headline,
-          basics_1_icon: block.settings.basics_1_icon
+          basics_1_icon: block.settings.basics_1_icon,
           basics_1_title: block.settings.basics_1_title,
           basics_1_description: block.settings.basics_1_description,
           basics_2_icon: block.settings.basics_2_icon,
@@ -46,9 +60,6 @@
           bottle_img: block.settings.bottle_img
         %}
 
-        {% when 'ceremonial_vs_culinary' %}
-        {% include 'about-ceremonial' %}
-
       {% endcase %}
     </div>
   {% endfor %}
@@ -58,6 +69,55 @@
     "name": "Matcha 101",
     "settings": [],
     "blocks": [
+      {
+        "name": "Image with text",
+        "type": "imgage_with_text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "layout",
+            "label": "Image alignment",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Image with text"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      },
       {
         "name": "Know Your Matcha",
         "type": "know_ur_matcha",
