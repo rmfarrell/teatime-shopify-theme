@@ -1,9 +1,124 @@
+<article id="about">
+  {% for block in section.blocks %}
+    <div class="content-blocks" {{ block.shopify_attributes }}>
+      {% case block.type %}
 
+        {% when 'banner' %}
+        <div class='wrapper pale-green'>
+          {% include 'page-content-snippets' with
+            handles: block.settings.page
+          %}
+        </div>
+
+        {% when 'image_with_text' %}
+        <div class='wrapper pale-green'>
+          {% include 'image-with-text' with
+            image: block.settings.image,
+            layout: block.settings.layout,
+            title: block.settings.title,
+            text: block.settings.text,
+            button_label: block.settings.button_label,
+            button_link: block.settings.button_link 
+          %}
+        </div>
+
+        {% when 'video_tout' %}
+        {% include 'video-tout' with 
+          headline: block.settings.headline,
+          description: block.settings.description,
+          thumbnail: block.settings.thumbnail,
+          link_text: block.settings.link_text,
+          link_url: block.settings.link_url
+        %}
+
+        {% when 'icon_list' %}
+        <div class='wrapper pale-green'>
+          {% include 'icon-list' with,
+            icon_list_headline: block.settings.icon_list_headline,
+            icon_list_1_icon: block.settings.icon_list_1_icon,
+            icon_list_1_title: block.settings.icon_list_1_title,
+            icon_list_1_description: block.settings.icon_list_1_description,
+            icon_list_2_icon: block.settings.icon_list_2_icon,
+            icon_list_2_title: block.settings.icon_list_2_title,
+            icon_list_2_description: block.settings.icon_list_2_description,
+            icon_list_3_icon: block.settings.icon_list_3_icon,
+            icon_list_3_title: block.settings.icon_list_3_title,
+            icon_list_3_description: block.settings.icon_list_3_description,
+            icon_list_4_icon: block.settings.icon_list_4_icon,
+            icon_list_4_title: block.settings.icon_list_4_title,
+            icon_list_4_description: block.settings.icon_list_4_description
+          %}
+        </div>
+
+      {% endcase %}
+    </div>
+  {% endfor %}
+</article>
 {% schema %}
   {
-    "name": "Matcha 101",
+    "name": "About",
     "settings": [],
     "blocks": [
+      {
+        "name": "Banner",
+        "type": "banner",
+        "settings": [
+          {
+            "type": "page",
+            "id": "page",
+            "label": "Banner include"
+          }
+        ]
+      },
+      {
+        "name": "Image with text",
+        "type": "image_with_text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "layout",
+            "label": "Image alignment",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Image with text"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      },
       {
         "name": "Video Tout",
         "type": "video_tout",
@@ -34,7 +149,78 @@
             "label": "Thumbnail"
           }
         ]
-      }    
+      },
+      {
+        "name": "Icon List",
+        "type": "icon_list",
+        "settings": [
+          {
+            "type": "text",
+            "id": "icon_list_headline",
+            "label": "Headline"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon_list_1_icon",
+            "label": "Icon 1"
+          },
+          {
+            "type": "text",
+            "id": "icon_list_1_title",
+            "label": "Title 1"
+          },
+          {
+            "type": "richtext",
+            "id": "icon_list_1_description",
+            "label": "Description 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon_list_2_icon",
+            "label": "Icon 2"
+          },
+          {
+            "type": "text",
+            "id": "icon_list_2_title",
+            "label": "Title 2"
+          },
+          {
+            "type": "richtext",
+            "id": "icon_list_2_description",
+            "label": "Description 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon_list_3_icon",
+            "label": "Icon 3"
+          },
+          {
+            "type": "text",
+            "id": "icon_list_3_title",
+            "label": "Title 3"
+          },
+          {
+            "type": "richtext",
+            "id": "icon_list_3_description",
+            "label": "Description 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon_list_4_icon",
+            "label": "Icon 4"
+          },
+          {
+            "type": "text",
+            "id": "icon_list_4_title",
+            "label": "Title 4"
+          },
+          {
+            "type": "richtext",
+            "id": "icon_list_4_description",
+            "label": "Description 4"
+          }
+        ]
+      }
     ]
   }
 {% endschema %}

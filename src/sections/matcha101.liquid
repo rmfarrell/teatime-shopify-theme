@@ -40,21 +40,23 @@
         %}
 
         {% when 'icon_list' %}
-        {% include 'icon-list' with,
-          icon_list_headline: block.settings.icon_list_headline,
-          icon_list_1_icon: block.settings.icon_list_1_icon,
-          icon_list_1_title: block.settings.icon_list_1_title,
-          icon_list_1_description: block.settings.icon_list_1_description,
-          icon_list_2_icon: block.settings.icon_list_2_icon,
-          icon_list_2_title: block.settings.icon_list_2_title,
-          icon_list_2_description: block.settings.icon_list_2_description,
-          icon_list_3_icon: block.settings.icon_list_3_icon,
-          icon_list_3_title: block.settings.icon_list_3_title,
-          icon_list_3_description: block.settings.icon_list_3_description,
-          icon_list_4_icon: block.settings.icon_list_4_icon,
-          icon_list_4_title: block.settings.icon_list_4_title,
-          icon_list_4_description: block.settings.icon_list_4_descriptionn
-        %}
+        <div class="wrapper pale-green">
+          {% include 'icon-list' with,
+            icon_list_headline: block.settings.icon_list_headline,
+            icon_list_1_icon: block.settings.icon_list_1_icon,
+            icon_list_1_title: block.settings.icon_list_1_title,
+            icon_list_1_description: block.settings.icon_list_1_description,
+            icon_list_2_icon: block.settings.icon_list_2_icon,
+            icon_list_2_title: block.settings.icon_list_2_title,
+            icon_list_2_description: block.settings.icon_list_2_description,
+            icon_list_3_icon: block.settings.icon_list_3_icon,
+            icon_list_3_title: block.settings.icon_list_3_title,
+            icon_list_3_description: block.settings.icon_list_3_description,
+            icon_list_4_icon: block.settings.icon_list_4_icon,
+            icon_list_4_title: block.settings.icon_list_4_title,
+            icon_list_4_description: block.settings.icon_list_4_descriptionn
+          %}
+        </div>
 
         {% when 'stacks_up' %}
         {% include 'stacks-up' with

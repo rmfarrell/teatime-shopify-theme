@@ -1,13 +1,12 @@
 .icon-list {
 
-  .wrapper {
-    padding-bottom: 7em;
-    margin-bottom: 7em;
-  }
-
   h2 {
     font-size: 3.2em;
     text-align: center;
+  }
+
+  .flex-columns {
+    align-items: flex-start;
   }
   
   .column {
