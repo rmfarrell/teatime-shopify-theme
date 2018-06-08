@@ -14,32 +14,6 @@
         <h5>{{ block.settings.title }}</h5>
       </li>
     {% endfor %}
-    {% for block in section.blocks %}
-      <li>
-        <div class="img-container">
-          {% include "responsive-image" with
-            image: block.settings.image,
-            max_width: 150,
-            max_height: 150
-          %}
-        </div>
-        <h4>{{ block.settings.name }}</h4>
-        <h5>{{ block.settings.title }}</h5>
-      </li>
-    {% endfor %}
-    {% for block in section.blocks %}
-      <li>
-        <div class="img-container">
-          {% include "responsive-image" with
-            image: block.settings.image,
-            max_width: 150,
-            max_height: 150
-          %}
-        </div>
-        <h4>{{ block.settings.name }}</h4>
-        <h5>{{ block.settings.title }}</h5>
-      </li>
-    {% endfor %}
   </ul>
 </section>
 {% schema %}

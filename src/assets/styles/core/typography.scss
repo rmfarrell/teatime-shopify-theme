@@ -89,6 +89,11 @@ li {
   line-height: 1.5em;
   white-space: nowrap;
   font-weight: 500;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-dark-text;
+  }
 }
 
 .text-cta {

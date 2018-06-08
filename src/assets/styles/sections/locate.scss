@@ -1,0 +1,153 @@
+#locate-page {
+  
+  .wrapper > header {
+    padding: 3em 0 6em;
+
+    h1 {
+      font-size: 6.6em;
+      margin-bottom: 0;
+    }
+
+    .description {
+      font-size: 1.4em;
+      color: $color-light-gray;
+      margin: 0 0 3em;
+      max-width: 16em;
+    }
+
+    p {
+      font-size: 1.6em;
+    }
+    .cta-container {
+      text-align: center;
+      
+      a {
+        margin: 0 1em auto 0; 
+      }
+    }
+
+    @media ($mq-medium) {
+      padding: 6em 0 12em;
+  
+      .cta-container {
+        text-align: left;
+        
+        a { 
+          margin: 0 1em 0 0; 
+        }
+      }
+    }
+  }
+}
+
+#find-a-cafe {
+  align-items: flex-start;
+  position: relative;
+
+  .subnav {
+    flex: 36% 0 0;
+    position: sticky;
+    top: $header-height;
+    z-index: 30;
+    background-color: white;
+    padding: 1em 0;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      text-align: center;
+    }
+
+    li {
+      flex: 7em 0 0;
+      margin: 0 1%;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      color: inherit;
+      margin: 0;
+      line-height: 1.3em;
+    }
+
+    h5 {
+      color: $color-light-gray;
+      margin: 0 0 1em;
+      display: none;
+    }
+
+    a {
+      display: block;
+      color: $color-light-gray;
+      opacity: 0.6;
+      margin: 0 0 1em;
+      transition: color 0.3s, opacity 0.3s;
+
+      &.active {
+        color: $color-green;
+        opacity: 1;
+      }
+    }
+
+    @media ($mq-medium) {
+      font-size: 1.6em;
+
+      ul {
+        display: block;
+        text-align: left;
+      }
+
+      h5 {
+        display: block;
+        margin: 0 0 1.5em;
+        font-size: 1em;
+      }
+
+      a {
+        margin: 0 0 1em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .location-container {
+    flex: 1;
+  }
+
+  .img-container {
+    margin: 0 0 4em;
+  }
+
+  .text-container {
+    align-items: start;
+    padding-bottom: 6em;
+  }
+
+  .location {
+
+    // close space left by p's you can't modify
+    .rte p {
+      margin: 0 0 0;
+    }
+
+    h4 {
+      font-size: 1.3em;
+      margin: 2em 0 0.75em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+#find-a-bottle {
+  height: 400px; 
+  background-color: #ccc;
+  margin-bottom: 6em;
+}
