@@ -1,0 +1,30 @@
+{% comment %}
+  Legal nav
+  Includes a legal nav and nothing else
+{% endcomment %}
+<nav>
+  <ul>
+    {% if section.settings.menu != blank %}
+      {% for link in linklists[section.settings.menu].links %}
+        <li>
+          <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    {% endif %}
+  <ul>
+</nav>
+
+{% schema %}
+  {
+    "name": "Menu",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Legal menu"
+      }
+    ]
+  }
+{% endschema %}
