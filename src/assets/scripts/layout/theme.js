@@ -44,6 +44,16 @@ $navToggle.addEventListener('click', () => {
   $nav.classList.toggle('is-active');
 });
 
+// -- Smooth scroll
+// smooth scroll to anchors site-wide
+import('smoothscroll').then((mod) => {
+  const SmoothScroll = mod.default
+  return new SmoothScroll('a[href*="#"]', {
+    offset: 120
+  })
+})
+  .catch((err) => window.console.log(err))
+
 // -- Open targetd el if data-open directive present
 const $$parentTogglers = $$('[data-open]')
 each($$parentTogglers, (el) => {
