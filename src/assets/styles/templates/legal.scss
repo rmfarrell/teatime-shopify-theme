@@ -1,0 +1,79 @@
+#legal-page {
+
+  .page-title {
+    font-size: 5.2em;
+    max-width: 7em;
+    margin-left: 0;
+  }
+
+  .rte {
+    p {
+      font-size: 1.2em;
+    }
+
+    h2, h1, h3, h4, h5 {
+      font-size: 1.3em;
+      margin: 3em 0 1em;
+    }
+  }
+
+  #shopify-section-legal-nav {
+    position: sticky;
+    top: $header-height;
+    margin: 0 0 4em;
+
+    a {
+      font-size: 1.1em;
+      font-weight: 500;
+      color: $color-light-gray;
+      opacity: 0.75;
+
+      &.active {
+        color: $color-green;
+        opacity: 1;
+      }
+    }
+
+    ul {
+      display: flex;
+      line-height: 1.5em;
+    }
+
+    li {
+      flex: 1;
+      margin: 0 1.5em 0 0;
+    }
+
+    @media ($mq-medium) {
+
+      a {
+        font-size: 1.3em;
+      }
+
+      ul {
+        display: block;
+      }
+
+      li {
+        margin: 0 0 1.2em;
+      }
+    }
+  }
+
+  .wrapper {
+    position: relative;
+
+    @media ($mq-medium) {
+      display: flex;
+      justify-content: space-between;
+
+      .nav-container {
+        flex: 20% 0 0;
+      }
+
+      .text-container {
+        flex: 72% 0 0;
+      }
+    }
+  }
+}
