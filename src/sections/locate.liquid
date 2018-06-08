@@ -1,0 +1,109 @@
+<article id="locate">
+  <div class="wrapper">
+    <header>
+      <h1>{{ section.settings.headline }}</h1>
+      <div class="description">
+        {{ section.settings.description }}
+      </div>
+      <p class="cta-container">
+        <a href="#find-a-cafe" data-smooth-scroll class="cta">{{ 'locate.cafe_link_label' | t }}</a>
+        <a href="#find-a-bottle" data-smooth-scroll class="cta">{{ 'locate.bottle_link_label' | t }}</a>
+      </p>
+    </header>
+    <section id="find-a-bottle">
+    </section>
+    <section id="find-a-cafe" class="flex-columns">
+      <nav class="subnav" class="column">
+        <h5>{{ 'locate.our_cafes_label' | t }}</h5>
+        <ul>
+          {% for block in section.blocks %}
+          <li>
+            <a >
+              <h2>{{ block.settings.name }}</h2>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="location-container column">
+        {% for block in section.blocks %}
+        <div class="location">
+          <div class="img-container">
+            {% include 'responsive-image' with
+              image: block.settings.image,
+              max_width: 900,
+              max_height: 600
+            %}
+          </div>
+          <div class="text-container flex-columns">
+            <div class="column rte">
+              {{block.settings.address}}
+            </div>
+            <div class="column rte">
+              {% if block.settings.hours != blank %}
+                <h4>{{ 'locate.hours_label' | t }}</h4>
+                <p>{{ block.settings.hours }}</p>
+              {% endif %}
+              {% if block.settings.phone != blank %}
+                <h4>{{ 'locate.phone_label' | t }}</h4>
+                <p class="rte">{{ block.settings.phone }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Locate",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Cafe",
+      "type": "cafe",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "address",
+          "label": "Address"
+        },
+        {
+          "type": "richtext",
+          "id": "hours",
+          "label": "Hours"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone"
+        }
+      ]
+    }      
+  ]
+}
+{% endschema %}

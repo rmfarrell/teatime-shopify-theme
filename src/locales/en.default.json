@@ -322,5 +322,12 @@
       "key": "Espresso Drink",
       "value": "80mg Caffeine"
     }
+  },
+  "locate": {
+    "bottle_link_label": "Find a bottle",
+    "cafe_link_label": "Find a Caf&eacute;",
+    "hours_label": "Hours:",
+    "phone_label": "Phone Number:",
+    "our_cafes_label": "our caf&eacute;s"
   }
 }
