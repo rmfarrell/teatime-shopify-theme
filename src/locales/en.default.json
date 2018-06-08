@@ -302,5 +302,25 @@
   },
   "blog_index": {
     "see_more": "See more from the"
+  },
+  "stacks_up": {
+    "bottle": {
+      "name": "Bottle",
+      "key": "Matcha Bottle",
+      "value": "80mg Caffeine"
+    },
+    "hustle": {
+      "name": "Hustle",
+      "key": "Hustle Can",
+      "value": "80mg Caffeine"
+    },
+    "energy_drink": {
+      "key": "Energy Drink",
+      "value": "80mg Caffeine"
+    },
+    "espresso": {
+      "key": "Espresso Drink",
+      "value": "80mg Caffeine"
+    }
   }
 }

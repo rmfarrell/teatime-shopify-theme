@@ -1,0 +1,73 @@
+
+{% comment %} 
+
+  Params
+    - title (text)
+    - description (richtext)
+    - hustle_img (image)
+    - bottle_img (image)
+{% endcomment %}
+<section id="how-it-stacks-up">
+  <div class="wrapper">
+    <div class="flex-columns">
+      <div class="column text-container">
+        <h2>{{ title }}</h2>
+        <div class="rte">{{ description }}</div>
+        <ul class="toggle">
+          <li>
+            <a data-switch-to="bottle">{{ 'stacks_up.bottle.name' | t }}</a> 
+          </li>
+          <li>
+            <a data-switch-to="hustle">{{ 'stacks_up.hustle.name' | t }}</a> 
+          </li>
+        </ul>
+        <div class="flex-columns contents" data-contents>
+          <div class="column">
+            <h5 class="key">{{ 'stacks_up.bottle.key' | t }}</h5>
+            <div class="value">{{ 'stacks_up.bottle.value' | t }}</div>
+          </div>
+          <div class="column">
+            <h5 class="key">{{ 'stacks_up.espresso.key' | t }}</h5>
+            <div class="value">{{ 'stacks_up.espresso.value' | t }}</div>
+          </div>
+        </div>
+        <div class="flex-columns contents" data-contents>
+          <div class="column">
+            <h5 class="key">{{ 'stacks_up.hustle.key' | t }}</h5>
+            <div class="value">{{ 'stacks_up.hustle.value' | t }}</div>
+          </div>
+          <div class="column">
+            <h5 class="key">{{ 'stacks_up.energy_drink.key' | t }}</h5>
+            <div class="value">{{ 'stacks_up.energy_drink.value' | t }}</div>
+          </div>
+        </div>
+      </div>
+      <figure class="column">
+        <div class="figure-contents" data-figure-contents>
+          <div class="img-container responsive">
+            {% include 'responsive-image' with
+              image: bottle_img,
+              max_width: 90,
+              max_height: 400
+            %}
+          </div>
+          <div class="img-container coffee-cup">
+            <img src="{{ '../assets/images/white_label_cup.png' | asset_url }}"/>          
+          </div>
+        </div>
+        <div class="figure-contents" data-figure-contents>
+          <div class="img-container responsive">
+            {% include 'responsive-image' with
+              image: hustle_img,
+              max_width: 90,
+              max_height: 400
+            %}
+          </div>
+          <div class="img-container">
+            <img src="{{ '../assets/images/white_label_can.png' | asset_url }}"/>          
+          </div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>

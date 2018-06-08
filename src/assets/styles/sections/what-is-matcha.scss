@@ -1,0 +1,39 @@
+#what-is-matcha {
+
+  .wrapper {
+    padding-top: 7em;
+    padding-bottom: 7em;
+    background-image: inherit;
+
+    @media ($mq-medium) {
+      background-size: 80rem;
+      background-position: -40% top;
+      background-repeat: no-repeat;
+    }
+
+    @media (min-width: 800px) {
+      background-position: 80% top;
+    }
+  }
+
+  h2 {
+    font-size: 3.2em;
+  }
+
+  .wrapper > .text-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 6em;
+
+    @media ($mq-medium) {
+      width: 45%;
+      min-height: 40rem;
+      margin-bottom: 16em;
+    }
+
+    > * {
+      width: 100%;
+    }
+  }
+}

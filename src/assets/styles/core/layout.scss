@@ -23,6 +23,13 @@ main {
   padding-right: $gutter;
   max-width: 1200px;
   margin: 0 auto;
+
+  &.pale-green {
+    background-color: $color-pale-green;
+    box-shadow: -1200px 0px 0px 0px $color-pale-green;
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
 }
 
 .intro-text {
@@ -66,11 +73,7 @@ main {
     align-items: center;
 
     .column {
-      flex: 40% 0 0;
-
-      @media ($mq-medium) {
-        flex: 16% 0 0;
-      }
+      flex: 16% 0 0;
     }
   }
 }

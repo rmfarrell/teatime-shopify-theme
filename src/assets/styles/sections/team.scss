@@ -1,0 +1,49 @@
+#the-team {
+  padding-top: 8em;
+  padding-bottom: 8em ;
+
+  > h2 {
+    font-size: 3.2em;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  li {
+    flex: calc(50% - #{$gutter}) 0 1;
+    text-align: center;
+    margin: 0 $gutter/2 6em;
+
+    @media (min-width: 400px) {
+      flex: calc(33.32% - #{$gutter}) 0 1;
+    }
+
+    @media (min-width: 850px) {
+      flex: calc(25% - #{$gutter}) 0 1;
+    }
+  }
+
+  h4, h5 {
+    font-size: 1.3em;
+    margin: 0 auto 0.5em;
+  }
+  
+  h5 {
+    font-weight: normal;
+    color: $color-light-gray;
+  }
+
+  .img-container  {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto 1.5em;
+    background-color: #D8D8D8;
+  }
+}

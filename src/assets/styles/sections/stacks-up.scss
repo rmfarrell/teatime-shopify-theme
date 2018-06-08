@@ -1,0 +1,132 @@
+#how-it-stacks-up {
+
+  .wrapper > .flex-columns {
+    @media ($mq-medium) {
+      flex-direction: row-reverse;
+    }
+  }
+  
+  h2 {
+    font-size: 3.2em;
+  }
+
+  .text-container {
+    padding: 0 10% 0 0;
+  }
+
+  .contents {
+    font-size: 1.5em;
+    color: $color-dark-text;
+    padding: 1em 5%;
+    display: none;
+
+    .column {
+      flex: 49% 0 0;
+    }
+
+    h5 {
+      font-size: 0.8em;
+      color: inherit;
+      font-weight: normal;
+      color: $color-light-gray;
+      margin: 0 0 0.5em;
+    }
+
+    &.active {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  ul.toggle {
+    display: flex;
+
+    li {
+      flex: 1;
+    }
+  
+    a {
+      display: block;
+      width: 100%;
+      font-weight: 500;
+      font-size: 1.5em;
+      text-align: center;
+      padding: 0.25em 0;
+      border-bottom: 2px solid $color-light-gray;
+      opacity: 0.25;
+      transition: background-color 0.3s, opacity 0.3s;
+      color: inherit;
+
+      &.active {
+        border-color: $color-green;
+        opacity: 1;
+        color: $color-green;
+      }
+    }
+  }
+
+  figure {
+    position: relative;
+    height: 40em;
+    background: url('../images/slash.png');
+    background-size: 22em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    @media ($mq-medium) {
+      height: 60em;
+    }
+  }
+
+  .figure-contents {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+
+    .img-container {
+      position: absolute;
+      left: 25%;
+      top: 50%;
+      transform: translate(-50%, -100%);
+      max-width: 120px;
+      height: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      opacity: 0;
+      transition: transform 0.75s, opacity 0.2s 0.3s;
+
+      & img {
+        width: 100%;
+        display: block;
+        filter: drop-shadow(-16px 10px 15px rgba(0, 0, 0, 0.4));
+      }
+
+      &.responsive {
+        // I have no idea, but it works
+        width: 150px;
+      }
+      
+      &.coffee-cup {
+        max-width: 160px;
+        height: 400px;
+      }
+
+
+      &:nth-of-type(2n) {
+        right: 15em;
+        left: 70%;
+        transform: translate(-50%, 50%);
+      }
+    }
+
+    &.active {
+      .img-container {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+  }
+}
