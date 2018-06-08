@@ -42,6 +42,7 @@
     "normalize.css": "^7.0.0",
     "object-fit-images": "^3.2.3",
     "promise-polyfill": "^8.0.0",
+    "smooth-scroll": "^14.2.0",
     "text-fit": "^1.0.1",
     "textfit": "^2.3.1",
     "unfetch": "^3.0.0"

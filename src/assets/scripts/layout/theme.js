@@ -25,6 +25,7 @@ import textFit from 'textfit';
 import '../templates/product'
 import '../sections/hero'
 import '../sections/matcha101'
+import '../sections/locate'
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};

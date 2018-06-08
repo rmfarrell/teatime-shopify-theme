@@ -5,6 +5,7 @@ const path = require('path');
 const alias = {
   jquery: path.resolve('./node_modules/jquery'),
   'lodash-es': path.resolve('./node_modules/lodash-es'),
+  smoothscroll: path.resolve('./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js')
 };
 
 module.exports = {
@@ -13,8 +14,8 @@ module.exports = {
   },
   slateTools: {
     extends: {
-      dev: {resolve: {alias}},
-      prod: {resolve: {alias}},
+      dev: { resolve: { alias } },
+      prod: { resolve: { alias } },
     },
   },
 };

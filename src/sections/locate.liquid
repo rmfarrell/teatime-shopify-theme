@@ -1,4 +1,4 @@
-<article id="locate">
+<article id="locate-page">
   <div class="wrapper">
     <header>
       <h1>{{ section.settings.headline }}</h1>
@@ -15,10 +15,10 @@
     <section id="find-a-cafe" class="flex-columns">
       <nav class="subnav" class="column">
         <h5>{{ 'locate.our_cafes_label' | t }}</h5>
-        <ul>
+        <ul data-gumshoe>
           {% for block in section.blocks %}
           <li>
-            <a >
+            <a href="#{{block.settings.name | split: ' ' | join: '-' | downcase }}">
               <h2>{{ block.settings.name }}</h2>
             </a>
           </li>
@@ -27,7 +27,7 @@
       </nav>
       <div class="location-container column">
         {% for block in section.blocks %}
-        <div class="location">
+        <div class="location" id="{{block.settings.name | split: ' ' | join: '-' | downcase }}">
           <div class="img-container">
             {% include 'responsive-image' with
               image: block.settings.image,
