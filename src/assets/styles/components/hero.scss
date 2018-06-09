@@ -64,10 +64,11 @@
           height: 0;
           padding-bottom: 100%;
           position: absolute;
-          bottom: -2.5%;
-          transform: scaleY(0.1) translateY(-100%);
+          bottom: 0;
+          transform: scaleY(0.1) translateY(0%);
           transform-origin: bottom center;
-          transition: opacity 0.6s, transform 0.6s
+          transition: opacity 0.6s, transform 0.6s;
+          z-index: -1;
         }
     
         // Penumbra
@@ -98,12 +99,12 @@
       .responsive-image__wrapper .psuedo {
 
         &:before {
-          transform: scale(1.2, 0.1) translateY(-100%);
+          transform: scale(1.2, 0.1) translateY(0%);
           opacity: 0.2;
         }
     
         &:after {
-          transform: scale(0.75, 0.05) translateY(-200%);
+          transform: scale(0.75, 0.05) translateY(-100%);
           opacity: 0;
         }
       }

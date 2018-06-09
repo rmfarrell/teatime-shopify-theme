@@ -9,7 +9,7 @@
 {% endif %}
 
   {{ hero.content }}
-  {% section 'hero' %}
+  {% section 'hero-tins' %}
 
   {% if collection.description != blank %}
     <div class="rte">
@@ -19,28 +19,16 @@
 
   <!-- tabs -->
   {% if is_tabbed %}
-    <nav class="tabs">
-      <ul class="wrapper">
-        {% assign active_class = 'active' %}
-        {% for product in collection.products %}
-          <li>
-            <a href="#product-{{product.id}}"  
-              class="{{active_class}}" 
-              data-active-style="color: {{product.metafields.product.color}}; 
-                                  border-bottom-color: {{product.metafields.product.color}}">
-              <span>{{product.title}}</span>
-            </a>
-          </li>
-          {% assign is_first_class = '' %}
-        {% endfor %}
-      </ul>
-    </nav>
+    {% include 'collection-tabs' with collection: collection %}
   {% endif %}
   
   <!-- content -->
   {% for product in collection.products %}
-    <div class="product-container">
-      {% include 'product' with product: product, section_id: forloop.index  %}
-    </div>
+    {% if forloop.index == 1 %}
+      {% assign active_class = 'active' %}
+    {% else %}
+      {% assign active_class = '' %}
+    {% endif %}
+    {% include 'product' with product: product, section_id: forloop.index, css_class: active_class %}
   {% endfor %}
 </article>

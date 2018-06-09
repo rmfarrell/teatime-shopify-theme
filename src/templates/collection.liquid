@@ -1,15 +1,1 @@
-<section>
-  {% if collection.description != blank %}
-    <div class="rte">
-      {{ collection.description }}
-    </div>
-  {% endif %}
-
-  {{ hero.content }}
-  {% section 'hero' %}
-
-
-  {% for product in collection.products %}
-    {% include product with product: product %}
-  {% endfor %}
-</section>
+<section></section>

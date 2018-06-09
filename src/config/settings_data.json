@@ -32,51 +32,6 @@
     "social_vimeo_link": "",
     "cart_notes_enable": true,
     "sections": {
-      "collection-list": {
-        "type": "collection-list",
-        "blocks": {
-          "collection-list-0": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "collection-list-1": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "collection-list-2": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          }
-        },
-        "block_order": [
-          "collection-list-0",
-          "collection-list-1",
-          "collection-list-2"
-        ],
-        "settings": {
-          "title": "Collection list"
-        }
-      },
-      "featured-collection": {
-        "type": "featured-collection",
-        "settings": {
-          "title": "Featured collection",
-          "collection": ""
-        }
-      },
-      "featured-product": {
-        "type": "featured-product",
-        "settings": {
-          "product": "",
-          "show_share_buttons": false
-        }
-      },
       "header": {
         "type": "header",
         "blocks": {
@@ -170,40 +125,40 @@
       "hero-bottles": {
         "type": "hero-bottles",
         "blocks": {
-          "1527719277778": {
+          "1528498121011": {
             "type": "floating_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Bottle2_c90abad8-582c-4beb-81ac-5fba654b360f.png",
+              "image": "shopify:\/\/shop_images\/Original.png",
+              "product_link": "#matchabar-iced-matcha-tea-original"
+            }
+          },
+          "1528500845059": {
+            "type": "floating_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Honey.png",
               "product_link": "#matchabar-iced-matcha-tea-hint-of-honey"
             }
           },
-          "1527719306213": {
+          "1528501317692": {
             "type": "floating_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Bottle4.png",
+              "image": "shopify:\/\/shop_images\/Mint.png",
               "product_link": "#matchabar-iced-matcha-tea-peach"
             }
           },
-          "1527719335929": {
+          "1528501364622": {
             "type": "floating_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Bottle3.png",
-              "product_link": "#matchabar-iced-matcha-tea-origina"
-            }
-          },
-          "1527719360836": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Bottle1.png",
-              "product_link": "#matchabar-iced-matcha-tea-original"
+              "image": "shopify:\/\/shop_images\/AppleGinger.png",
+              "product_link": "#matchabar-iced-matcha-tea-peach"
             }
           }
         },
         "block_order": [
-          "1527719277778",
-          "1527719306213",
-          "1527719335929",
-          "1527719360836"
+          "1528498121011",
+          "1528500845059",
+          "1528501317692",
+          "1528501364622"
         ],
         "settings": {
           "title": "Bottle",
@@ -259,25 +214,310 @@
       },
       "instagram-feed": {
         "type": "instagram-feed",
+        "settings": {
+          "title": "Follow @Matchabar"
+        }
+      },
+      "1528081839617": {
+        "type": "introducing-hustle",
+        "settings": {
+          "calls_to_action": "introducing-hustle"
+        }
+      },
+      "1528082006426": {
+        "type": "blog-posts",
+        "settings": {
+          "blog": "matchafam",
+          "title": "Bringing matcha  to the people",
+          "description": "<p>We believe in all natural energy that keeps your <br>hustle going strong all day.&nbsp; See where we&rsquo;ve been, <br>and keep up with where we&rsquo;re going.<\/p>"
+        }
+      },
+      "1528130295075": {
+        "type": "image-with-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/tea.jpg",
+          "layout": "left",
+          "title": "What is Matcha?",
+          "text": "<p>Getting curious about that green powder popping up at all your favorite cafes?&nbsp; Here&rsquo;s the full rundown on our Matcha, how it&rsquo;s made and why have so lovingly dubbed it the Better Energy.<\/p>",
+          "button_label": "Matcha 101",
+          "button_link": "shopify:\/\/pages\/one"
+        }
+      },
+      "matcha101": {
+        "type": "matcha101",
         "blocks": {
-          "1528058345452": {
-            "type": "partner",
+          "1528165177187": {
+            "type": "know_ur_matcha",
             "settings": {
-              "image": "",
-              "name": "",
-              "url": ""
+              "headline": "Get to know  your matcha",
+              "description": "<p>Matcha Tea is energy derived naturally from green tea <br> leaves, the process extracts caffine, anti-oxidents and the magical L-Theanine that give matcha it&rsquo;s unique form of focused andsustained energy to get you through your day.<\/p>",
+              "link_text": "Watch the Video",
+              "link_url": "http:\/\/youtube.com",
+              "thumbnail": "shopify:\/\/shop_images\/kym-thumb.jpg"
+            }
+          },
+          "1528414048531": {
+            "type": "what_is_matcha",
+            "settings": {
+              "headline": "What is Matcha?",
+              "description": "<p>Unlike regular green tea, Matcha tea is grown<br>in the shade to force the plants to produce<br>extra nutrients in order to grow big and strong. <br>We then harvest the power-packed leaves and stone grind to the traditional, neon green matcha powder, packed with all the Better Energy to get you through your day.<\/p>"
+            }
+          },
+          "1528413593042": {
+            "type": "icon_list",
+            "settings": {
+              "icon_list_headline": "The Basics",
+              "icon_list_1_icon": "shopify:\/\/shop_images\/rocket_def7f029-ee60-47bc-a531-55abfb256fea.png",
+              "icon_list_1_title": "Caffeine",
+              "icon_list_1_description": "<p>The beauty of matcha lies in the extended release nature of the caffeine, increasing the time it takes for the caffeine to break down in the bloodstream.&nbsp;<\/p>",
+              "icon_list_2_icon": "shopify:\/\/shop_images\/leaf_f8fab2ab-4153-48e3-b963-d1be16db8780.png",
+              "icon_list_2_title": "Antioxidents",
+              "icon_list_2_description": "<p>Matcha is one of the most concentrated sources of antioxidants on the planet, our footsoldiers against damaging agents in the bloodstream.<\/p>",
+              "icon_list_3_icon": "shopify:\/\/shop_images\/smiley.png",
+              "icon_list_3_title": "L-Theanine",
+              "icon_list_3_description": "<p>L-Theanine supports the activity of alpha brain waves, responsible for matcha&rsquo;s cool, calm, collected feeling we  love so much.<\/p>",
+              "icon_list_4_icon": "",
+              "icon_list_4_title": "",
+              "icon_list_4_description": ""
+            }
+          },
+          "1528166156790": {
+            "type": "stacks_up",
+            "settings": {
+              "title": "How it stacks up",
+              "description": "<p>With Matcha, it&rsquo;s more than just caffeine at work. But in case you were curious, here&rsquo;s how it stacks up to your daily caffine kicks.<\/p>",
+              "bottle_img": "shopify:\/\/shop_images\/Bottle4.png",
+              "hustle_img": "shopify:\/\/shop_images\/Hustle.png"
+            }
+          },
+          "1528409656407": {
+            "type": "imgage_with_text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/ceremonial-vs-culinary.jpg",
+              "layout": "right",
+              "title": "Ceremonial Grade  vs. Culinary Grade",
+              "text": "<p>Ceremonial grade denotes the highest quality <br> of matcha, meant to be consumed in a traditional Japanese tea ceremony, containing all the natural caffeine and L-Theinine we love so much.&nbsp; We follow the same steps at our partner Farm in Japan to ensure pure, clean energy in every sip.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1528166196363": {
+            "type": "banner",
+            "settings": {
+              "page": "include-the-perfect-cup"
+            }
+          },
+          "1528166209516": {
+            "type": "banner",
+            "settings": {
+              "page": "include-get-the-tools"
             }
           }
         },
         "block_order": [
-          "1528058345452"
+          "1528165177187",
+          "1528414048531",
+          "1528413593042",
+          "1528166156790",
+          "1528409656407",
+          "1528166196363",
+          "1528166209516"
+        ],
+        "settings": {}
+      },
+      "about": {
+        "type": "about",
+        "blocks": {
+          "1528414590806": {
+            "type": "video_tout",
+            "settings": {
+              "headline": "Good things come to those who hustle",
+              "description": "<p>It&rsquo;s the backbone of our business, and responsible for MatchaBar&rsquo;s very existence. The hustle is about going above and beyond to get the job done. Our community, the MatchaFam, defines itself by just this - hard work, passion, and a sense of purpose.<\/p>",
+              "link_text": "Watch the video",
+              "link_url": "https:\/\/youtube.com",
+              "thumbnail": "shopify:\/\/shop_images\/kym-thumb.jpg"
+            }
+          },
+          "1528414655605": {
+            "type": "icon_list",
+            "settings": {
+              "icon_list_headline": "Our Values",
+              "icon_list_1_icon": "shopify:\/\/shop_images\/rocket_def7f029-ee60-47bc-a531-55abfb256fea.png",
+              "icon_list_1_title": "Value 1",
+              "icon_list_1_description": "<p>value 1 content<\/p>",
+              "icon_list_2_icon": "shopify:\/\/shop_images\/leaf_f8fab2ab-4153-48e3-b963-d1be16db8780.png",
+              "icon_list_2_title": "Value 2",
+              "icon_list_2_description": "<p>value 2 content<\/p>",
+              "icon_list_3_icon": "shopify:\/\/shop_images\/smiley.png",
+              "icon_list_3_title": "Value 3",
+              "icon_list_3_description": "<p>value 3 content<\/p>",
+              "icon_list_4_icon": "shopify:\/\/shop_images\/smiley.png",
+              "icon_list_4_title": "Value 4",
+              "icon_list_4_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a sollicitudin turpis, in mollis arcu. Pellentesque at tortor porttitor, cursus lectus eget, finibus orci. Vestibulum vitae turpis et lectus semper sodales congue eu quam. In hac habitasse platea dictumst. In eu risus a arcu aliquet condimentum. Donec luctus interdum luctus. Maecenas vel ligula sapien. Fusce at semper tortor. Fusce non mauris vel sapien tempus tempor at eu nulla. Ut vel aliquet metus. Donec ultrices tempus dui sed varius. Vivamus vel ante eu libero luctus fringilla quis in ligula.<\/p>"
+            }
+          },
+          "1528415357578": {
+            "type": "image_with_text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/founders_573afef2-a1e5-4f70-a4ff-89d291c41ae9.jpg",
+              "layout": "right",
+              "title": "Our Matcha",
+              "text": "<p>We are proud to serve our very own blend of  ?ceremonial grade matcha sourced directly from  an independent family farm in Nishio, Japan. This partnership is the foundation of our business and  we make a pilgrimage to the farm every May for  the spring harvest!<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1528414590806",
+          "1528414655605",
+          "1528415357578"
+        ],
+        "settings": {}
+      },
+      "page-sections": {
+        "type": "page-sections",
+        "settings": {}
+      },
+      "team": {
+        "type": "team",
+        "blocks": {
+          "1528416675649": {
+            "type": "person",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/max.jpg",
+              "name": "Max Fortgang",
+              "title": "Founder"
+            }
+          },
+          "1528416743983": {
+            "type": "person",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/graham.jpg",
+              "name": "Graham Fortgang",
+              "title": "Founder"
+            }
+          },
+          "1528416762036": {
+            "type": "person",
+            "settings": {
+              "image": "",
+              "name": "Joe Kaufman",
+              "title": "Chief Financial Officer"
+            }
+          }
+        },
+        "block_order": [
+          "1528416675649",
+          "1528416743983",
+          "1528416762036"
         ],
         "settings": {
-          "title": ""
+          "title": "The Team"
+        }
+      },
+      "locate": {
+        "type": "locate",
+        "blocks": {
+          "1528420664804": {
+            "type": "cafe",
+            "settings": {
+              "name": "Los Angeles",
+              "image": "shopify:\/\/shop_images\/la-cafe.jpg",
+              "address": "<p>3534 Sunset Blvd,<\/p>\n<p>Los Angeles, CA<\/p>\n<p>90026<\/p>",
+              "hours": "<p>Mon to Fri&nbsp; 7:00AM - 6:00PM<\/p>\n<p>Sat and Sun 7:00AM - 6:00PM<\/p>",
+              "phone": "323-522-6810"
+            }
+          },
+          "1528420827048": {
+            "type": "cafe",
+            "settings": {
+              "name": "Chelsea",
+              "image": "shopify:\/\/shop_images\/chelsea-cafe.jpg",
+              "address": "<p>256 W 15th Street,<\/p>\n<p>New York, NY<\/p>\n<p>10011<\/p>",
+              "hours": "<p>Mon to Fri&nbsp; 8:00AM - 7:00PM<\/p>\n<p>Sat and Sun 10:00AM - 7:00PM<\/p>",
+              "phone": "212-627-1058"
+            }
+          },
+          "1528420943629": {
+            "type": "cafe",
+            "settings": {
+              "name": "SoHo",
+              "image": "shopify:\/\/shop_images\/soho-cafe.jpg",
+              "address": "<p>70 Prince Street<\/p>\n<p>New York, NY<\/p>\n<p>10012<\/p>",
+              "hours": "<p>Everyday&nbsp; 8:00AM - 7:00PM<\/p>",
+              "phone": ""
+            }
+          }
+        },
+        "block_order": [
+          "1528420664804",
+          "1528420827048",
+          "1528420943629"
+        ],
+        "settings": {
+          "headline": "Come and get it",
+          "description": "<p>Find a MatchaBar Cafe or bottle near you.<\/p>"
+        }
+      },
+      "legal-nav": {
+        "type": "legal-nav",
+        "settings": {
+          "menu": "legal"
+        }
+      },
+      "hero-tins": {
+        "type": "hero-tins",
+        "blocks": {
+          "1528506703038": {
+            "type": "floating_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Tin80.png",
+              "product_link": "#classic-matcha-tin"
+            }
+          }
+        },
+        "block_order": [
+          "1528506703038"
+        ],
+        "settings": {
+          "title": "Tins",
+          "description": "<h2>Ready-to-brew Ceremonial Grade matcha<\/h2>"
+        }
+      },
+      "hero-hustle": {
+        "type": "hero-hustle",
+        "blocks": {
+          "1528507767947": {
+            "type": "floating_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Hustle_67c45d72-ba04-48e7-a0ba-9bc63ea40d94.png",
+              "product_link": "#hustle-can"
+            }
+          },
+          "1528507820296": {
+            "type": "floating_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Hustle_67c45d72-ba04-48e7-a0ba-9bc63ea40d94.png",
+              "product_link": "#hustle-can-2"
+            }
+          }
+        },
+        "block_order": [
+          "1528507767947",
+          "1528507820296"
+        ],
+        "settings": {
+          "title": "Hustle",
+          "description": "<h2>The first ever Matcha-based energy drink<\/h2>\n<p>Choose a can to explore<\/p>"
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+      "1528081839617",
+      "1528082006426",
+      "1528130295075"
+    ]
   },
   "presets": {
     "Default": {
@@ -316,7 +556,11 @@
           "settings": {}
         }
       },
-      "content_for_index": []
+      "content_for_index": [
+        "collection-list",
+        "featured-collection",
+        "featured-product"
+      ]
     }
   }
 }
