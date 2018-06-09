@@ -22,15 +22,14 @@
           {% when 'hero_image' %}
           {% include 'responsive-image' with
               image: block.settings.image,
-              max_width: 400,
-              max_height: 400 %}
+              max_height: 420 %}
 
           {% when 'floating_image' %}
           <a href="{{block.settings.product_link}}" class="floating-image">
             {% include 'responsive-image' with
               image: block.settings.image,
-              max_width: 400,
-              max_height: 400 %}
+              psuedo_elements: true,
+              max_height: 420 %}
           </a>
 
           {% when 'call_to_action' %}

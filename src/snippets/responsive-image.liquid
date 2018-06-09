@@ -12,6 +12,7 @@
     - max_height: {Number} Max height of the image container
     - img_class: {String} class name of the <img />
     - wrapper_class: {String} class name of the <div> wrapper
+    - psuedo_elements: {Boolean}
 
     Usage:
     In your liquid template file, copy the following line
@@ -65,6 +66,9 @@
     data-sizes="auto"
     alt="{{ image.alt | escape }}"
   >
+  {% if psuedo_elements == true %}
+    <span class="psuedo"></span>
+  {% endif %}
 </div>
 
 <noscript>

@@ -7,4 +7,14 @@ import gumshoe from '../gumshoe';
   gumshoe.init({
     offset: 400
   });
+
+
+  // -- Smooth scroll
+  import('smoothscroll').then((mod) => {
+    const SmoothScroll = mod.default
+    return new SmoothScroll('a[href*="#"]', {
+      offset: 120
+    })
+  })
+    .catch((err) => window.console.log(err))
 })(window);

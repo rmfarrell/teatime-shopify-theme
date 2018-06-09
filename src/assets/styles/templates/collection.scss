@@ -79,49 +79,22 @@
   // Hide products when not activated by tabs on a tabbed layout
   article.tabbed .product-container {
     display: none;
-    position: relative;
-    padding-top: 5em;
-    overflow: hidden;
 
-    &:after, 
     &:before {
-      content: '';
-      background-color: $color-green;
-      width: 100%;
-      height: 100%;
-      position: absolute;
+      background-color: $color-green;;
+      content: "";
       display: block;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      opacity: 0;
-      transition: transform 0.25s, opacity 0.25s;
-      visibility: hidden;
-      pointer-events: none;
+      height: 0;
+      transition: height 0.3s;
     }
-
-    &:before {
-      transform: translate3d(25vw, 0, 0);
-      visibility: visible;
-    }
-
-    &:after {
-      transform: translate3d(-125vw, 0, 0);
-      visibility: visible;
-    }
-
+    
     &.active {
       display: inherit;
     }
 
-    &.in::before {
-      transform: translate3d(0, 0, 0) scaleX(1);
-      opacity: 1
-    }
-
-    &.out::after {
-      transform: translate3d(0, 0, 0) scaleX(1);
-      opacity: 1
+    &.in::before,
+    &.out::before {
+      height: 90vh;
     }
   }
 

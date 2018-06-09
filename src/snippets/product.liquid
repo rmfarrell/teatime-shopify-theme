@@ -27,13 +27,14 @@
       {% if featured_image != blank %}
         {% include 'responsive-image' with
           image: featured_image,
-          max_width: 400,
-          max_height: 400
+          max_width: 600,
+          max_height: 600
         %}
       {% endif %}
       {% if product.images.size > 1 %}
         {% comment %} TODO {% endcomment %}
       {% endif %}
+      {% include 'spiral' %}
     </div>
     <div class="text-container column">
       {% if product.metafields.decorators.tagline %}

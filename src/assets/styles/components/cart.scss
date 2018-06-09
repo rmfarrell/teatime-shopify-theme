@@ -41,6 +41,15 @@ $cart-gutter: 2em;
     margin-bottom: 0;
   }
 
+  .img-container {
+    text-align: center;
+    
+    img {
+      max-width: 16em;
+      max-height: 16em;
+    }
+  }
+
 
   .remove-product {
     color: $color-light-gray;
