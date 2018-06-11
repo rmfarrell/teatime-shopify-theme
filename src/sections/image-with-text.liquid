@@ -4,7 +4,8 @@
   title: section.settings.title,
   text: section.settings.text,
   button_label: section.settings.button_label,
-  button_link: section.settings.button_link
+  button_link: section.settings.button_link,
+  animate_in: section.settings.animate_in
 %}
 
 {% schema %}
@@ -53,6 +54,11 @@
         "type": "url",
         "id": "button_link",
         "label": "Button link"
+      },
+      {
+        "type": "checkbox",
+        "id": "animate_in",
+        "label": "Animate In?"
       }
     ],
     "presets": [

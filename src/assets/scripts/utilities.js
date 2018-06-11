@@ -78,6 +78,28 @@ function remove(el) {
   el.parentNode.removeChild(el);
 }
 
+/**
+ * Find an element based on criteria defined in a filter function
+ * @param {HTMLElement} el target element
+ * @param {Function} fn filter function should return 
+ */
+function parentUntil(el, fn = function () { return true }) {
+  if (!el.parentElement) return null;
+  if (fn(el.parentElement)) return el.parentElement;
+  return parentUntil(el.parentElement, fn);
+}
+
+/**
+ * Preload an image and apply callback with loaded image as argument
+ * @param {String} url 
+ * @param {Function} fn callback after loaded
+ */
+function preloadImage(url = '', fn = function () { }) {
+  const img = new Image()
+  img.src = url;
+  img.onload = () => { fn(img) }
+}
+
 
 module.exports = {
   $,
@@ -87,5 +109,7 @@ module.exports = {
   debounce,
   delegate,
   wrap,
-  remove
+  remove,
+  parentUntil,
+  preloadImage,
 }

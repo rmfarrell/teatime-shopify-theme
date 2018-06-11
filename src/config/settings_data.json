@@ -53,10 +53,16 @@
               "collection": "tins"
             }
           },
-          "1527628667426": {
+          "1528684296901": {
             "type": "collection",
             "settings": {
-              "collection": "gear"
+              "collection": "kits"
+            }
+          },
+          "1528677998635": {
+            "type": "collection",
+            "settings": {
+              "collection": "gear-1"
             }
           }
         },
@@ -64,7 +70,8 @@
           "1527628652276",
           "1527628659558",
           "1527628662985",
-          "1527628667426"
+          "1528684296901",
+          "1528677998635"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/matchabar-logo.png",
@@ -96,7 +103,13 @@
           "1527628730303": {
             "type": "collection",
             "settings": {
-              "collection": "gear"
+              "collection": "kits"
+            }
+          },
+          "1528677969210": {
+            "type": "collection",
+            "settings": {
+              "collection": "gear-1"
             }
           }
         },
@@ -104,11 +117,12 @@
           "1527628695942",
           "1527628718882",
           "1527628725573",
-          "1527628730303"
+          "1527628730303",
+          "1528677969210"
         ],
         "settings": {
           "footer_linklist": "footer",
-          "logo": "shopify:\/\/shop_images\/logo-white.png",
+          "logo": "shopify:\/\/shop_images\/matchabar-logo.png",
           "email_label": "Email label configurable",
           "social_instagram_link": "",
           "social_twitter_link": "",
@@ -240,7 +254,8 @@
           "title": "What is Matcha?",
           "text": "<p>Getting curious about that green powder popping up at all your favorite cafes?&nbsp; Here&rsquo;s the full rundown on our Matcha, how it&rsquo;s made and why have so lovingly dubbed it the Better Energy.<\/p>",
           "button_label": "Matcha 101",
-          "button_link": "shopify:\/\/pages\/one"
+          "button_link": "shopify:\/\/pages\/one",
+          "animate_in": true
         }
       },
       "matcha101": {
@@ -510,6 +525,22 @@
         "settings": {
           "title": "Hustle",
           "description": "<h2>The first ever Matcha-based energy drink<\/h2>\n<p>Choose a can to explore<\/p>"
+        }
+      },
+      "hero-gear": {
+        "type": "hero-gear",
+        "settings": {
+          "title": "Gear",
+          "description": "<h2>Get all the matcha swag<\/h2>\n<p>Some more copy here.<\/p>",
+          "image": ""
+        }
+      },
+      "hero-kits": {
+        "type": "hero-kits",
+        "settings": {
+          "title": "Kits",
+          "description": "<h2>Get all the Matcha Swag<\/h2><p>Some more copy goes here.<\/p>",
+          "image": "shopify:\/\/shop_images\/Bitmap.png"
         }
       }
     },

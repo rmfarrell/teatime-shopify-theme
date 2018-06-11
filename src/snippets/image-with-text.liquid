@@ -9,9 +9,11 @@
   - button label: label associated with the button
   - button link: link of the button
   - layout
+  - animate_in
 {%- endcomment -%}
 
-<section class="image-with-text dir-{{layout}} flex-columns wrapper">
+<section class="image-with-text dir-{{layout}} flex-columns wrapper"
+  {% if animate_in == true %} data-observe-intersection {% endif %}>
   <div class="img-container column">
     {% if image != blank %}
       {% include 'responsive-image' with

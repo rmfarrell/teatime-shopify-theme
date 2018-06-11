@@ -17,11 +17,11 @@
       <div class="teaser-container">
         {% for article in blog.articles limit: 3 %}
           {% if article.image %}
-            <a class="blog-post__item lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}" title="{{article.title}}" href="{{article.url}}">
+            <a class="blog-post__item lazyload" data-observe-intersection data-bgset="{% include 'responsive-bg-image', image: article.image %}" title="{{article.title}}" href="{{article.url}}">
               <h2 class="title"> {{ article.title }} </h2>
             </a>
           {% else %}
-            <a class="blog-post__item lazyload" title="{{article.title}}" href="{{article.url}}">
+            <a class="blog-post__item lazyload" data-observe-intersection title="{{article.title}}" href="{{article.url}}">
               <h2 class="title"> {{ article.title }} </h2>
             </a>
           {% endif %}

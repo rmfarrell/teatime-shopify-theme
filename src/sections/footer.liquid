@@ -4,7 +4,7 @@ TODO: hide on all but product pages
 {% endcomment %}
 {% if true  %}
   {% comment %} Loop through product categories {% endcomment %}
-  <div class="wrapper">
+  <div class="wrapper"  data-observe-intersection>
     {% include 'collection-list' with include_products: true %}
   </div>
 {% endif %}
