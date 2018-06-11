@@ -33,6 +33,14 @@
       z-index: -1;
       opacity: 0.6;
     }
+
+    .img-wrapper {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
   }
   
   .product-main {
@@ -184,6 +192,29 @@
     @media ($mq-medium) {
       width: auto;
       margin: 0 0 0 1em;
+    }
+  }
+
+  &.grid {
+    flex: 46% 0 0;
+
+    .product-main {
+      display: block;
+      margin-bottom: 6em;
+    }
+
+    .img-container {
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    
+    figcaption {
+      text-align: center;
+      font-size: 1.3em;
+      color: $color-light-gray;
+      background-color: white;
     }
   }
 }

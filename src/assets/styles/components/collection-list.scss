@@ -7,6 +7,7 @@ ul.collection-list {
   padding: 0;
   list-style-type: none;
   font-size: 1.1em;
+  text-align: center;
 
   li {
     flex: 50% 0 0;
@@ -22,7 +23,6 @@ ul.collection-list {
   }
   
   h4 {
-    text-align: center;
     font-size: 1.4em;
     margin-bottom: 0.4em;
   }
@@ -55,20 +55,24 @@ ul.collection-list {
 
   ul {
     list-style-type: none;
-    text-align: left;
     padding: 0;
     margin: 0 auto;
     max-width: 10em;
 
     li {
-      text-align: left;
       margin: 0 0 0.5em;
       padding:  0;
     }
   }
 
-  &.includes-products-true h4 {
-    text-align: left;
-    max-width: 10em;
+  &.includes-products-true {
+
+    ul, h4 {
+      max-width: 10em
+    }
+
+    @media ($mq-medium) {
+      text-align: left;
+    }
   }
 }
