@@ -1,11 +1,10 @@
-import { $$, $, each } from '../utilities'
+import { $$, $, each, preloadImage } from '../utilities'
 
 // delay tab switch
 const delay = 350;
 const activeCLassName = 'active'
-let loadDelay = 1000
 
-// Trigger a push state to highlight each tab
+// -- Trigger a push state to highlight each tab
 each($$('.hero'), ($hero) => {
   const $$floaters = $hero.querySelectorAll('.floating-image')
   each($$floaters, ($floater) => {
@@ -19,4 +18,21 @@ each($$('.hero'), ($hero) => {
       }, delay)
     })
   })
-})
+});
+
+
+// -- Introducing hustle script (homepage)
+(function () {
+  const $container = $('#introducing-hustle')
+  if (!$container) return;
+  // TODO: load apng or png
+  const $img = $container.querySelector('img')
+  const src = $img.getAttribute('data-custom-src')
+  preloadImage(src, () => {
+    $container.classList.remove('preload')
+    setTimeout(() => {
+      $container.classList.remove('preload')
+      $img.src = src
+    }, 600)
+  })
+})()

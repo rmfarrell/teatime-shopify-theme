@@ -1,4 +1,4 @@
-<div class="banner hero" id="introducing-hustle">
+<div class="banner hero preload" id="introducing-hustle">
   {% assign cta = section.settings.calls_to_action %}
   <div class="wrapper">
     <h1>
@@ -17,7 +17,7 @@
       </div>
     {% endif %}
   </div>
-  <img class="hustle-bottle-container" data-onload="loaded" data-onload-src="{{ '../assets/images/hustle-animated.png' | asset_url }}"/>
+  <img class="hustle-bottle-container" data-custom-src="{{ '../assets/images/hustle-animated.png' | asset_url }}"/>
 </div>
 
 {% schema %}

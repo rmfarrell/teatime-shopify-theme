@@ -1,4 +1,20 @@
 #introducing-hustle {
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    background-color: $color-green;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    transition: transform 2s;
+    z-index: 50;
+    transform: translate3d(100%, 0, 0);
+  }
 
   h1 {
     color: black;
@@ -8,6 +24,8 @@
     letter-spacing: initial;
     width: 100%;
     transform: initial;
+    transition: opacity 0.4s 0.8s, transform 0.4s 0.8s;
+    visibility: visible;
   }
 
   .hustle-svg-container {
@@ -22,17 +40,12 @@
     font-size: 0.75em;
     width: 42em;
     position: absolute;
-    top: 3em;
-    right: 50%;
-    transition: transform 1s, opacity 0.5s;
-    opacity: 0;
-    transform: translate(42em, 0);
+    top: -2em;
+    left: 38%;
+    margin-left: -21em;
+    transition: transform 1s 0.5s, opacity 0.5s 0.5s;
+    opacity: 1;
     pointer-events: none;
-
-    &.loaded {
-      transform: translate3d(14em, 0, 0);
-      opacity: 1;
-    }
   }
 
   .cta-container  {
@@ -47,9 +60,14 @@
     margin: 0 auto 1em;
     position: relative;
     z-index: 10;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s 0s, opacity 0.7s 1.6s, transform 0.5s 1.6s;
+
+    &:nth-of-type(1) {
+      transition-delay: 0s, 1.2s, 1.2s
+    }
 
     &:nth-of-type(2) {
+      transition-delay: 0s, 1.3s, 1.3s;
       background: transparent;
       color: $color-green;
     }
@@ -59,6 +77,9 @@
 
     h1 span {
       font-size: 1.8em;
+      transition: opacity 0.7s 1.1s, transform 0.5s 1.1s; 
+      display: block;
+      line-height: 1em;
     }
 
     .wrapper {
@@ -72,12 +93,8 @@
     .hustle-bottle-container {
       font-size: 1em;
       top: 50%;
-      right: 60%;
-      transform: translate(600px, -50%);
-
-      &.loaded {
-        transform: translate(50%, -50%);
-      }
+      left: 46%;
+      margin-top: -23em;
     }
 
     .cta-container {
@@ -112,5 +129,41 @@
       left: 25%;
       top: 1.2em;
     }
+  }
+
+  &.preload {
+
+    h1 {
+      opacity: 0;
+      transform: translateX(-20%);
+
+      span {
+        opacity: 0;
+        transform: translateY(0.5em);
+      }
+    }
+
+    .cta {
+      opacity: 0;
+      transform: translateY(-2em);
+    }
+
+    &:before {
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    .hustle-bottle-container {
+      transform: translate3d(100%, 0, 0);
+      opacity: 0;
+    }
+    
+    // .hustle-bottle-container {
+    //   transform: translate3d(14em, 0, 0);
+    //   opacity: 1;
+
+    //   @media ($mq-medium) {
+    //     transform: translate(50%, -50%);
+    //   }
+    // }
   }
 }

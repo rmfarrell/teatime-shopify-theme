@@ -89,6 +89,17 @@ function parentUntil(el, fn = function () { return true }) {
   return parentUntil(el.parentElement, fn);
 }
 
+/**
+ * Preload an image and apply callback
+ * @param {String} url 
+ * @param {Function} fn callback after loaded
+ */
+function preloadImage(url = '', fn = function () { }) {
+  const img = new Image()
+  img.src = url;
+  img.onload = () => { fn() }
+}
+
 
 module.exports = {
   $,
@@ -100,4 +111,5 @@ module.exports = {
   wrap,
   remove,
   parentUntil,
+  preloadImage,
 }

@@ -101,31 +101,6 @@ if (cookiesEnabled()) {
   );
 }
 
-// -- Dynamic handlers
-
-// apply class on load
-// move data-src to src on load
-// applies data-onload as class
-each($$('[data-onload]'), ($el) => {
-  const className = $el.getAttribute('data-onload')
-  const url = $el.getAttribute('data-onload-src')
-  preloadImage(url, ($img) => {
-    $el.setAttribute('src', url)
-    $el.classList.add(className)
-  })
-})
-
-// -- Utilities
-
-/**
- * Parse a string into HTML
- * @param {*} str 
- */
-function parseHtml(str = '') {
-  const parser = new DOMParser()
-  return parser.parseFromString(str, 'text/html')
-}
-
 // -- Lazy load event handlers
 
 // remove preload class when image has loaded
@@ -158,14 +133,3 @@ document.addEventListener('lazybeforeunveil', (e) => {
     observer.observe(targ)
   })
 })();
-
-/**
- * Preload an image and apply callback
- * @param {String} url 
- * @param {Function} fn callback after loaded
- */
-function preloadImage(url = '', fn = function () { }) {
-  const img = new Image();
-  img.src = url;
-  img.onload = () => { fn(img) }
-}
