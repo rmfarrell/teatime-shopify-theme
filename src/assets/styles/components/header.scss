@@ -4,6 +4,7 @@
   position: fixed;
   width: 100%;
   z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   
   // TODO: this is too deeply-nested
   header {
@@ -106,7 +107,6 @@
     // shopping cart button
     .cart-button {
       color: black;
-      opacity: 0.4;
       line-height: $header-height;
       font-size: 2em;
       padding: 0 1em;
@@ -133,14 +133,14 @@
 
     @media ($mq-medium) {
       align-items: center;
-      @include constrain;
+      justify-content: flex-end;
 
       h1 {
-        width: 140px;
+        flex: 140px 0 0;
       }
 
       .hamburger {
-        display: none
+        display: none;
       }
 
       nav,
@@ -154,7 +154,7 @@
         opacity: 1;
         background: transparent;
         overflow: visible;
-        flex: 1 1 auto;
+        flex: calc(#{$max-width} - 7em) 0 1;
 
         > ul {
           text-align: right;
@@ -193,9 +193,14 @@
           margin-bottom: 2em;
         }
       }
-    }
-    .cart-button {
-      opacity: 1;
-    }
+    
+      .cart-button {
+        opacity: 1;
+        flex: 5em 0 0;
+        padding: 0;
+        text-align: center;
+        border-left: 1px solid rgba(0,0,0,0.1);
+      }
+    } // end of media query
   }
 }

@@ -1,4 +1,4 @@
-import { $, $$, each } from '../utilities';
+import { $, $$, each, scrollToTarget } from '../utilities';
 import fetch from 'unfetch';
 import serialize from 'form-serialize'
 import jq from 'jquery';
@@ -37,8 +37,9 @@ each($$('form[action="/cart/add"]'), ($form) => {
 function Tabs() {
   const activeClassName = 'active';
   const expandMobileClass = 'expanded';
-  const animationTime = 250;
+  const animationTime = 300;
   const $tabbedContainer = $('article.tabbed');
+  const $tabsParent = $tabbedContainer.querySelector('nav.tabs')
   let $$tabs;
   let $$pages;
   let $currentPage;
@@ -130,6 +131,7 @@ function Tabs() {
 
   /**
    * Set the active class on the current the section content
+   * Trigger in and out animations for transition effect.
    * @param {String} hash 
    */
   function _updatePage(hash = '') {
@@ -150,6 +152,11 @@ function Tabs() {
     })
       .then(() => {
         $new.classList.add('in', activeClassName)
+        $tabsParent.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        })
+
         return setTimeout(() => {
           $new.classList.remove('in')
         }, animationTime)

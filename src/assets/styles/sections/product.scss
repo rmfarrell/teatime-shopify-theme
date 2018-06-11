@@ -1,6 +1,5 @@
 .product-container {
-  padding-top: 6em;
-  
+
   p, 
   h5.tagline, 
   .pack-info span, 
@@ -9,13 +8,30 @@
     color: $color-light-gray;
   }
 
+  .wrapper {
+    padding-top: 6em;
+  }
+
   .product-main {
     margin: 0 auto 10em
   }
 
   .product-img {
+    margin-bottom: 4em;
+    position: relative;
+
     img {
       filter: drop-shadow(-20px 22px 25px rgba(0, 0, 0, 0.25));
+    }
+
+    svg {
+      position: absolute;
+      width: 80%;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      z-index: -1;
+      opacity: 0.6;
     }
   }
   
