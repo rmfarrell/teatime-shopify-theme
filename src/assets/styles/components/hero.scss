@@ -143,4 +143,11 @@
       letter-spacing: -4px;
     }
   }
+
+  &.full-height {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }

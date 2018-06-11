@@ -125,7 +125,6 @@ document.addEventListener('lazybeforeunveil', (e) => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.intersectionRatio > 0) entry.target.classList.remove('out-of-viewport');
-      else entry.target.classList.add('out-of-viewport');
     });
   }, observerOptions);
   each(targs, (targ) => {

@@ -119,8 +119,7 @@
           height: 100%;
           top: 0;
           left: 0;
-          background-color: $color-pink;
-          mix-blend-mode: multiply;
+          background-color: $color-green;
           opacity: 0;
           transition: opacity 0.3s;
         }
@@ -128,7 +127,7 @@
         &:hover {
         
           &:after {
-            opacity: 1;
+            opacity: 0.8;
           }
 
           h2 {
