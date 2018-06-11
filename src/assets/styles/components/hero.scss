@@ -45,6 +45,13 @@
   }
 
   .floating-image {
+    opacity: 1;
+    transition: opacity 0.3s 0s, visibility 0s;
+
+    &.preload {
+      visibility: hidden;
+      opacity: 0;
+    }
 
     .responsive-image__wrapper  {
 
@@ -86,11 +93,11 @@
           width: 90%;
           left: 5%;
         }
-
       }
     }
     
-    &.active {
+    &.preload,
+    &:hover {
 
       img {
         transform: translateY(-12%);

@@ -30,11 +30,12 @@
         {% case block.type %}
 
           {% when 'floating_image' %}
-          <a href="{{block.settings.product_link}}" class="floating-image">
+          <a href="{{block.settings.product_link}}" class="floating-image preload">
             {% include 'responsive-image' with
               image: block.settings.image,
               psuedo_elements: true,
-              max_height: 420 %}
+              max_height: 420
+            %}
           </a>
 
           {% when 'call_to_action' %}

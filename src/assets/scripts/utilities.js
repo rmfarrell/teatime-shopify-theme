@@ -78,6 +78,17 @@ function remove(el) {
   el.parentNode.removeChild(el);
 }
 
+/**
+ * Find an element based on criteria defined in a filter function
+ * @param {HTMLElement} el target element
+ * @param {Function} fn filter function should return 
+ */
+function parentUntil(el, fn = function () { return true }) {
+  if (!el.parentElement) return null;
+  if (fn(el.parentElement)) return el.parentElement;
+  return parentUntil(el.parentElement, fn);
+}
+
 
 module.exports = {
   $,
@@ -87,5 +98,6 @@ module.exports = {
   debounce,
   delegate,
   wrap,
-  remove
+  remove,
+  parentUntil,
 }

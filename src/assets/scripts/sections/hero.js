@@ -3,8 +3,9 @@ import { $$, $, each } from '../utilities'
 // delay tab switch
 const delay = 350;
 const activeCLassName = 'active'
+let loadDelay = 1000
 
-// trigger a push state to highlight each tab
+// Trigger a push state to highlight each tab
 each($$('.hero'), ($hero) => {
   const $$floaters = $hero.querySelectorAll('.floating-image')
   each($$floaters, ($floater) => {

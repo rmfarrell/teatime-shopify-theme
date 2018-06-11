@@ -15,7 +15,7 @@ import 'promise-polyfill/src/polyfill';
 
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
-import { $, $$, each, debounce } from '../utilities';
+import { $, $$, each, debounce, parentUntil } from '../utilities';
 import { resizeEvent, cart } from '../events';
 import { windowWhen } from 'rxjs/operator/windowWhen';
 import { Cart } from '../cart'
@@ -125,6 +125,39 @@ function parseHtml(str = '') {
   const parser = new DOMParser()
   return parser.parseFromString(str, 'text/html')
 }
+
+// -- Lazy load event handlers
+
+// remove preload class when image has loaded
+document.addEventListener('lazybeforeunveil', (e) => {
+  const $container = parentUntil(e.target, (p) => p.classList.contains('preload'));
+  if ($container) {
+    $container.classList.remove('preload')
+    setTimeout(() => {
+      $container.classList.remove('preload')
+    }, 300)
+  }
+});
+
+// -- Intersection observer event handlers
+// add an out-of-viewport class to all elements with 'data-observe-intersection'
+// remove this when in view.
+// early return if window.IntersectionObserver is undefined
+(function () {
+  if (!window.IntersectionObserver) return;
+  const targs = document.querySelectorAll('[data-observe-intersection]');
+  const observerOptions = {}
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > 0) entry.target.classList.remove('out-of-viewport');
+      else entry.target.classList.add('out-of-viewport');
+    });
+  }, observerOptions);
+  each(targs, (targ) => {
+    targ.classList.add('out-of-viewport')
+    observer.observe(targ)
+  })
+})();
 
 /**
  * Preload an image and apply callback
