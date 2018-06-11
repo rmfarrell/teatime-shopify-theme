@@ -53,16 +53,16 @@
               "collection": "tins"
             }
           },
-          "1528677998635": {
-            "type": "collection",
-            "settings": {
-              "collection": "gear-1"
-            }
-          },
           "1528684296901": {
             "type": "collection",
             "settings": {
               "collection": "kits"
+            }
+          },
+          "1528677998635": {
+            "type": "collection",
+            "settings": {
+              "collection": "gear-1"
             }
           }
         },
@@ -254,7 +254,8 @@
           "title": "What is Matcha?",
           "text": "<p>Getting curious about that green powder popping up at all your favorite cafes?&nbsp; Here&rsquo;s the full rundown on our Matcha, how it&rsquo;s made and why have so lovingly dubbed it the Better Energy.<\/p>",
           "button_label": "Matcha 101",
-          "button_link": "shopify:\/\/pages\/one"
+          "button_link": "shopify:\/\/pages\/one",
+          "animate_in": true
         }
       },
       "matcha101": {

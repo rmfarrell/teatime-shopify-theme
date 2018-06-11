@@ -26,13 +26,13 @@ each($$('.hero'), ($hero) => {
   const $container = $('#introducing-hustle')
   if (!$container) return;
   // TODO: load apng or png
-  const $img = $container.querySelector('img')
-  const src = $img.getAttribute('data-custom-src')
-  preloadImage(src, () => {
+  const $imgContainer = $container.querySelector('.hustle-bottle-container')
+  const src = $imgContainer.getAttribute('data-custom-src')
+  preloadImage(src, ($img) => {
     $container.classList.remove('preload')
     setTimeout(() => {
       $container.classList.remove('preload')
-      $img.src = src
-    }, 600)
+      $imgContainer.appendChild($img)
+    }, 200)
   })
 })()

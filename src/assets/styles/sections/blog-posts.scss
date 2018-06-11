@@ -142,18 +142,30 @@
           width: 50%;
           padding-bottom: 70%;
           float: right;
+
+          &:before{
+            transition-delay: 0.3s;
+          }
         }
         &:nth-of-type(2) {
           width: 45%;
           padding-bottom: 45%;
           float: left;
           margin-top: 6em;
+
+          &:before{
+            transition-delay: 0.4;
+          }
         }
         &:nth-of-type(3) {
           width: 30%;
           padding-bottom: 30%;
           float: left;
           margin-left: 15%;
+
+          &:before{
+            transition-delay: 0.2s;
+          }
         }
       }
     }
