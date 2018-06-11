@@ -4,7 +4,7 @@ import serialize from 'form-serialize'
 import jq from 'jquery';
 import { cart } from '../events';
 
-// AJAX-ify the form
+// -- AJAX-ify the form
 each($$('form[action="/cart/add"]'), ($form) => {
   $form.addEventListener('submit', (ev) => {
     ev.preventDefault()
@@ -26,6 +26,20 @@ each($$('form[action="/cart/add"]'), ($form) => {
 
     return false;
   })
+})
+
+// -- Intialize the tabbed section
+if ($('article.tabbed')) {
+  Tabs().init(window.location.hash)
+}
+
+// -- Swap images on hover/touch
+each($$('[data-product-img-count]'), ($container) => {
+  if (parseInt($container.getAttribute('data-product-img-count'), 10) < 2) {
+    return;
+  }
+  const ec = ElementCycler($container.querySelectorAll('.img-wrapper'))
+  $container.addEventListener('click', ec.next)
 })
 
 /**
@@ -161,11 +175,48 @@ function Tabs() {
           $new.classList.remove('in')
         }, animationTime)
       })
-      .catch((e) => {
-        console.log(e)
-      })
+      .catch((e) => console.log(e))
   }
   return { update, init }
 }
 
-Tabs().init(window.location.hash)
+/**
+ * Cycle an active state accross an array of elements
+ * @param {HTMLNodeList} $$imgs
+ * @param {String} activeClass
+ * @return {Object.Function} next applies the activeclass on the next element in $$imgs
+ */
+function ElementCycler($$imgs, activeClass = 'active') {
+  $$imgs = Array.prototype.slice.call($$imgs)
+  let activeIdx = _getActiveIndex()
+
+  function next() {
+    _reset()
+    activeIdx = _getNext();
+    $$imgs[activeIdx].classList.add(activeClass)
+  }
+
+  function _reset() {
+    $$imgs.forEach(($img) => {
+      $img.classList.remove(activeClass);
+    });
+  }
+
+  function _getNext() {
+    return $$imgs.length > activeIdx + 1 ? activeIdx + 1 : 0
+  }
+
+  function _getActiveIndex() {
+    let out = 0
+    $$imgs.forEach(($img, idx) => {
+      if ($img.classList.contains(activeClass)) {
+        out = idx;
+      }
+    });
+    return out;
+  }
+
+  return {
+    next,
+  }
+}

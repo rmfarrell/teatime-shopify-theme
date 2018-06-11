@@ -116,22 +116,9 @@
     }
   }
 
-  .product-wrapper-grid {
+  .products-wrapper-grid {
     flex-wrap: wrap;
     max-width: 1000px;
     margin: 0 auto;
-
-    .product-container {
-      flex: 46% 0 0;
-    }
-
-    .product-main {
-      display: block;
-      margin-bottom: 6em;
-    }
-
-    @media ($mq-medium) {
-        
-    }
   }
 }

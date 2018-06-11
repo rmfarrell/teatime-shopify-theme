@@ -9,9 +9,14 @@
   {% endif %}
   
   <!-- content -->
-  <div class="product-wrapper-grid flex-columns">
+  <div class="products-wrapper-grid flex-columns">
     {% for product in collection.products %}
-      {% include 'product' with product: product, section_id: forloop.index, css_class: 'column' %}
+      {% include 'product' with 
+        product: product, 
+        section_id: forloop.index,
+        css_class: 'column grid',
+        img_max_height: 320 
+      %}
     {% endfor %}
   </div>
 </article>
