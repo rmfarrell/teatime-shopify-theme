@@ -125,6 +125,7 @@
 
     small {
       flex: 1 1 100%;
+      text-align: left;
     }
     
     .footer-links {
@@ -182,13 +183,10 @@
       }
     }
 
-    a {}
-
     .social-links {
-
       a {
         font-size: 3em;
-        font-weight: bold;
+        font-weight: 500;
         font-size: 1.3em;
         color: $color-green;
 

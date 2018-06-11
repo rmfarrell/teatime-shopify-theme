@@ -1,0 +1,25 @@
+{% include 'hero' with section: section, css_class: 'gear' %}
+
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Hustle"
+      },
+      {
+        "id": "description",
+        "type": "html",
+        "label": "Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ]
+  }
+{% endschema %}

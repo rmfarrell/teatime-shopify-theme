@@ -107,4 +107,31 @@
       color: red;
     }
   }
+
+  // -- Grid layout
+  article.grid {
+
+    > .shopify-section {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+  }
+
+  .product-wrapper-grid {
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .product-container {
+      flex: 46% 0 0;
+    }
+
+    .product-main {
+      display: block;
+      margin-bottom: 6em;
+    }
+
+    @media ($mq-medium) {
+        
+    }
+  }
 }

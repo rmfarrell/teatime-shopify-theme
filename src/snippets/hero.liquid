@@ -15,14 +15,19 @@
     <div class='description rte'>{{section.settings.description}}</div>
   </div>
   <div class="hero-images-container">
+
+    {% if section.settings.image %}
+      <div class="hero-image" {{ block.shopify_attributes }}>
+        {% include 'responsive-image' with
+          image: section.settings.image,
+          max_height: 600,
+          max_width: 720 %}
+      </div>
+    {% endif %}
+
     {% for block in section.blocks %}
       <div class="hero-image" {{ block.shopify_attributes }}>
         {% case block.type %}
-
-          {% when 'hero_image' %}
-          {% include 'responsive-image' with
-              image: block.settings.image,
-              max_height: 420 %}
 
           {% when 'floating_image' %}
           <a href="{{block.settings.product_link}}" class="floating-image">
