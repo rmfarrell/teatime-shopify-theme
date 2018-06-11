@@ -26,41 +26,41 @@
 
   form {
     font-size: 0;
+  }
 
-     label {
-       display: block;
-       font-weight: 500;
-       margin:  0 0 1em;
-       font-size: 1.7rem;
-     }
+  label {
+    display: block;
+    font-weight: 500;
+    margin:  0 0 1em;
+    font-size: 1.7rem;
+  }
 
-     input[type=email],
-     input[type=text]  {
-       background-color: rgba(255,255,255,0.05);
-       transition: background-color 0.3s;
-       color: white;
-       padding: 0 1em;
-       border: 1px solid transparent;
-       width: auto;
+  input[type=email],
+  input[type=text]  {
+    background-color: rgba(255,255,255,0.05);
+    transition: background-color 0.3s;
+    color: white;
+    padding: 0 1em;
+    border: 1px solid transparent;
+    width: auto;
 
-       &:focus {
-        background-color: rgba(0,0,0,0.8);
-       }
+    &:focus {
+     background-color: rgba(0,0,0,0.8);
+    }
 
-       &::placeholder {
-         opacity: 0.5;
-       }
-     }
-
-     input[type=submit] {
-      font-size: 2.2rem;
-      padding: 0 0.5em;
-      background-color: white;
-      color: $color-dark-text;
-      font-family: sans-serif;
-      border-radius: 0;
+    &::placeholder {
+      opacity: 0.5;
     }
   }
+
+  input[type=submit] {
+   font-size: 2.2rem;
+   padding: 0 0.5em;
+   background-color: white;
+   color: $color-dark-text;
+   font-family: sans-serif;
+   border-radius: 0;
+ }
 
   .social-links {
     margin: 1em auto 1.5em;
@@ -97,7 +97,16 @@
     text-align: left;
 
     .logo-image {
-      margin: 0 auto 3rem;
+      margin: 0 0 3rem;
+      text-align: left;
+
+      .responsive-image__wrapper {
+        margin: 0;
+      }
+    }
+
+    label {
+      text-align: left;
     }
 
     .wrapper {
@@ -132,6 +141,60 @@
 
       &:last-child {
         padding-right: 0;
+      }
+    }
+  }
+
+  // -- White variant
+  &.white {
+    background-color: white;
+    color: $color-dark-text;
+    text-align: center;
+    padding: 3em 0 2rem;
+    background: url('../images/green-line.png') 0 0 repeat-x;
+    background-size: 900px;
+    padding-top: 6em;
+
+    .logo-image {
+      margin-bottom: 3.5em;
+    }
+
+    .form-email-wrapper {
+      background-color: #FCFCFC;
+      border: 1px solid #E5E5E5;
+      border-radius: 2.5rem;
+      display: inline-block;
+
+      input[type=email],
+      input[type=text] {
+        background-color: transparent;
+        margin: 0.1em;
+        color: $color-dark-text;
+        width: 25rem;
+      }
+
+      input[type=submit] {
+        background-color: $color-green;
+        border-radius: 1em;
+        padding: 0 0.4em;
+        color: white;
+        margin: 0.1em;
+      }
+    }
+
+    a {}
+
+    .social-links {
+
+      a {
+        font-size: 3em;
+        font-weight: bold;
+        font-size: 1.3em;
+        color: $color-green;
+
+        &:hover {
+          color: $color-dark-text;
+        }
       }
     }
   }

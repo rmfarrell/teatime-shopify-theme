@@ -9,16 +9,18 @@ TODO: hide on all but product pages
   </div>
 {% endif %}
 
-<footer id="global-footer">
+<footer id="global-footer" class="white">
   <div class="wrapper">
     <div class="column">
       {% comment %} Logo {% endcomment %}
       <a href="/" itemprop="url"{% if section.settings.logo != blank %} class="logo-image"{% endif %}>
+
         {% if section.settings.logo != blank %}
-          <img src="{{ section.settings.logo | img_url: image_size }}"
-              srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-              alt="{{ section.settings.logo.alt | default: shop.name }}"
-              itemprop="logo">
+          {% include 'responsive-image' with
+            image: section.settings.logo,
+            max_width: 140,
+            max_height: 60
+          %}
         {% endif %}
       </a>
 
@@ -34,21 +36,23 @@ TODO: hide on all but product pages
         {{ form.errors | default_errors }}
 
         <label for="ContactFormEmail">{{ section.settings.email_label }}</label>
-        <input type="email"
-          name="contact[email]"
-          id="ContactFormEmail"
-          placeholder="{{ 'contact.form.email' | t }}"
-          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-          spellcheck="false"
-          autocomplete="off"
-          autocapitalize="off">
+        <div class="form-email-wrapper">
+          <input type="email"
+            name="contact[email]"
+            id="ContactFormEmail"
+            placeholder="{{ 'contact.form.email' | t }}"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            spellcheck="false"
+            autocomplete="off"
+            autocapitalize="off">
 
-        <input hidden
-          name="contact[context]"
-          id="ContactFormContext"
-          value="footer-email">
+          <input hidden
+            name="contact[context]"
+            id="ContactFormContext"
+            value="footer-email">
 
-        <input type="submit" class="button" value="&rarr;">
+          <input type="submit" class="button" value="&rarr;">
+        </div>
 
       {% endform %}
     </div>
