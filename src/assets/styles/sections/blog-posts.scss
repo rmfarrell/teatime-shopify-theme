@@ -42,12 +42,13 @@
         top: 0;
         background-color: #F6FAF6;
         display: block;
-        transform: translate3d(100%, 0, 0);
+        transform: scaleX(0);
+        transform-origin: 0% 0%;
         transition: transform 0.5s 0.2s;
       }
 
       &.out-of-viewport:before {
-        transform: translate3d(0, 0, 0);
+        transform: scaleX(1);
       }
 
       h2 {
@@ -79,7 +80,6 @@
   }
 
   @media ($mq-medium) {
-    overflow: hidden;
     max-width: $max-width;
     padding-left: $gutter;
     padding-right: $gutter;
@@ -93,7 +93,6 @@
       width: 80%;
       margin: 0 auto;
       max-width: 750px;
-      overflow: auto;
     }
 
     .teaser-container {
@@ -125,6 +124,7 @@
         }
 
         &:hover {
+          box-shadow: 0 20px 70px rgba(0,0,0,0.17);
         
           &:after {
             opacity: 0.8;
@@ -179,6 +179,13 @@
       a {
         font-weight: 500;
       }
+    }
+
+    // Clearfix
+    &:after {
+      content: "";
+      clear: both;
+      display: table;
     }
   }
 }
