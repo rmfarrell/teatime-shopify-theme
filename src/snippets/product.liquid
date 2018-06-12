@@ -151,15 +151,15 @@
   </div>
 
   <!-- Page Includes -->
-  {% if product.metafields.snippet.page_snippet.size > 0 %}
-    <aside class="includes">
+  <div class="wrapper pale-green">
+    {% if product.metafields.snippet.page_snippet.size > 0 %}
       {% include 'page-content-snippets', with handles: product.metafields.snippet.page_snippet %}
-    </aside>
-  {% endif  %}
+    {% endif  %}
+  </div>
 
   <!-- Nutrition Information -->
   {% if product.metafields.nutrition_info.show == 'true' %}
-    <div class="secondary-callout wrapper">
+    <div class="wrapper pale-green">
       <div class="nutrition-information">
         <h3>{{ 'nutrition_facts.headline' | t }}</h3>
         <table>

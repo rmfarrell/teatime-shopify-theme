@@ -1,0 +1,19 @@
+.secondary-callout {
+  padding: 3em 0;
+
+  p, 
+  h5.tagline, 
+  .pack-info span, 
+  ul,
+  td {
+    color: $color-light-gray;
+  }
+
+  text-align: center;
+  font-size: 1.1em;
+
+  @media ($mq-medium) {
+    text-align: left;
+    font-size: 1.3em;
+  }
+}
