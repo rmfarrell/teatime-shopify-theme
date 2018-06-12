@@ -2,6 +2,10 @@ section.video-tout {
   position: relative;
   margin-bottom: 6em;
 
+  .img-container {
+    box-shadow: 0 20px 70px rgba(0,0,0,0.17)
+  }
+
   .text-container {
     padding: 0 0 4em 0;
     
@@ -37,7 +41,6 @@ section.video-tout {
 
   .play-link {
     font-weight: 500;
-    // TODO fix font sizes globally
     font-size: 1.4em;
     margin-top: 2em;
 
