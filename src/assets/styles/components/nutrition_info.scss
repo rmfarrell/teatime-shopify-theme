@@ -1,5 +1,14 @@
 .nutrition-information {
 
+  p,
+  td {
+    color: $color-light-gray;
+  }
+
+  strong {
+    color: $color-dark-text;
+  }
+
   table {
     width: 100%;
   }

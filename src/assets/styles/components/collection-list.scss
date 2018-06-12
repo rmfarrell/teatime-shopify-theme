@@ -38,19 +38,16 @@ ul.collection-list {
 
   img {
     flex: 0;
+    filter: drop-shadow(-0.5em 0.5em 1em rgba(0, 0, 0, 0.15));
   }
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: #9f9f9f;
     display: block;
     height: 100%;
     padding: 1em 5%;
-    transition: box-shadow 0.4s;
-
-    &:hover {
-      box-shadow: inset 0 0 6em rgba(0,0,0,0.15);
-    }
+    transition: box-shadow 0.4s
   }
 
   ul {
@@ -81,8 +78,6 @@ ul.collection-list {
 #shopify-section-footer {
   
   .out-of-viewport ul.collection-list > li {
-    // transition: opacity 0.4s, transform 0.4s;
-    // transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 25%, 0);
     opacity: 0;
   }

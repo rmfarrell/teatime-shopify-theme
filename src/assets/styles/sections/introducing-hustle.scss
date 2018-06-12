@@ -2,6 +2,10 @@
   position: relative;
   overflow: hidden;
 
+  .wrapper {
+    width: 100%;
+  }
+
   &:before {
     content: "";
     background-color: $color-green;
@@ -43,7 +47,7 @@
     top: -2em;
     left: 38%;
     margin-left: -21em;
-    transition: transform 1s 0, opacity 0.5s 0;
+    transition: transform 1s 0s, opacity 0.5s 0s;
     opacity: 1;
     pointer-events: none;
   }
@@ -74,6 +78,10 @@
   }
 
   @media ($mq-medium) {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     h1 span {
       font-size: 1.8em;

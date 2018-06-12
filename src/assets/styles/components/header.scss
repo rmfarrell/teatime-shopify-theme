@@ -70,6 +70,10 @@
           color: inherit;
           cursor: pointer;
 
+          &.active {
+            color: $color-green;
+          }
+
           &:hover {
             color: $color-green;
           }
@@ -183,6 +187,8 @@
         left: 0;
         top: $header-height;
         background-color: $color-very-light-gray;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
       }
 
       ul.collection-list {

@@ -34,14 +34,13 @@
 
   .hero-images-container {
     display: flex;
-    margin:  7em 0 5em;
-    justify-content: flex-end;
+    margin:  2em 0 5em;
+    justify-content: flex-start;
   }
 
   .hero-image {
-    flex: 1;
-    margin: 0 3%;
-    position: relative;
+    flex: auto 1 1;
+    padding: 0 2%;
   }
 
   .floating-image {
@@ -118,6 +117,26 @@
     }
   }
 
+  &.full-height {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: 500px) {
+    justify-content: space-around;
+    
+    .hero-images-container {
+      margin:  2em 0 5em;
+    }
+
+    .hero-image {
+      flex: 20em 0 1;
+      position: relative;
+    }
+  }
+
   @media ($mq-medium) {
     font-size: 1.5em;
     padding-top: 1em;
@@ -130,12 +149,17 @@
 
     .hero-images-container {
       position: absolute;
-      width: 50%;
+      width: 60%;
       top: 0;
       right: 0;
       height: 100%;
       align-items: center;
       margin: 0;
+      justify-content: flex-end;
+    }
+
+    .hero-image {
+      flex: 12em 0 1;
     }
 
     h1 {

@@ -1,13 +1,5 @@
 .product-container {
 
-  p, 
-  h5.tagline, 
-  .pack-info span, 
-  ul,
-  td {
-    color: $color-light-gray;
-  }
-
   .wrapper {
     padding-top: 6em;
   }
@@ -108,27 +100,10 @@
     line-height: 1em;
   }
 
-  .secondary-callout {
-    background-color: $color-pale-green;
-    box-shadow: -1200px 0px 0px 0px $color-pale-green;
-    padding-top: 5em;
-    padding-bottom: 5em;
-  }
-
-  // Content called in here is from page.includes
-  .includes {
-    text-align: center;
-    font-size: 1.1em;
-
-    @media ($mq-medium) {
-      text-align: left;
-      font-size: 1.3em;
-    }
-  }
-
   .nutrition-information {
     font-size: 1.1em;
     max-width: 30em;
+    padding-bottom: 6em;
 
     @media ($mq-medium) {
       font-size: 1.3em;

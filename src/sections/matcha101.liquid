@@ -27,6 +27,7 @@
         {% when 'know_ur_matcha' %}
         {% include 'video-tout' with 
           headline: block.settings.headline,
+          superhead: block.settings.superhead,
           description: block.settings.description,
           thumbnail: block.settings.thumbnail,
           link_text: block.settings.link_text,
@@ -132,6 +133,11 @@
             "type": "text",
             "id": "headline",
             "label": "Headline"
+          },
+          {
+            "type": "text",
+            "id": "superhead",
+            "label": "Superhead"
           },
           {
             "type": "richtext",

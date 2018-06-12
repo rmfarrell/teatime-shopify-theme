@@ -30,11 +30,9 @@ import '../sections/locate'
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 
-// -- Resize handler
-const debouncedResize = debounce(() => window.dispatchEvent(resizeEvent), 250);
-window.addEventListener('resize', debouncedResize);
+// -- Global Nav
 
-// -- Toggle header
+// - Toggle header
 const $globalHeader = $('#global-header')
 const $navToggle = $globalHeader.querySelector('.hamburger')
 const $nav = $globalHeader.querySelector('nav')
@@ -44,24 +42,39 @@ $navToggle.addEventListener('click', () => {
   $nav.classList.toggle('is-active');
 });
 
-// -- Open targetd el if data-open directive present
+// - Highlight nav
+const $navAs = $globalHeader.querySelectorAll('a')
+each($navAs, ($a) => {
+  if (window.location.href.includes($a.getAttribute('href'))) {
+    $a.classList.add('active')
+  }
+})
+
+// - Open targetd el if data-open directive present
 const $$parentTogglers = $$('[data-open]')
 each($$parentTogglers, (el) => {
   const targ = $(el.getAttribute('data-open'))
-  el.addEventListener('click', () => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
     targ.classList.toggle('open')
     el.classList.toggle('open')
   })
 })
 
-// -- Shopping cart
+// -- Shopping cart tray
 const $closeCartButton = $('[data-close-shopping-cart-tray]')
 const $shoppingCartIcon = $('[data-shopping-cart-icon]')
 const $cartItemCounter = $shoppingCartIcon.querySelector('[data-cart-item-counter]');
+
+// - initialize shopping cart
 const shoppingCart = Cart((c) => {
   $cartItemCounter.innerText = `${c.item_count}`;
 })
+
+// - open the cart when button is clicked
 $closeCartButton.addEventListener('click', shoppingCart.close)
+
+// - close cart tray when close button is clicked
 $shoppingCartIcon.addEventListener('click', (e) => {
   e.preventDefault();
   shoppingCart.open()
@@ -125,7 +138,6 @@ document.addEventListener('lazybeforeunveil', (e) => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.intersectionRatio > 0) entry.target.classList.remove('out-of-viewport');
-      else entry.target.classList.add('out-of-viewport');
     });
   }, observerOptions);
   each(targs, (targ) => {
