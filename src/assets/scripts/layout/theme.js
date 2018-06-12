@@ -34,7 +34,9 @@ window.theme = window.theme || {};
 const debouncedResize = debounce(() => window.dispatchEvent(resizeEvent), 250);
 window.addEventListener('resize', debouncedResize);
 
-// -- Toggle header
+// -- Global Nav
+
+// - Toggle header
 const $globalHeader = $('#global-header')
 const $navToggle = $globalHeader.querySelector('.hamburger')
 const $nav = $globalHeader.querySelector('nav')
@@ -44,11 +46,20 @@ $navToggle.addEventListener('click', () => {
   $nav.classList.toggle('is-active');
 });
 
+// - Highlight nav
+const $navAs = $globalHeader.querySelectorAll('a')
+each($navAs, ($a) => {
+  if (window.location.href.includes($a.getAttribute('href'))) {
+    $a.classList.add('active')
+  }
+})
+
 // -- Open targetd el if data-open directive present
 const $$parentTogglers = $$('[data-open]')
 each($$parentTogglers, (el) => {
   const targ = $(el.getAttribute('data-open'))
-  el.addEventListener('click', () => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
     targ.classList.toggle('open')
     el.classList.toggle('open')
   })
