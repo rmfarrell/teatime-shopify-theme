@@ -30,15 +30,6 @@ import '../sections/locate'
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 
-const TeaTime = function () {
-  // -- Resize handler
-  const debouncedResize = debounce(() => window.dispatchEvent(resizeEvent), 250);
-  window.addEventListener('resize', debouncedResize);
-
-
-
-}
-
 // -- Global Nav
 
 // - Toggle header
@@ -59,7 +50,7 @@ each($navAs, ($a) => {
   }
 })
 
-// -- Open targetd el if data-open directive present
+// - Open targetd el if data-open directive present
 const $$parentTogglers = $$('[data-open]')
 each($$parentTogglers, (el) => {
   const targ = $(el.getAttribute('data-open'))
@@ -75,22 +66,19 @@ const $closeCartButton = $('[data-close-shopping-cart-tray]')
 const $shoppingCartIcon = $('[data-shopping-cart-icon]')
 const $cartItemCounter = $shoppingCartIcon.querySelector('[data-cart-item-counter]');
 
-// initialize shopping cart
+// - initialize shopping cart
 const shoppingCart = Cart((c) => {
   $cartItemCounter.innerText = `${c.item_count}`;
 })
 
-// open the cart when button is clicked
+// - open the cart when button is clicked
 $closeCartButton.addEventListener('click', shoppingCart.close)
 
-// close cart tray when close button is clicked
+// - close cart tray when close button is clicked
 $shoppingCartIcon.addEventListener('click', (e) => {
   e.preventDefault();
   shoppingCart.open()
 });
-
-// close the tray on scroll
-// window.addEventListener('scroll', shoppingCart.close)
 
 // -- Sliders
 each($$('.accordion'), (el) => {
