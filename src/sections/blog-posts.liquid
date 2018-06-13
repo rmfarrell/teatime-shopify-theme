@@ -16,15 +16,16 @@
     <div class="mobile-scroll-container">
       <div class="teaser-container">
         {% for article in blog.articles limit: 3 %}
-          {% if article.image %}
-            <a class="blog-post__item lazyload" data-observe-intersection data-bgset="{% include 'responsive-bg-image', image: article.image %}" title="{{article.title}}" href="{{article.url}}">
+          <a 
+            class="blog-post__item lazyload",
+            data-observe-intersection,
+            {% if article.image %} data-bgset="{% include 'responsive-bg-image', image: article.image %}" {% endif %},
+            title="{{article.title}}" 
+            href="{{article.url}}">
+            <div class="text-container">
               <h2 class="title"> {{ article.title }} </h2>
-            </a>
-          {% else %}
-            <a class="blog-post__item lazyload" data-observe-intersection title="{{article.title}}" href="{{article.url}}">
-              <h2 class="title"> {{ article.title }} </h2>
-            </a>
-          {% endif %}
+              <div class="read-more text-cta">{{ 'blog_index.read_more' | t }}</div>
+            </div>
           </a>
         {% endfor %}
       </div>
