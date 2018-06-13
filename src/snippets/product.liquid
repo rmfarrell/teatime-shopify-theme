@@ -151,11 +151,11 @@
   </div>
 
   <!-- Page Includes -->
-  <div class="wrapper pale-green">
-    {% if product.metafields.snippet.page_snippet.size > 0 %}
+  {% if product.metafields.snippet.page_snippet.size > 0 %}
+    <div class="wrapper pale-green">
       {% include 'page-content-snippets', with handles: product.metafields.snippet.page_snippet %}
+    </div>
     {% endif  %}
-  </div>
 
   <!-- Nutrition Information -->
   {% if product.metafields.nutrition_info.show == 'true' %}

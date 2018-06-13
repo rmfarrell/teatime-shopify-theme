@@ -173,6 +173,15 @@
   &.grid {
     flex: 46% 0 0;
 
+    .product-img {
+      img {
+        filter: none;
+      }
+      svg {
+        display: none;
+      }
+    }
+
     .product-main {
       display: block;
       margin-bottom: 6em;
