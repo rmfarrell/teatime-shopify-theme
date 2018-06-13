@@ -187,13 +187,16 @@
         left: 0;
         top: $header-height;
         background-color: $color-very-light-gray;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
       }
 
       ul.collection-list {
         font-size: 0.65em;
         @include constrain;
+
+        a {
+          margin-top: 2em;
+          margin-bottom: 3em;
+        }
 
         h4 {
           margin-bottom: 2em;

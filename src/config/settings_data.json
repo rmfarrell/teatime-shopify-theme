@@ -249,7 +249,7 @@
       "1528130295075": {
         "type": "image-with-text",
         "settings": {
-          "image": "shopify:\/\/shop_images\/tea.jpg",
+          "image": "shopify:\/\/shop_images\/tea_1080x_1d1be659-fc9f-4e48-92cb-772ebca193d1.png",
           "layout": "left",
           "title": "What is Matcha?",
           "text": "<p>Getting curious about that green powder popping up at all your favorite cafes?&nbsp; Here&rsquo;s the full rundown on our Matcha, how it&rsquo;s made and why have so lovingly dubbed it the Better Energy.<\/p>",
@@ -264,7 +264,7 @@
           "1528165177187": {
             "type": "know_ur_matcha",
             "settings": {
-              "headline": "Get to know  your matcha",
+              "headline": "Know your Matcha",
               "description": "<p>Matcha Tea is energy derived naturally from green tea <br> leaves, the process extracts caffine, anti-oxidents and the magical L-Theanine that give matcha it&rsquo;s unique form of focused andsustained energy to get you through your day.<\/p>",
               "link_text": "Watch the Video",
               "link_url": "http:\/\/youtube.com",
@@ -275,7 +275,7 @@
             "type": "what_is_matcha",
             "settings": {
               "headline": "What is Matcha?",
-              "description": "<p>Unlike regular green tea, Matcha tea is grown<br>in the shade to force the plants to produce<br>extra nutrients in order to grow big and strong. <br>We then harvest the power-packed leaves and stone grind to the traditional, neon green matcha powder, packed with all the Better Energy to get you through your day.<\/p>"
+              "description": "<p>Unlike regular green tea, Matcha tea is grown in the shade to force the plants to produce extra nutrients in order to grow big and strong.&nbsp; We then harvest the power-packed leaves and stone grind to the traditional, neon green matcha powder, packed with all the Better Energy to get you through your day.<\/p>"
             }
           },
           "1528413593042": {
@@ -301,7 +301,7 @@
             "settings": {
               "title": "How it stacks up",
               "description": "<p>With Matcha, it&rsquo;s more than just caffeine at work. But in case you were curious, here&rsquo;s how it stacks up to your daily caffine kicks.<\/p>",
-              "bottle_img": "shopify:\/\/shop_images\/Bottle4.png",
+              "bottle_img": "shopify:\/\/shop_images\/Original.png",
               "hustle_img": "shopify:\/\/shop_images\/Hustle.png"
             }
           },
@@ -346,7 +346,7 @@
           "1528414590806": {
             "type": "video_tout",
             "settings": {
-              "headline": "Good things come to those who hustle",
+              "headline": "Good things come  to those who hustle",
               "description": "<p>It&rsquo;s the backbone of our business, and responsible for MatchaBar&rsquo;s very existence. The hustle is about going above and beyond to get the job done. Our community, the MatchaFam, defines itself by just this - hard work, passion, and a sense of purpose.<\/p>",
               "link_text": "Watch the video",
               "link_url": "https:\/\/youtube.com",
@@ -540,7 +540,7 @@
         "settings": {
           "title": "Kits",
           "description": "<h2>Get all the Matcha Swag<\/h2><p>Some more copy goes here.<\/p>",
-          "image": "shopify:\/\/shop_images\/Bitmap.png"
+          "image": "shopify:\/\/shop_images\/brew_group.png"
         }
       }
     },
