@@ -1,8 +1,25 @@
 .blog-posts-section {
   text-align: center;
-  background-color: $color-pale-green;
-  box-shadow: -1200px 0px 0px 0px $color-pale-green;
+  // background-color: $color-pale-green;
+  // box-shadow: -1200px 0px 0px 0px $color-pale-green;
   padding-bottom: 6em;
+  transition: background-color 4s;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    display: block;
+    background-color: $color-pale-green;
+    z-index: -1;
+    transform: scaleX(1);
+    transform-origin: 0 0;
+    transition: transform 1s 0.5s;
+  }
 
   .wrapper {
     padding-top: 12em;
@@ -194,6 +211,12 @@
       display: table;
     }
   }
+
+  &.out-of-viewport:before {
+    transform: scaleX(0);
+  }
+
+
   @media (min-width: 800px) {
 
     .teaser-container a:nth-of-type(3) h2 {
