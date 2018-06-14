@@ -48,9 +48,21 @@ each($navAs, ($a) => {
   if (window.location.href.includes($a.getAttribute('href'))) {
     $a.classList.add('active')
   }
-})
+});
 
-// - Open targetd el if data-open directive present
+// - Stagger in links on homepage header
+(function () {
+  const $navAs = $$('.template-index #global-header a')
+  if (!$navAs) return;
+  let timer = 900;
+  each($navAs, ($a) => {
+    setTimeout(() => $a.classList.add('show'), timer)
+    timer += 100;
+  })
+})();
+
+
+// -- Open targetd el if data-open directive present
 const $$parentTogglers = $$('[data-open]')
 each($$parentTogglers, (el) => {
   const targ = $(el.getAttribute('data-open'))
@@ -85,17 +97,17 @@ each($$('.accordion'), (el) => {
   const observer = new MutationObserver((ev) => {
     const targ = ev[0].target
     if (targ && targ.classList.contains('open')) {
-      targ.style.height = `${targ.scrollHeight}px`
+      targ.style.height = `${targ.scrollHeight}px`;
       return;
     }
-    targ.style.height = '0px'
-    return
-  })
+    targ.style.height = '0px';
+    return;
+  });
 
   observer.observe(el, {
     attributeFilter: ['class']
-  })
-})
+  });
+});
 
 // -- Textfit
 const textFitOptions = {
@@ -141,7 +153,6 @@ document.addEventListener('lazybeforeunveil', (e) => {
     });
   }, observerOptions);
   each(targs, (targ) => {
-    console.log(targ)
     targ.classList.add('out-of-viewport')
     observer.observe(targ)
   })

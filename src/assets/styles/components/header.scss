@@ -212,4 +212,20 @@
       }
     } // end of media query
   }
+
+  // Stagger nav on homepage
+  // I hate this so much -RF
+  .template-index & {
+
+    a {
+      opacity: 0;
+      transform: translateY(-$header-height);
+      transition: opacity 0.5s, transform 0.5s;
+
+      &.show {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+  }
 }
