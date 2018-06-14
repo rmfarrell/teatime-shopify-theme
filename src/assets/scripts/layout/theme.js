@@ -133,9 +133,6 @@ document.addEventListener('lazybeforeunveil', (e) => {
   const $container = parentUntil(e.target, (p) => p.classList.contains('preload'));
   if ($container) {
     $container.classList.remove('preload')
-    setTimeout(() => {
-      $container.classList.remove('preload')
-    }, 300)
   }
 });
 
