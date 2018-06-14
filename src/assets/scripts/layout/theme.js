@@ -141,6 +141,7 @@ document.addEventListener('lazybeforeunveil', (e) => {
     });
   }, observerOptions);
   each(targs, (targ) => {
+    console.log(targ)
     targ.classList.add('out-of-viewport')
     observer.observe(targ)
   })

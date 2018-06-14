@@ -17,9 +17,9 @@
       <div class="teaser-container">
         {% for article in blog.articles limit: 3 %}
           <a 
-            class="blog-post__item lazyload",
-            data-observe-intersection,
-            {% if article.image %} data-bgset="{% include 'responsive-bg-image', image: article.image %}" {% endif %},
+            class="blog-post__item lazyload"
+            data-observe-intersection
+            {% if article.image %} data-bgset="{% include 'responsive-bg-image', image: article.image %}" {% endif %}
             title="{{article.title}}" 
             href="{{article.url}}">
             <div class="text-container">
