@@ -45,7 +45,8 @@
 
   .floating-image {
     opacity: 1;
-    transition: opacity 0.3s 0s, visibility 0s;
+    transition: opacity 0.4s 0s, visibility 0s 0s;
+    display: block;
 
     &.preload {
       visibility: hidden;
