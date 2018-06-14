@@ -30,6 +30,10 @@ import '../sections/locate'
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 
+// -- Dispatch resize event
+const debouncedResize = debounce(() => window.dispatchEvent(resizeEvent), 1000);
+window.addEventListener('resize', debouncedResize);
+
 // -- Global Nav
 
 // - Toggle header
