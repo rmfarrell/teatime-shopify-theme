@@ -26,23 +26,13 @@
     {% endif %}
 
     {% for block in section.blocks %}
-      <div class="hero-image" {{ block.shopify_attributes }}>
-        {% case block.type %}
-
-          {% when 'floating_image' %}
-          <a href="{{block.settings.product_link}}" class="floating-image preload">
-            {% include 'responsive-image' with
-              image: block.settings.image,
-              psuedo_elements: true,
-              max_height: 420
-            %}
-          </a>
-
-          {% when 'call_to_action' %}
-          <a href="{{block.settings.url}}" class="cta">{{block.settings.title}}</a>
-
-        {% endcase %}
-      </div>
+      <a href="{{block.settings.product_link}}" class="floating-image preload hero-image" {{ block.shopify_attributes }}>
+        {% include 'responsive-image' with
+          image: block.settings.image,
+          psuedo_elements: true,
+          max_height: 420
+        %}
+      </a>
     {% endfor %}
   </div>
 </header>
