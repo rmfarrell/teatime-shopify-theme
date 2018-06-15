@@ -7,12 +7,14 @@
     - section_id: {String} any unique identifier
     - product: {Object} shopify product object
     - img_max_height: {Number} overwrite max image height
+    - color: {String}
 
     Usage:
     In your liquid template file, copy the following line
     - {% include 'product' with css_class: 'active', product: product %}
 {%- endcomment -%}
-<div class="product-container {{css_class}}" id="{{product.handle}}" data-section-id="{{ section_id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
+{% assign _color = product.metafields.product.color2 | default: 'green' %}
+<div class="product-container {{css_class}} {{_color}}" id="{{product.handle}}" data-section-id="{{ section_id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
 
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
@@ -74,7 +76,6 @@
       {% if product.metafields.external_vendor.amazon != blank %}
         <a href="{{product.metafields.external_vendor.amazon}}" 
           class="cta external-vendor"
-          style="background-color: {{product.metafields.product.color}}"
           target="_blank">{{ 'product.amazon_cta' | t }}</a>
       {% else %}
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="add-to-cart">

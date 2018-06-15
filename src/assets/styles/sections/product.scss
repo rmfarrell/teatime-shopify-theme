@@ -1,13 +1,12 @@
 .product-container {
-  padding-top: $header-height;
 
   .wrapper {
-    padding-top: 3em;
+    padding-top: calc(#{$header-height} + 3em);
   }
 
   .product-main {
     margin: 0 auto 10em;
-    min-height: 100vh;
+    min-height: 80vh;
   }
 
   .product-img {
@@ -169,6 +168,24 @@
     @media ($mq-medium) {
       width: auto;
       margin: 0 0 0 1em;
+    }
+  }
+
+  &.Magenta {
+    & .cta {
+      background-color: $color-magenta;
+    }
+  }
+
+  &.Gold {
+    & .cta {
+      background-color: $color-gold;
+    }
+  }
+
+  &.Mint {
+    & .cta {
+      background-color: $color-mint;
     }
   }
 

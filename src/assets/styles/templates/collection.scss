@@ -80,11 +80,30 @@
     display: none;
 
     &:before {
-      background-color: $color-green;;
+      background-color: $color-green;
       content: "";
       display: block;
       height: 0;
-      transition: height 0.3s;
+      transition: height 0.5s;
+      opacity: 1;
+    }
+
+    &.Magenta {
+      &:before {
+        background-color: $color-magenta;
+      }
+    }
+  
+    &.Gold {
+      &:before {
+        background-color: $color-gold;
+      }
+    }
+  
+    &.Mint {
+      &:before {
+        background-color: $color-mint;
+      }
     }
     
     &.active {
@@ -93,7 +112,7 @@
 
     &.in::before,
     &.out::before {
-      height: 90vh;
+      height: 90vh
     }
   }
 

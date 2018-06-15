@@ -4,6 +4,7 @@
   background-size: 900px;
   margin: 0 0 0;
   margin: 6em 0 2em;
+  z-index: 100;
 
   @media ($mq-medium) {
     margin-bottom: 3em;
