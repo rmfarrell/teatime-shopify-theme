@@ -70,11 +70,16 @@
     </button>
     {% include 'cart' %}
   </div>
-
   <main role="main" id="MainContent">
     {{ content_for_layout }}
   </main>
 
+  {% if true  %}
+    <div class="wrapper"  data-observe-intersection>
+      {% section 'collection-list' %}
+    </div>
+  {% endif %}
+  <div id="glob"></div>
   {% section 'footer' %}
 </body>
 </html>

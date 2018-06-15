@@ -1,0 +1,20 @@
+{% include 'collection-list' with include_products: true %}
+
+{% schema %}
+  {
+    "name": "Collection Lineup",
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "label": "Collection",
+            "id": "collection",
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
