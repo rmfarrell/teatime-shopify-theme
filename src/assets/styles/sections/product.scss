@@ -6,7 +6,8 @@
   }
 
   .product-main {
-    margin: 0 auto 10em
+    margin: 0 auto 10em;
+    min-height: 100vh;
   }
 
   .product-img {
@@ -173,6 +174,7 @@
 
   &.grid {
     flex: 46% 0 0;
+    padding-top: 0;
 
     .product-img {
       img {
@@ -186,6 +188,7 @@
     .product-main {
       display: block;
       margin-bottom: 6em;
+      min-height: initial;
     }
 
     .img-container {
