@@ -36,6 +36,7 @@
     display: flex;
     margin:  2em 0 5em;
     justify-content: flex-start;
+    align-items:  baseline;
   }
 
   .hero-image {
@@ -153,7 +154,6 @@
       width: 60%;
       top: 50%;
       right: 0;
-      align-items:  baseline;
       margin: 0;
       justify-content: flex-end;
       transform: translateY(-50%);
