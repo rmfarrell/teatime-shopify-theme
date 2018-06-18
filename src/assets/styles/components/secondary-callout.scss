@@ -1,8 +1,7 @@
 .secondary-callout {
   padding: 3em 0;
 
-  p, 
-  h5.tagline, 
+  p,
   .pack-info span, 
   ul,
   td {
@@ -15,5 +14,18 @@
   @media ($mq-medium) {
     text-align: left;
     font-size: 1.3em;
+  }
+
+  .image-with-text {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    h2 {
+      font-size: 3.2em;
+    }
+
+    .img-container:before {
+      background-color: $color-pale-green;
+    }
   }
 }
