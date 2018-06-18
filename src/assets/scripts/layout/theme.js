@@ -56,13 +56,9 @@ each($navAs, ($a) => {
 
 // - Stagger in links on homepage header
 (function () {
-  const $navAs = $$('.template-index #global-header a')
-  if (!$navAs) return;
-  let timer = 900;
-  each($navAs, ($a) => {
-    setTimeout(() => $a.classList.add('show'), timer)
-    timer += 100;
-  })
+  const $homeHeader = $('.template-index #global-header');
+  if (!$homeHeader) return
+  setTimeout(() => $homeHeader.classList.add('show'), 50)
 })();
 
 
