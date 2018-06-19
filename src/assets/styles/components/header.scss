@@ -1,272 +1,286 @@
 #shopify-section-header {
   background-color: white;
-  height: $header-height;
   position: fixed;
   width: 100%;
   z-index: 100;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#global-header {
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  top: 0;
+  height: $header-height;
+  transition: height 0.3s;
   
-  // TODO: this is too deeply-nested
-  header {
-    display: flex;
-    justify-content: space-between;
-    z-index: 100;
-    top: 0;
-    
-    // Hamburger menu
-    .hamburger {
-      outline: none;
-      opacity: 0.5;
-    }
-
-    .hamburger-inner, 
-    .hamburger-inner::before, 
-    .hamburger-inner::after {
-      width: 30px;
-      height:  2px;
-      border-radius: 0;
-    }
-
-    // Nav items
-    nav {
-      display: block;
-      position: absolute;
-      width: 100%;
-      top: $header-height;
-      overflow-y: auto;
-      background-color: white;
-      font-size: 1.6em;
-      transform: translateY(-100%);
-      transition: opacity 0.4s, transform 0.4s;
-      z-index: -1;
-      opacity: 0;
-      
-      &.is-active {
-        display: block;
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      ul, li {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        color: $color-body-text;
-        list-style-type: none;
-      }
-
-      > ul {
-        
-        > li:last-child a {
-          border-bottom: 1px solid $color-light-gray;
-        }
-
-        > li > a {
-          display: block;
-          padding: 1em 0;
-          border-top: 1px solid $color-light-gray;
-          text-align: center;
-          text-decoration: none;
-          color: inherit;
-          cursor: pointer;
-
-          &.active {
-            color: $color-green;
-          }
-
-          &:hover {
-            color: $color-green;
-          }
-
-          .fas {
-            font-size: 0.5em;
-            transform: rotate(90deg) translate(-25%, -150%);
-            transition: transform 0.25s;
-          }
-
-          &.open {
-            color: $color-green;
-
-            .fas {
-              transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
-            }
-          }
-        }
-      }
-    }
-
-    h1 {
-      margin: 0;
-
-      a {
-        height: $header-height;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-    }
-
-    // shopping cart button
-    .cart-button {
-      color: black;
-      line-height: $header-height;
-      font-size: 2em;
-      padding: 0 1em;
-    }
-
-    [data-cart-item-counter] {
-      background-color: $color-green;
-      width: 1.4em;
-      padding: 0.3em 0 0;
-      font-size: 0.7em;
-      line-height: 1.2em;
-      display: inline-block;
-      color: white;
-      text-align: center;
-      border-radius: 50%;
-      font-weight: 500;
-      position: relative;
-      top: -0.5em;
-    }
-
-    .collection-list {
-      font-size: 0.5em;
-    }
-
-    @media ($mq-medium) {
-      align-items: center;
-      justify-content: flex-end;
-
-      h1, .h1 {
-        flex: 140px 0 0;
-      }
-
-      .hamburger {
-        display: none;
-      }
-
-      nav,
-      nav.is-active {
-        display: inline-block;
-        position: static;
-        width: auto;
-        font-size: 1.2em;
-        transform: none;
-        z-index: 0;
-        opacity: 1;
-        background: transparent;
-        overflow: visible;
-        flex: calc(#{$max-width} - 7em) 0 1;
-
-        > ul {
-          text-align: right;
-
-          > li:last-child a {
-            border-bottom: none;
-          }
-    
-          > li {
-            display: inline-block;
-            width: auto;
-            margin: 0 5% 0 0;
-
-            > a {
-              display: inline-block;
-              padding: 0;
-              border: none;
-              font-weight: 500;
-            }
-          }
-        }
-      }
-      .collection-list-container {
-        position: fixed;
-        width: 100vw;
-        left: 0;
-        top: $header-height;
-        background-color: $color-very-light-gray;
-      }
-
-      ul.collection-list {
-        font-size: 0.65em;
-        @include constrain;
-
-        a {
-          margin-top: 2em;
-          margin-bottom: 3em;
-        }
-
-        h4 {
-          margin-bottom: 2em;
-        }
-      }
-    
-      .cart-button {
-        opacity: 1;
-        flex: 5em 0 0;
-        padding: 0;
-        text-align: center;
-        border-left: 1px solid rgba(0,0,0,0.1);
-      }
-    } // end of media query
+  // Hamburger menu
+  .hamburger {
+    outline: none;
+    opacity: 0.5;
   }
 
-  // Stagger nav on homepage
-  .template-index & {
-    @media ($mq-medium) {
-      #global-header {
-        transform: translateY(-$header-height);
-        transition: transform 0.3s $ih_delay;
+  .hamburger-inner, 
+  .hamburger-inner::before, 
+  .hamburger-inner::after {
+    width: 30px;
+    height:  2px;
+    border-radius: 0;
+  }
 
-        nav a {
-          opacity: 0;
-          transform: translateY(-100%);
-          transition: transform 0.3s, opacity 0.3s;
-        }
+  // Nav items
+  nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: $header-height;
+    overflow-y: auto;
+    background-color: white;
+    font-size: 1.6em;
+    transform: translateY(-100%);
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: -1;
+    opacity: 0;
+    
+    &.is-active {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    ul, li {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      color: $color-body-text;
+      list-style-type: none;
+    }
+
+    > ul {
       
-        &.show {
-          transform: translateY(0px);
+      > li:last-child a {
+        border-bottom: 1px solid $color-light-gray;
+      }
 
-          nav a {
-            opacity: 1;
-            transform: translateY(0);
-          }
+      > li > a {
+        display: block;
+        padding: 1em 0;
+        border-top: 1px solid $color-light-gray;
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
 
-          nav {
-            li:nth-child(1) a {
-              transition-delay: $ih_delay;
-            }
-            li:nth-child(2) a {
-              transition-delay: $ih_delay + $stagger_delay;
-            }
-            li:nth-child(3) a {
-              transition-delay: $ih_delay + ($stagger_delay * 2);
-            }
-            li:nth-child(4) a {
-              transition-delay: $ih_delay + ($stagger_delay * 3);
-            }
-            li:nth-child(5) a {
-              transition-delay: $ih_delay + ($stagger_delay * 4);
-            }
-            li:nth-child(6) a {
-              transition-delay: $ih_delay + ($stagger_delay * 5);
-            }
+        &.active {
+          color: $color-green;
+        }
+
+        &:hover {
+          color: $color-green;
+        }
+
+        .fas {
+          font-size: 0.5em;
+          transform: rotate(90deg) translate(-25%, -150%);
+          transition: transform 0.25s;
+        }
+
+        &.open {
+          color: $color-green;
+
+          .fas {
+            transform: rotate(90deg) translate(-25%, -150%) scaleX(-1);
           }
         }
       }
     }
+  }
 
-    // a {
-    //   opacity: 0;
-    //   transform: translateY(-$header-height);
-    //   transition: opacity 0.5s, transform 0.5s;
+  h1 {
+    margin: 0;
 
-    //   &.show {
-    //     opacity: 1;
-    //     transform: translateY(0%);
-    //   }
-    // }
+    a {
+      height: $header-height;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  // shopping cart button
+  .cart-button {
+    color: black;
+    line-height: $header-height;
+    font-size: 2em;
+    padding: 0 1em;
+  }
+
+  [data-cart-item-counter] {
+    background-color: $color-green;
+    width: 1.4em;
+    padding: 0.3em 0 0;
+    font-size: 0.7em;
+    line-height: 1.2em;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 500;
+    position: relative;
+    top: -0.5em;
+  }
+
+  .collection-list {
+    font-size: 0.5em;
+  }
+
+  // Make header smaller after scroller
+  &.scrolled {
+    height: 6rem;
+
+    .collection-list-container {
+      top: 6rem;
+    }
+
+    .cart-button {
+      line-height: 6rem;
+    }
+
+    nav {
+      top: 6rem;
+    }
+
+    h1,
+    .h1 {
+
+      img {
+        height: 5.5rem;
+      }
+
+      a {
+        height: 6rem;
+      }
+    }
+  }
+
+  @media ($mq-medium) {
+    align-items: center;
+    justify-content: flex-end;
+
+    h1, .h1 {
+      flex: 140px 0 0;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    nav,
+    nav.is-active {
+      display: inline-block;
+      position: static;
+      width: auto;
+      font-size: 1.2em;
+      transform: none;
+      z-index: 0;
+      opacity: 1;
+      background: transparent;
+      overflow: visible;
+      flex: calc(#{$max-width} - 7em) 0 1;
+
+      > ul {
+        text-align: right;
+
+        > li:last-child a {
+          border-bottom: none;
+        }
+  
+        > li {
+          display: inline-block;
+          width: auto;
+          margin: 0 5% 0 0;
+
+          > a {
+            display: inline-block;
+            padding: 0;
+            border: none;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .collection-list-container {
+      position: fixed;
+      width: 100vw;
+      left: 0;
+      top: $header-height;
+      background-color: $color-very-light-gray;
+    }
+
+    ul.collection-list {
+      font-size: 0.65em;
+      @include constrain;
+
+      a {
+        margin-top: 2em;
+        margin-bottom: 3em;
+      }
+
+      h4 {
+        margin-bottom: 2em;
+      }
+    }
+  
+    .cart-button {
+      opacity: 1;
+      flex: 5em 0 0;
+      padding: 0;
+      text-align: center;
+      border-left: 1px solid rgba(0,0,0,0.1);
+    }
+
+    // Animate header elements in after page load
+    .template-index & {
+      transform: translateY(-$header-height);
+      transition: transform 0.3s $ih_delay, height 0.3s;
+
+      nav a {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s, opacity 0.3s;
+      }
+    
+      &.show {
+        transform: translateY(0px);
+
+        nav a {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        nav {
+          li:nth-child(1) a {
+            transition-delay: $ih_delay;
+          }
+          li:nth-child(2) a {
+            transition-delay: $ih_delay + $stagger_delay;
+          }
+          li:nth-child(3) a {
+            transition-delay: $ih_delay + ($stagger_delay * 2);
+          }
+          li:nth-child(4) a {
+            transition-delay: $ih_delay + ($stagger_delay * 3);
+          }
+          li:nth-child(5) a {
+            transition-delay: $ih_delay + ($stagger_delay * 4);
+          }
+          li:nth-child(6) a {
+            transition-delay: $ih_delay + ($stagger_delay * 5);
+          }
+        }
+      }
+    }
   }
 }
