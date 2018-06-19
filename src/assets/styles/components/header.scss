@@ -11,7 +11,7 @@
   justify-content: space-between;
   z-index: 100;
   top: 0;
-  height: $header-height;
+  height: $header-height-initial;
   transition: height 0.3s;
   
   // Hamburger menu
@@ -33,7 +33,7 @@
     display: block;
     position: absolute;
     width: 100%;
-    top: $header-height;
+    top: $header-height-initial;
     overflow-y: auto;
     background-color: white;
     font-size: 1.6em;
@@ -100,7 +100,7 @@
     margin: 0;
 
     a {
-      height: $header-height;
+      height: $header-height-initial;
       margin: 0;
       display: flex;
       align-items: center;
@@ -112,7 +112,7 @@
   // shopping cart button
   .cart-button {
     color: black;
-    line-height: $header-height;
+    line-height: $header-height-initial;
     font-size: 2em;
     padding: 0 1em;
   }
@@ -138,29 +138,29 @@
 
   // Make header smaller after scroller
   &.scrolled {
-    height: 6rem;
+    height: $header-height;
 
     .collection-list-container {
-      top: 6rem;
+      top: $header-height;
     }
 
     .cart-button {
-      line-height: 6rem;
+      line-height: $header-height;
     }
 
     nav {
-      top: 6rem;
+      top: $header-height;
     }
 
     h1,
     .h1 {
 
       img {
-        height: 5.5rem;
+        height: $header-height - 0.5rem;
       }
 
       a {
-        height: 6rem;
+        height: $header-height;
       }
     }
   }
@@ -215,7 +215,7 @@
       position: fixed;
       width: 100vw;
       left: 0;
-      top: $header-height;
+      top: $header-height-initial;
       background-color: $color-very-light-gray;
     }
 
@@ -243,7 +243,7 @@
 
     // Animate header elements in after page load
     .template-index & {
-      transform: translateY(-$header-height);
+      transform: translateY(-$header-height-initial);
       transition: transform 0.3s $ih_delay, height 0.3s;
 
       nav a {

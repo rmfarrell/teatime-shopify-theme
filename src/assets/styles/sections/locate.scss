@@ -58,6 +58,7 @@
       justify-content: space-around;
       align-items: flex-start;
       text-align: center;
+      margin: auto;
     }
 
     li {
@@ -82,7 +83,7 @@
       display: block;
       color: $color-light-gray;
       opacity: 0.6;
-      margin: 0 0 1em;
+      margin: 0.5em auto;
       transition: color 0.3s, opacity 0.3s;
 
       &.active {
