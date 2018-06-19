@@ -16,7 +16,7 @@ import 'promise-polyfill/src/polyfill';
 import { cookiesEnabled } from '@shopify/theme-cart';
 import { wrapTable, wrapIframe } from '@shopify/theme-rte';
 import { $, $$, each, debounce, parentUntil } from '../utilities';
-import { resizeEvent, cart } from '../events';
+import { resizeEvent, scrollEvent, cart } from '../events';
 import { windowWhen } from 'rxjs/operator/windowWhen';
 import { Cart } from '../cart'
 import textFit from 'textfit';
@@ -30,7 +30,13 @@ import '../sections/locate'
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 
-// -- Dispatch resize event
+// -- Global events
+
+// - Scroll event
+const debouncedScroll = debounce(() => window.dispatchEvent(scrollEvent), 200);
+window.addEventListener('scroll', debouncedScroll)
+
+// - Dispatch resize event
 const debouncedResize = debounce(() => window.dispatchEvent(resizeEvent), 1000);
 window.addEventListener('resize', debouncedResize);
 
@@ -53,6 +59,13 @@ each($navAs, ($a) => {
     $a.classList.add('active')
   }
 });
+
+// - Apply scrolled when nav position is lower
+window.addEventListener('matchabar:scroll', () => {
+  if (window.scrollY > 100) return $globalHeader.classList.add('scrolled')
+  return $globalHeader.classList.remove('scrolled')
+});
+
 
 // - Stagger in links on homepage header
 (function () {
