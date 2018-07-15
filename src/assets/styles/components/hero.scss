@@ -2,9 +2,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 10em $gutter;
+  padding: 9em $gutter;
   font-size: 1.3em;
   text-align: center;
+  margin-bottom: 1em;
 
   h1 {
     font-weight: bold;
@@ -25,6 +26,10 @@
       background-color: $color-green;
       color: white;
     }
+  }
+
+  .grid & {
+    margin-bottom: 0;
   }
 
   @media($mq-medium) {
