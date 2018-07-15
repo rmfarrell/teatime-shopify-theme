@@ -1,41 +1,16 @@
 #introducing-hustle {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  padding: 10em $gutter;
   text-align: center;
 
   h1 {
-    font-size: 6em;
-    line-height: 1em;
-    color: white;
-    width: 100%;
-    letter-spacing: -1px;
+    margin-bottom: 0.25em;
   }
-
-  .cta {
-    background-color: white;
-    color: $color-green;
-    font-size: 1.3em;
-
-    &:hover {
-      background-color: $color-green;
-      color: white;
-    }
-  }
-
+  
   @media($mq-medium) {
-    padding-top: 16em;
-    padding-bottom: 16em;
-
+    
     h1 {
-      letter-spacing: -1px;
-      font-size: 8em;
-      margin-bottom: 0.15em;
+      font-size: 11em;
     }
 
-    .cta {
-      font-size: 1.1em;
-    }
+    text-align: center;
   }
 }

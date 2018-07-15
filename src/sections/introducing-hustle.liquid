@@ -1,7 +1,6 @@
 <section class="banner hero lazyload" id="introducing-hustle" data-bgset="{% include 'responsive-bg-image', image: section.settings.image %}">
-  {% comment %} TODO: troubleshoot why this doesn't update {% endcomment %}
-  <h1>Gift the Hustle</h1>
-  <a href="giftthehustle.com" class="cta">Gift a free can</a>
+  <h1>{{section.settings.headline}}</h1>
+  <a href="{{section.settings.cta_url}}" class="cta">{{section.settings.cta_text}}</a>
 </section>
 
 {% schema %}

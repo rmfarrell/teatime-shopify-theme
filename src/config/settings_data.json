@@ -137,46 +137,9 @@
         }
       },
       "hero-bottles": {
-        "type": "hero-bottles",
-        "blocks": {
-          "1528498121011": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Original.png",
-              "product_link": "#matchabar-iced-matcha-tea-original"
-            }
-          },
-          "1528500845059": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Honey.png",
-              "product_link": "#matchabar-iced-matcha-tea-hint-of-honey"
-            }
-          },
-          "1528501317692": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Mint.png",
-              "product_link": "#matchabar-iced-matcha-tea-peach"
-            }
-          },
-          "1528501364622": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/AppleGinger.png",
-              "product_link": "#matchabar-iced-matcha-tea-peach"
-            }
-          }
-        },
-        "block_order": [
-          "1528498121011",
-          "1528500845059",
-          "1528501317692",
-          "1528501364622"
-        ],
         "settings": {
           "title": "Bottle",
-          "description": "<h2>Our classic iced matcha drink<\/h2>\n<p>Choose a bottle to explore<\/p>"
+          "image": ""
         }
       },
       "partners": {
@@ -515,22 +478,6 @@
       },
       "hero-hustle": {
         "type": "hero-hustle",
-        "blocks": {
-          "1528507767947": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Hustle_67c45d72-ba04-48e7-a0ba-9bc63ea40d94.png",
-              "product_link": "#hustle-can"
-            }
-          },
-          "1528507820296": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Hustle_67c45d72-ba04-48e7-a0ba-9bc63ea40d94.png",
-              "product_link": "#hustle-can-2"
-            }
-          }
-        },
         "block_order": [
           "1528507767947",
           "1528507820296"
