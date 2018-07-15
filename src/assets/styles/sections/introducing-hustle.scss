@@ -1,168 +1,41 @@
 #introducing-hustle {
-  position: relative;
-  overflow: hidden;
-
-  .wrapper {
-    width: 100%;
-  }
-
-  &:before {
-    content: "";
-    background-color: $color-green;
-    height: 100%;
-    width: 200%;
-    position: absolute;
-    display: block;
-    left: 0;
-    top: 0;
-    transition: transform $ih_delay linear;
-    z-index: 50;
-    transform: translate3d(100%, 0, 0);
-  }
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 10em $gutter;
+  text-align: center;
 
   h1 {
-    color: black;
-    margin: 0;
-    font-weight: bold;
+    font-size: 6em;
     line-height: 1em;
-    letter-spacing: initial;
+    color: white;
     width: 100%;
-    transform: initial;
-    transition: opacity 0.4s ($ih_delay - 0.2s), transform 0.4s ($ih_delay - 0.2s);
-    visibility: visible;
-  }
-
-  .hustle-svg-container {
-    width: 100%;
-
-    svg {
-      width: 100%;
-    }
-  }
-
-  .hustle-bottle-container {
-    font-size: 0.75em;
-    width: 42em;
-    position: absolute;
-    top: -2em;
-    left: 38%;
-    margin-left: -21em;
-    transition: transform 1s ($ih_delay - 0.85s), opacity 0.5s ($ih_delay - 0.85s);
-    opacity: 1;
-    pointer-events: none;
-  }
-
-  .cta-container  {
-    text-align: center;
-    margin-top: 10em;
+    letter-spacing: -1px;
   }
 
   .cta {
-    font-size: 1.2em;
-    display: block;
-    max-width: 12em;
-    margin: 0 auto 1em;
-    position: relative;
-    z-index: 10;
-    transition: background-color 0.3s 0s, opacity 0.7s $ih_delay + 0.4s, transform 0.5s $ih_delay + 0.4s;
+    background-color: white;
+    color: $color-green;
+    font-size: 1.3em;
 
-    &:nth-of-type(1) {
-      transition-delay: 0s, inherit, inherit
-    }
-
-    &:nth-of-type(2) {
-      transition-delay: 0s, $ih_delay + 0.6s, $ih_delay + 0.6s;
-      background: transparent;
-      color: $color-green;
-    }
-  }
-
-  @media ($mq-medium) {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    h1 span {
-      font-size: 1.8em;
-      transition: opacity 0.7s $ih_delay + 0.2s, transform 0.5s $ih_delay + 0.2s; 
-      display: block;
-      line-height: 1em;
-    }
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 60vw;
-      max-height: 550px;
-    }
-
-    .hustle-bottle-container {
-      font-size: 1em;
-      top: 50%;
-      left: 46%;
-      margin-top: -23em;
-    }
-
-    .cta-container {
-      display: flex;
-      justify-content: flex-end;
-      margin: 1em 0 0;
-    }
-
-    .cta {
-      background: $color-dark-text;
+    &:hover {
+      background-color: $color-green;
       color: white;
-      margin: 0 0 0 1em;
-      
-      &:hover {
-        background-color: $color-green;
-      }
-  
-      &:nth-of-type(2) {
-        background: $color-dark-text;
-        color: white;
-
-        &:hover {
-          background-color: $color-green;
-        }
-      }
     }
   }
 
-  @media (min-width: 900px) {
-    h1 span {
-      position: relative;
-      left: 25%;
-      top: 1.2em;
-    }
-  }
-
-  &.preload {
+  @media($mq-medium) {
+    padding-top: 16em;
+    padding-bottom: 16em;
 
     h1 {
-      opacity: 0;
-      transform: translateX(-20%);
-
-      span {
-        opacity: 0;
-        transform: translateY(0.5em);
-      }
+      letter-spacing: -1px;
+      font-size: 8em;
+      margin-bottom: 0.15em;
     }
 
     .cta {
-      opacity: 0;
-      transform: translateY(-2em);
-    }
-
-    &:before {
-      transform: translate3d(-100%, 0, 0);
-    }
-
-    .hustle-bottle-container {
-      transform: translate3d(100%, 0, 0);
-      opacity: 0;
+      font-size: 1.1em;
     }
   }
 }

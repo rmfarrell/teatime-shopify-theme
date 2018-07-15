@@ -235,7 +235,10 @@
       "1528081839617": {
         "type": "introducing-hustle",
         "settings": {
-          "calls_to_action": "introducing-hustle"
+          "image": "shopify:\/\/shop_images\/matcha-retouch-08020.jpg",
+          "headline": "Gift The Hustle",
+          "cta_text": "Gift a Free Can",
+          "cta_url": "https:\/\/google.com"
         }
       },
       "1528082006426": {
@@ -249,7 +252,7 @@
       "1528130295075": {
         "type": "image-with-text",
         "settings": {
-          "image": "shopify:\/\/shop_images\/tea_1080x_1d1be659-fc9f-4e48-92cb-772ebca193d1.png",
+          "image": "shopify:\/\/shop_images\/WhatsInside.png",
           "layout": "left",
           "title": "What is Matcha?",
           "text": "<p>Getting curious about that green powder popping up at all your favorite cafes?&nbsp; Here&rsquo;s the full rundown on our Matcha, how it&rsquo;s made and why have so lovingly dubbed it the Better Energy.<\/p>",
@@ -265,7 +268,8 @@
             "type": "know_ur_matcha",
             "settings": {
               "headline": "Know your Matcha",
-              "description": "<p>Matcha Tea is energy derived naturally from green tea <br> leaves, the process extracts caffine, anti-oxidents and the magical L-Theanine that give matcha it&rsquo;s unique form of focused andsustained energy to get you through your day.<\/p>",
+              "superhead": "",
+              "description": "<p>Matcha is a fine powder made from stone ground green tea leaves. The combination of caffeine, l-theanine, and antioxidants makes for a extended release energy, no crash, no jitters. Matcha is better energy.<\/p>",
               "link_text": "Watch the Video",
               "link_url": "http:\/\/youtube.com",
               "thumbnail": "shopify:\/\/shop_images\/kym-thumb.jpg"
@@ -275,7 +279,7 @@
             "type": "what_is_matcha",
             "settings": {
               "headline": "What is Matcha?",
-              "description": "<p>Unlike regular green tea, Matcha tea is grown in the shade to force the plants to produce extra nutrients in order to grow big and strong.&nbsp; We then harvest the power-packed leaves and stone grind to the traditional, neon green matcha powder, packed with all the Better Energy to get you through your day.<\/p>"
+              "description": "<p>Matcha is a fine powder made from stone ground green tea leaves. The combination of caffeine, l-theanine, and antioxidants makes for a extended release energy, no crash, no jitters. Matcha is better energy.<\/p>\n<p>Unlike regular green tea, Matcha plants are shade-grown to produce extra nutrients in order to grow with limited sunlight. Rather than steeping a tea bag with traditional tea, the beauty of matcha lies in consuming the whole leaf.<\/p>"
             }
           },
           "1528413593042": {
@@ -300,7 +304,7 @@
             "type": "stacks_up",
             "settings": {
               "title": "How it stacks up",
-              "description": "<p>With Matcha, it&rsquo;s more than just caffeine at work. But in case you were curious, here&rsquo;s how it stacks up to your daily caffine kicks.<\/p>",
+              "description": "<p>In case you were wondering how matcha stacks up to your daily dose, here&rsquo;s the breakdown:<\/p>",
               "bottle_img": "shopify:\/\/shop_images\/Original.png",
               "hustle_img": "shopify:\/\/shop_images\/Hustle.png"
             }
@@ -308,10 +312,10 @@
           "1528409656407": {
             "type": "imgage_with_text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/ceremonial-vs-culinary.jpg",
+              "image": "shopify:\/\/shop_images\/MatchaCompare_19f308f7-c23a-49d5-b9eb-8e3a1ca5af92.png",
               "layout": "right",
               "title": "Ceremonial Grade  vs. Culinary Grade",
-              "text": "<p>Ceremonial grade denotes the highest quality <br> of matcha, meant to be consumed in a traditional Japanese tea ceremony, containing all the natural caffeine and L-Theinine we love so much.&nbsp; We follow the same steps at our partner Farm in Japan to ensure pure, clean energy in every sip.<\/p>",
+              "text": "<p>Ceremonial Grade is an official designation for the highest quality matcha available and it&rsquo;s the only grade of matcha we produce with our partner farm in Japan. Crafted for traditional Japanese tea ceremonies, Ceremonial Grade matcha is rich in natural caffeine and L-Theanine offering a unique combination of energy and focus.<\/p>",
               "button_label": "",
               "button_link": ""
             }
@@ -347,6 +351,7 @@
             "type": "video_tout",
             "settings": {
               "headline": "Good things come  to those who hustle",
+              "superhead": "",
               "description": "<p>It&rsquo;s the backbone of our business, and responsible for MatchaBar&rsquo;s very existence. The hustle is about going above and beyond to get the job done. Our community, the MatchaFam, defines itself by just this - hard work, passion, and a sense of purpose.<\/p>",
               "link_text": "Watch the video",
               "link_url": "https:\/\/youtube.com",
@@ -490,10 +495,18 @@
               "image": "shopify:\/\/shop_images\/Tin80.png",
               "product_link": "#classic-matcha-tin"
             }
+          },
+          "1529423058979": {
+            "type": "floating_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Tin30.png",
+              "product_link": "#premium-matcha-tin-30g"
+            }
           }
         },
         "block_order": [
-          "1528506703038"
+          "1528506703038",
+          "1529423058979"
         ],
         "settings": {
           "title": "Tins",
@@ -542,6 +555,49 @@
           "description": "<h2>Get all the Matcha Swag<\/h2><p>Some more copy goes here.<\/p>",
           "image": "shopify:\/\/shop_images\/brew_group.png"
         }
+      },
+      "collection-list": {
+        "type": "collection-list",
+        "blocks": {
+          "1529086713706": {
+            "type": "collection",
+            "settings": {
+              "collection": "bottle"
+            }
+          },
+          "1529086721062": {
+            "type": "collection",
+            "settings": {
+              "collection": "hustle"
+            }
+          },
+          "1529086729737": {
+            "type": "collection",
+            "settings": {
+              "collection": "tins"
+            }
+          },
+          "1529086739130": {
+            "type": "collection",
+            "settings": {
+              "collection": "kits"
+            }
+          },
+          "1529086744768": {
+            "type": "collection",
+            "settings": {
+              "collection": "gear-1"
+            }
+          }
+        },
+        "block_order": [
+          "1529086713706",
+          "1529086721062",
+          "1529086729737",
+          "1529086739130",
+          "1529086744768"
+        ],
+        "settings": {}
       }
     },
     "content_for_index": [
