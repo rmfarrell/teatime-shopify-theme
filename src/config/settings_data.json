@@ -129,19 +129,6 @@
           "social_fb_link": ""
         }
       },
-      "hero": {
-        "type": "hero",
-        "settings": {
-          "title": "Hustle",
-          "description": ""
-        }
-      },
-      "hero-bottles": {
-        "settings": {
-          "title": "Bottle",
-          "image": ""
-        }
-      },
       "partners": {
         "type": "partners",
         "blocks": {
@@ -192,7 +179,7 @@
       "instagram-feed": {
         "type": "instagram-feed",
         "settings": {
-          "title": "Follow @Matchabar"
+          "title": "Join the #MatchaFam"
         }
       },
       "1528081839617": {
@@ -449,60 +436,6 @@
           "menu": "legal"
         }
       },
-      "hero-tins": {
-        "type": "hero-tins",
-        "blocks": {
-          "1528506703038": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Tin80.png",
-              "product_link": "#classic-matcha-tin"
-            }
-          },
-          "1529423058979": {
-            "type": "floating_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Tin30.png",
-              "product_link": "#premium-matcha-tin-30g"
-            }
-          }
-        },
-        "block_order": [
-          "1528506703038",
-          "1529423058979"
-        ],
-        "settings": {
-          "title": "Tins",
-          "description": "<h2>Ready-to-brew Ceremonial Grade matcha<\/h2>"
-        }
-      },
-      "hero-hustle": {
-        "type": "hero-hustle",
-        "block_order": [
-          "1528507767947",
-          "1528507820296"
-        ],
-        "settings": {
-          "title": "Hustle",
-          "description": "<h2>The first ever Matcha-based energy drink<\/h2>\n<p>Choose a can to explore<\/p>"
-        }
-      },
-      "hero-gear": {
-        "type": "hero-gear",
-        "settings": {
-          "title": "Gear",
-          "description": "<h2>Get all the matcha swag<\/h2>\n<p>Some more copy here.<\/p>",
-          "image": ""
-        }
-      },
-      "hero-kits": {
-        "type": "hero-kits",
-        "settings": {
-          "title": "Kits",
-          "description": "<h2>Get all the Matcha Swag<\/h2><p>Some more copy goes here.<\/p>",
-          "image": "shopify:\/\/shop_images\/brew_group.png"
-        }
-      },
       "collection-list": {
         "type": "collection-list",
         "blocks": {
@@ -545,11 +478,55 @@
           "1529086744768"
         ],
         "settings": {}
+      },
+      "hero-bottles": {
+        "type": "hero-bottles",
+        "settings": {
+          "title": "Bottle",
+          "image": "shopify:\/\/shop_images\/bottle.jpg"
+        }
+      },
+      "hero-hustle": {
+        "type": "hero-hustle",
+        "settings": {
+          "title": "Hustle",
+          "image": "shopify:\/\/shop_images\/justle.jpg"
+        }
+      },
+      "hero-tins": {
+        "type": "hero-tins",
+        "settings": {
+          "title": "Tins",
+          "image": "shopify:\/\/shop_images\/tins.jpg"
+        }
+      },
+      "hero-kits": {
+        "type": "hero-kits",
+        "settings": {
+          "title": "Kits",
+          "image": "shopify:\/\/shop_images\/kits.jpg"
+        }
+      },
+      "hero-gear": {
+        "type": "hero-gear",
+        "settings": {
+          "title": "Gear",
+          "image": "shopify:\/\/shop_images\/Gear.jpg"
+        }
+      },
+      "1531700618504": {
+        "type": "full-bleed-banner",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Bottles.jpg",
+          "cta_title": "Shop Bottles",
+          "cta_url": "shopify:\/\/collections\/bottle"
+        }
       }
     },
     "content_for_index": [
       "1528081839617",
       "1528082006426",
+      "1531700618504",
       "1528130295075"
     ]
   },

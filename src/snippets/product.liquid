@@ -168,35 +168,59 @@
     </div>
   </div>
 
-  <!-- Page Includes -->
+
+  {% comment %} Intersitial image {% endcomment %}
+  {% assign interstitial = product.metafields.accentuate.interstitial_background %}
+  {% case interstitial %}
+  {% when 'Leaves and Bottles' %}
+    <div class="interstitial" style="background-image: url({{ '../assets/images/inter-original.jpg' | asset_url }})" /></div>
+  {% when 'Honey' %}
+    <div class="interstitial" style="background-image: url({{ '../assets/images/inter-honey.jpg' | asset_url }})" /></div>
+  {% when 'Mint' %}
+    <div class="interstitial" style="background-image: url({{ '../assets/images/inter-mint.jpg' | asset_url }})" /></div>
+  {% when 'Apple and Ginger' %}
+    <div class="interstitial" style="background-image: url({{ '../assets/images/inter-apple-and-ginger.jpg' | asset_url }})" /></div>
+  {% when 'Matcha Prep' %}
+    <div class="interstitial" style="background-image: url({{ '../assets/images/inter-matcha-prep.jpg' | asset_url }})" /></div>
+  {% else %}
+  {% endcase %}
+
+  {% comment %} Page Includes {% endcomment %}
   {% if product.metafields.snippet.page_snippet.size > 0 %}
     <div class="wrapper pale-green">
       {% include 'page-content-snippets', with handles: product.metafields.snippet.page_snippet %}
     </div>
     {% endif  %}
 
-  <!-- Nutrition Information -->
-  {% if product.metafields.nutrition_info.show == 'true' %}
-    <div class="wrapper pale-green">
-      <div class="nutrition-information">
-        <h3>{{ 'nutrition_facts.headline' | t }}</h3>
-        <table>
-          <tr>
-            <th colspan="2">{{ 'nutrition_facts.amount_per_serving' | t }}</th>
-            <th>{{ 'nutrition_facts.percent_daily_value' | t }}</th>
-          </tr>
-          {% for field in product.metafields.nutrition_facts %}
-            {% assign values = field | last | split: '|' %}
-            <tr>
-              <td>{{ field | first | split: '_' | join: ' ' }}</td>
-              <td>{{ values[0] }}</td>
-              <td>{{ values[1] }}</td>
-            </tr>
-          {% endfor %}
-        </table>
-        <p>{{ 'nutrition_facts.additional_info' | t }}</p>
-        <p><strong>{{ 'nutrition_facts.key' | t }}</strong></p>
+  <div class="flex-columns wrapper nutrition-info-container">
+    {% if product.metafields.accentuate.whats_inside != 'blank' %}
+      <div class="column rte">
+        {{ product.metafields.accentuate.whats_inside }}
       </div>
-    </div>
-  {% endif %}
+    {% endif %}
+
+    {% if product.metafields.nutrition_info.show == 'true' %}
+      <div class="column">
+        <div class="nutrition-information">
+          <h3>{{ 'nutrition_facts.headline' | t }}</h3>
+          <table>
+            <tr>
+              <th colspan="2">{{ 'nutrition_facts.amount_per_serving' | t }}</th>
+              <th>{{ 'nutrition_facts.percent_daily_value' | t }}</th>
+            </tr>
+            {% for field in product.metafields.nutrition_facts %}
+              {% assign values = field | last | split: '|' %}
+              <tr>
+                <td>{{ field | first | split: '_' | join: ' ' }}</td>
+                <td>{{ values[0] }}</td>
+                <td>{{ values[1] }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+          <p>{{ 'nutrition_facts.additional_info' | t }}</p>
+          <p><strong>{{ 'nutrition_facts.key' | t }}</strong></p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
 </div>

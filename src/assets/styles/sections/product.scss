@@ -114,6 +114,29 @@
     }
   }
 
+  .nutrition-info-container {
+    align-items: flex-start;
+
+    .column {
+      flex: 47% 0 1;
+    }
+
+    ul {
+      padding-left: 0;
+    }
+    
+    li:before {
+      display: none;
+    }
+  }
+
+  .interstitial {
+    min-height: 50em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
   .add-to-cart form {
 
     font-size: 1.2em;
