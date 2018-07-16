@@ -19,20 +19,3 @@ each($$('.hero'), ($hero) => {
     })
   })
 });
-
-
-// -- Introducing hustle script (homepage)
-(function () {
-  const $container = $('#introducing-hustle')
-  if (!$container) return;
-  // TODO: load apng or png
-  const $imgContainer = $container.querySelector('.hustle-bottle-container')
-  const src = $imgContainer.getAttribute('data-custom-src')
-  preloadImage(src, ($img) => {
-    $container.classList.remove('preload')
-    setTimeout(() => {
-      $container.classList.remove('preload')
-      $imgContainer.appendChild($img)
-    }, 200)
-  })
-})()

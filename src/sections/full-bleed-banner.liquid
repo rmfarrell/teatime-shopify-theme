@@ -1,0 +1,32 @@
+<aside class="full-bleed-banner hero lazyload"  data-bgset="{% include 'responsive-bg-image', image: section.settings.image %}">
+  <a class="cta" href="{{section.settings.cta_url}}" title="{{section.settings.cta_title}}">{{section.settings.cta_title}}</a>
+</aside>
+
+{% schema %}
+  {
+    "name": "Full Bleed Banner",
+    "settings": [
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "cta_title",
+        "label": "CTA title"
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA URL"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Full Bleed Banner",
+        "category": "Promotional"
+      }
+    ]
+  }
+{% endschema %}

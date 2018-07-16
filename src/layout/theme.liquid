@@ -73,12 +73,9 @@
   <main role="main" id="MainContent">
     {{ content_for_layout }}
   </main>
+  
+  {% section 'instagram-feed' %}
 
-  {% if true  %}
-    <div class="wrapper"  data-observe-intersection>
-      {% section 'collection-list' %}
-    </div>
-  {% endif %}
   <div id="glob"></div>
   {% section 'footer' %}
 </body>

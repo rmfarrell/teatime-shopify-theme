@@ -1,7 +1,5 @@
 .blog-posts-section {
   text-align: center;
-  // background-color: $color-pale-green;
-  // box-shadow: -1200px 0px 0px 0px $color-pale-green;
   padding-bottom: 6em;
   transition: background-color 4s;
   position: relative;
@@ -88,6 +86,10 @@
     padding-right: $gutter;
     margin: 0 auto;
     position: relative;
+    background-image: url(../images/purple-circle.svg),url(../images/Honey-06.svg);
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: 90% 30%, 20% 95%;
 
     h2 {
       font-size: 3.6em;

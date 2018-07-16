@@ -9,30 +9,6 @@
   In your liquid template file, copy the following line
   - {% include 'product' with css_class: 'bottles', section: section %}
 {%- endcomment -%}
-<header class='hero wrapper {{css_class}}'>
-  <div class="text-container">
-    <h1 class="text-fit">{{section.settings.title}}</h1>
-    <div class='description rte'>{{section.settings.description}}</div>
-  </div>
-  <div class="hero-images-container">
-
-    {% if section.settings.image %}
-      <div class="hero-image" {{ block.shopify_attributes }}>
-        {% include 'responsive-image' with
-          image: section.settings.image,
-          max_height: 600,
-          max_width: 720 %}
-      </div>
-    {% endif %}
-
-    {% for block in section.blocks %}
-      <a href="{{block.settings.product_link}}" class="floating-image preload hero-image" {{ block.shopify_attributes }}>
-        {% include 'responsive-image' with
-          image: block.settings.image,
-          psuedo_elements: true,
-          max_height: 420
-        %}
-      </a>
-    {% endfor %}
-  </div>
+<header class="hero lazyload {{css_class}}"  data-bgset="{% include 'responsive-bg-image', image: section.settings.image %}">
+  <h1 class="wrapper">{{section.settings.title}}</h1>
 </header>
