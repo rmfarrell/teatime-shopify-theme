@@ -4,11 +4,6 @@
     padding-top: calc(#{$header-height} + 3em);
   }
 
-  .product-main {
-    margin: 0 auto 10em;
-    min-height: 80vh;
-  }
-
   h5.tagline {
     color: $color-light-gray;
   }
@@ -42,6 +37,8 @@
   .product-main {
     font-size: 1.1em;
     text-align: center;
+    margin: 0 auto 10em;
+    min-height: 80vh;
 
     h1 {
       font-size: 3.333em;
@@ -55,6 +52,10 @@
     .description {
       margin: 0 0 2em;
       font-size: 1em;
+    }
+
+    .text-container p {
+      max-width: 24em;
     }
 
     @media ($mq-medium) {
