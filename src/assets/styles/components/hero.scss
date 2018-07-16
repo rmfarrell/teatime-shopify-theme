@@ -2,10 +2,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 9em $gutter;
+  padding: 0 $gutter;
   font-size: 1.3em;
   text-align: center;
   margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 34em;
+  background-color: $color-green;
 
   h1 {
     font-weight: bold;
@@ -21,6 +26,7 @@
     background-color: white;
     color: $color-green;
     font-size: 1.3em;
+    align-self: center;
 
     &:hover {
       background-color: $color-green;
@@ -34,8 +40,6 @@
 
   @media($mq-medium) {
     text-align: left;
-    padding-top: 6em;
-    padding-bottom: 6em;
 
     h1 {
       letter-spacing: -1px;

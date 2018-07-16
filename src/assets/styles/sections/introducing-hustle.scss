@@ -1,14 +1,13 @@
 #introducing-hustle {
   text-align: center;
   margin-bottom: 0;
+  min-height: 100vh;
 
   h1 {
     margin-bottom: 0.25em;
   }
   
   @media($mq-medium) {
-    padding-top: 12em;
-    padding-bottom: 12em;
     
     h1 {
       font-size: 11em;
