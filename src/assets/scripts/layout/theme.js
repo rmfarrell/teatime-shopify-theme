@@ -33,7 +33,7 @@ window.theme = window.theme || {};
 // -- Global events
 
 // - Scroll event
-const debouncedScroll = debounce(() => window.dispatchEvent(scrollEvent), 200);
+const debouncedScroll = debounce(() => window.dispatchEvent(scrollEvent), 100);
 window.addEventListener('scroll', debouncedScroll)
 
 // - Dispatch resize event
