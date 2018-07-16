@@ -42,7 +42,24 @@
         %}
       {% endfor %}
 
-      {% include 'spiral' %}
+
+      {% assign product_bg = product.metafields.accentuate.product_background %}
+      {% case product_bg %}
+      {% when 'apple' %}
+        {% include 'apple-svg' %}
+      {% when 'circle' %}
+        {% include 'circle-svg' %}
+      {% when 'honey' %}
+        {% include 'honey-svg' %}
+      {% when 'mint' %}
+        {% include 'mint-svg' %}
+      {% when 'unsweetened' %}
+        {% include 'unsweetened-svg' %}
+      {% when 'original' %}
+        {% include 'original-svg' %}
+      {% else %}
+      {% endcase %}
+
       {% if product.images.size > 1 %}
         <figcaption>
           <span class="desktop">Click</span>
