@@ -291,17 +291,6 @@
       "about": {
         "type": "about",
         "blocks": {
-          "1528414590806": {
-            "type": "video_tout",
-            "settings": {
-              "headline": "Good things come  to those who hustle",
-              "superhead": "",
-              "description": "<p>It&rsquo;s the backbone of our business, and responsible for MatchaBar&rsquo;s very existence. The hustle is about going above and beyond to get the job done. Our community, the MatchaFam, defines itself by just this - hard work, passion, and a sense of purpose.<\/p>",
-              "link_text": "Watch the video",
-              "link_url": "https:\/\/youtube.com",
-              "thumbnail": "shopify:\/\/shop_images\/kym-thumb.jpg"
-            }
-          },
           "1528415357578": {
             "type": "image_with_text",
             "settings": {

@@ -3,6 +3,11 @@
     <div class="content-blocks" {{ block.shopify_attributes }}>
       {% case block.type %}
 
+        {% when 'video_embed' %}
+        {% include 'video-embed' with 
+          video_url: block.settings.video_url
+        %}
+
         {% when 'banner' %}
         <div class='wrapper pale-green'>
           {% include 'page-content-snippets' with
@@ -21,16 +26,6 @@
             button_link: block.settings.button_link 
           %}
         </div>
-
-        {% when 'video_tout' %}
-        {% include 'video-tout' with 
-          headline: block.settings.headline,
-          superhead: block.settings.superhead,
-          description: block.settings.description,
-          thumbnail: block.settings.thumbnail,
-          link_text: block.settings.link_text,
-          link_url: block.settings.link_url
-        %}
 
         {% when 'icon_list' %}
         <div class='wrapper pale-green'>
@@ -121,38 +116,14 @@
         ]
       },
       {
-        "name": "Video Tout",
-        "type": "video_tout",
+        "name": "Video Embed",
+        "type": "video_embed",
         "settings": [
           {
-            "type": "text",
-            "id": "headline",
-            "label": "Headline"
-          },
-          {
-            "type": "text",
-            "id": "superhead",
-            "label": "Superhead"
-          },
-          {
-            "type": "richtext",
-            "id": "description",
-            "label": "Description"
-          },
-          {
-            "type": "text",
-            "id": "link_text",
-            "label": "Link Text"
-          },
-          {
-            "type": "url",
-            "id": "link_url",
-            "label": "Link URL"
-          },
-          {
-            "type": "image_picker",
-            "id": "thumbnail",
-            "label": "Thumbnail"
+            "type": "video_url",
+            "id": "video_url",
+            "label": "Video URL",
+            "accept": ["youtube"]
           }
         ]
       },
