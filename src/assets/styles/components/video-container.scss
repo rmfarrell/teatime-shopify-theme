@@ -1,0 +1,16 @@
+.video-container {
+  background-color: $color-green;
+  position: relative;
+
+  iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &.youtube {
+    padding-bottom: 56.5%;
+  }
+}

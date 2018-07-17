@@ -5,7 +5,7 @@
   }
 }
 
-// -- Styles for the Contact page
+// -- Specific pages
 #contact-page {
   align-items: start;
   
@@ -14,4 +14,9 @@
   textarea {
     margin: 0 0 2.5em;
   }
+}
+
+#about-matchabar main,
+#matcha-101 main {
+  padding-top: $header-height-initial;
 }
