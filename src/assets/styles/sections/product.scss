@@ -198,9 +198,9 @@
     }
   }
 
-  &.Magenta {
+  &.Red {
     & .cta {
-      background-color: $color-magenta;
+      background-color: $color-red;
     }
   }
 
@@ -213,6 +213,12 @@
   &.Mint {
     & .cta {
       background-color: $color-mint;
+    }
+  }
+
+  &.LightGreen {
+    & .cta {
+      background-color: $color-light-green;
     }
   }
 
