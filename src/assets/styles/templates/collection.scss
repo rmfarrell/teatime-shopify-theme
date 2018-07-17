@@ -88,11 +88,18 @@
       opacity: 1;
     }
 
-    &.Magenta {
+    &.Red {
       &:before {
-        background-color: $color-magenta;
+        background-color: $color-red;
       }
     }
+
+    &.LightGreen {
+      &:before {
+        background-color: $color-light-green;
+      }
+    }
+  
   
     &.Gold {
       &:before {
