@@ -14,7 +14,7 @@
           title: block.settings.title,
           text: block.settings.text,
           button_label: block.settings.button_label,
-          button_link: block.settings.button_link 
+          button_link: block.settings.button_link
         %}
 
         {% when 'banner' %}
@@ -27,12 +27,6 @@
         {% when 'video_embed' %}
         {% include 'video-embed' with 
           video_url: block.settings.video_url
-        %}
-
-        {% when 'what_is_matcha' %}
-        {% include 'what-is-matcha' with 
-          headline: block.settings.headline,
-          description: block.settings.description
         %}
 
         {% when 'icon_list' %}
@@ -128,22 +122,6 @@
             "type": "video_url",
             "id": "video_url",
             "label": "Video URL"
-          }
-        ]
-      },
-      {
-        "name": "What is Matcha?",
-        "type": "what_is_matcha",
-        "settings": [
-          {
-            "type": "text",
-            "id": "headline",
-            "label": "Headline"
-          },
-          {
-            "type": "richtext",
-            "id": "description",
-            "label": "Description"
           }
         ]
       },

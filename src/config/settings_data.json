@@ -214,17 +214,6 @@
       "matcha101": {
         "type": "matcha101",
         "blocks": {
-          "1528165177187": {
-            "type": "know_ur_matcha",
-            "settings": {
-              "headline": "Know your Matcha",
-              "superhead": "",
-              "description": "<p>Matcha is a fine powder made from stone ground green tea leaves. The combination of caffeine, l-theanine, and antioxidants makes for a extended release energy, no crash, no jitters. Matcha is better energy.<\/p>",
-              "link_text": "Watch the Video",
-              "link_url": "http:\/\/youtube.com",
-              "thumbnail": "shopify:\/\/shop_images\/kym-thumb.jpg"
-            }
-          },
           "1528414048531": {
             "type": "what_is_matcha",
             "settings": {
@@ -297,8 +286,7 @@
           "1528166196363",
           "1531776597377"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "about": {
         "type": "about",
@@ -342,13 +330,11 @@
           "1528415357578",
           "1531774894583"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "page-sections": {
         "type": "page-sections",
-        "settings": {
-        }
+        "settings": {}
       },
       "team": {
         "type": "team",
@@ -478,8 +464,7 @@
           "1529086739130",
           "1529086744768"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "hero-bottles": {
         "type": "hero-bottles",
@@ -540,18 +525,15 @@
           "blocks": {
             "collection-list-0": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "collection-list-1": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "collection-list-2": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -559,8 +541,7 @@
             "collection-list-1",
             "collection-list-2"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -570,8 +551,7 @@
         },
         "featured-product": {
           "type": "featured-product",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "content_for_index": [
