@@ -3,7 +3,7 @@
     "social_twitter_link": "https:\/\/twitter.com\/matchabar",
     "social_facebook_link": "https:\/\/facebook.com\/matchabar",
     "social_instagram_link": "https:\/\/instagram.com\/matchabar",
-    "favicon": "",
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -188,7 +188,7 @@
           "image": "shopify:\/\/shop_images\/matcha-retouch-08020.jpg",
           "headline": "Gift The Hustle",
           "cta_text": "Gift a Free Can",
-          "cta_url": "https:\/\/google.com"
+          "cta_url": "http:\/\/www.matchahustle.com\/"
         }
       },
       "1528082006426": {
@@ -276,10 +276,15 @@
               "page": "include-the-perfect-cup"
             }
           },
-          "1528166209516": {
-            "type": "banner",
+          "1531776597377": {
+            "type": "imgage_with_text",
             "settings": {
-              "page": "include-get-the-tools"
+              "image": "shopify:\/\/shop_images\/matcha-whisk_72e73f9f-47ee-4ed0-ac15-53f6c760d4b1.png",
+              "layout": "left",
+              "title": "Get the tools",
+              "text": "<p>Before you begin, pick up the tools to get the job done right. We promise, your matcha will thank you.<\/p>",
+              "button_label": "Get the tools",
+              "button_link": "shopify:\/\/collections\/kits"
             }
           }
         },
@@ -290,9 +295,10 @@
           "1528166156790",
           "1528409656407",
           "1528166196363",
-          "1528166209516"
+          "1531776597377"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "about": {
         "type": "about",
@@ -308,31 +314,24 @@
               "thumbnail": "shopify:\/\/shop_images\/kym-thumb.jpg"
             }
           },
-          "1528414655605": {
-            "type": "icon_list",
-            "settings": {
-              "icon_list_headline": "Our Values",
-              "icon_list_1_icon": "shopify:\/\/shop_images\/rocket_def7f029-ee60-47bc-a531-55abfb256fea.png",
-              "icon_list_1_title": "Value 1",
-              "icon_list_1_description": "<p>value 1 content<\/p>",
-              "icon_list_2_icon": "shopify:\/\/shop_images\/leaf_f8fab2ab-4153-48e3-b963-d1be16db8780.png",
-              "icon_list_2_title": "Value 2",
-              "icon_list_2_description": "<p>value 2 content<\/p>",
-              "icon_list_3_icon": "shopify:\/\/shop_images\/smiley.png",
-              "icon_list_3_title": "Value 3",
-              "icon_list_3_description": "<p>value 3 content<\/p>",
-              "icon_list_4_icon": "shopify:\/\/shop_images\/smiley.png",
-              "icon_list_4_title": "Value 4",
-              "icon_list_4_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a sollicitudin turpis, in mollis arcu. Pellentesque at tortor porttitor, cursus lectus eget, finibus orci. Vestibulum vitae turpis et lectus semper sodales congue eu quam. In hac habitasse platea dictumst. In eu risus a arcu aliquet condimentum. Donec luctus interdum luctus. Maecenas vel ligula sapien. Fusce at semper tortor. Fusce non mauris vel sapien tempus tempor at eu nulla. Ut vel aliquet metus. Donec ultrices tempus dui sed varius. Vivamus vel ante eu libero luctus fringilla quis in ligula.<\/p>"
-            }
-          },
           "1528415357578": {
             "type": "image_with_text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/founders_573afef2-a1e5-4f70-a4ff-89d291c41ae9.jpg",
+              "image": "shopify:\/\/shop_images\/Matcha-fields2.png",
               "layout": "right",
               "title": "Our Matcha",
-              "text": "<p>We are proud to serve our very own blend of  ?ceremonial grade matcha sourced directly from  an independent family farm in Nishio, Japan. This partnership is the foundation of our business and  we make a pilgrimage to the farm every May for  the spring harvest!<\/p>",
+              "text": "<p>We are proud to serve our very own blend of ceremonial grade matcha sourced directly from a family business in Kagoshima, Japan. This partnership is the foundation of our business and we make a pilgrimage to the farm every May for the spring harvest! All of our matcha is blended by a 10th grade &ldquo;chasi&rdquo; (tea master), one of 10 in the world with this certification!<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1531774894583": {
+            "type": "image_with_text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Matchabar-Founders.png",
+              "layout": "left",
+              "title": "Our Founders",
+              "text": "<p>Back in 2014, brothers Max &amp; Graham Fortgang were in the midst of pursuing what they like to call the <i>Hustle<\/i>: juggling school, pursuing careers and holding down jobs to make ends meet.<\/p>\n<p>Max, President and co-founder worked at galleries and museums while holding down jobs in the food &amp; beverage world. Graham, MatchaBar&rsquo;s CEO and fellow co-founder followed his entrepreneurial spirit with his own event production company in the world of music.<\/p>\n<p>While their commitment to their hustles never wavered, their reliance on coffee and energy drinks was getting them down. In response, they started seeking a better energy, discovered matcha, and the rest is history....<\/p>",
               "button_label": "",
               "button_link": ""
             }
@@ -340,14 +339,16 @@
         },
         "block_order": [
           "1528414590806",
-          "1528414655605",
-          "1528415357578"
+          "1528415357578",
+          "1531774894583"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "page-sections": {
         "type": "page-sections",
-        "settings": {}
+        "settings": {
+        }
       },
       "team": {
         "type": "team",
@@ -477,7 +478,8 @@
           "1529086739130",
           "1529086744768"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "hero-bottles": {
         "type": "hero-bottles",
@@ -517,7 +519,7 @@
       "1531700618504": {
         "type": "full-bleed-banner",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Bottles.jpg",
+          "image": "shopify:\/\/shop_images\/matchagrab.png",
           "cta_title": "Shop Bottles",
           "cta_url": "shopify:\/\/collections\/bottle"
         }
@@ -538,15 +540,18 @@
           "blocks": {
             "collection-list-0": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "collection-list-1": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "collection-list-2": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -554,7 +559,8 @@
             "collection-list-1",
             "collection-list-2"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -564,7 +570,8 @@
         },
         "featured-product": {
           "type": "featured-product",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [
