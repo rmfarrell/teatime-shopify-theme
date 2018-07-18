@@ -24,6 +24,12 @@
           %}
         </div>
 
+        {% when 'interstitial' %}
+        {% include 'responsive-image' with 
+          image: block.settings.interstitial, 
+          max_width: 2500
+        %}
+
         {% when 'video_embed' %}
         {% include 'video-embed' with 
           video_url: block.settings.video_url
@@ -121,7 +127,8 @@
           {
             "type": "video_url",
             "id": "video_url",
-            "label": "Video URL"
+            "label": "Video URL",
+            "accept": ["youtube"]
           }
         ]
       },
@@ -193,6 +200,17 @@
             "type": "richtext",
             "id": "icon_list_4_description",
             "label": "Description 4"
+          }
+        ]
+      },
+      {
+        "name": "Interstitial image",
+        "type": "interstitial",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "interstitial",
+            "label": "Interstitial Image"
           }
         ]
       },
