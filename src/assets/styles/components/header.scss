@@ -4,6 +4,7 @@
   width: 100%;
   z-index: 100;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+
 }
 
 #global-header {
@@ -41,6 +42,8 @@
     transition: opacity 0.4s, transform 0.4s;
     z-index: -1;
     opacity: 0;
+    max-height: 100vh;
+    -webkit-overflow-scrolling: touch;
     
     &.is-active {
       display: block;
@@ -222,11 +225,6 @@
     ul.collection-list {
       font-size: 0.65em;
       @include constrain;
-
-      a {
-        margin-top: 2em;
-        margin-bottom: 3em;
-      }
 
       h4 {
         margin-bottom: 2em;
