@@ -5,7 +5,9 @@
 
         {% when 'video_embed' %}
         {% include 'video-embed' with 
-          video_url: block.settings.video_url
+          video_url: block.settings.video_url,
+          autoplay: block.settings.autoplay,
+          loop: block.settings.loop
         %}
 
         {% when 'banner' %}
@@ -124,6 +126,16 @@
             "id": "video_url",
             "label": "Video URL",
             "accept": ["youtube"]
+          },
+          {
+            "type": "checkbox",
+            "id": "autoplay",
+            "label": "Autoplay"
+          },
+          {
+            "type": "checkbox",
+            "id": "loop",
+            "label": "Loop"
           }
         ]
       },
