@@ -3,8 +3,20 @@
 
   Params
   - video_url (video_url)
+  - loop (boolean)
+  - autoplay (boolean)
 
 {% endcomment %}
+{% if autoplay == true %}
+  {% assign _autoplay = 1 %}
+{% else %}
+  {% assign _autoplay = 0 %}
+{% endif %}
+{% if loop == true %}
+  {% assign _loop = 1 %}
+{% else %}
+  {% assign _loop = 0 %}
+{% endif %}
 <section class="video-container youtube">
-  <iframe src="//www.youtube.com/embed/{{video_url.id}}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe src="//www.youtube.com/embed/{{video_url.id}}?autoplay={{_autoplay}}&loop={{_loop}}&showinfo=0&controls=0&modestbranding=1&enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </section>

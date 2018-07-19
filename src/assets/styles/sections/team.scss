@@ -1,49 +1,40 @@
 #the-team {
-  padding-top: 8em;
-  padding-bottom: 8em ;
+  margin-bottom: 4em;
 
-  > h2 {
-    font-size: 3.2em;
+  h2 {
     text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .img-container {
     margin-bottom: 2em;
   }
-  
+
+  li:before {
+    display: none;
+  }
+
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
+    padding-left: 0;
+
+    @media (min-width: 750px) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   li {
-    flex: calc(50% - #{$gutter}) 0 1;
-    text-align: center;
-    margin: 0 $gutter/2 6em;
+    margin: 1.5em 0 0;
+    flex: 0 0 30%;
+  }
 
-    @media (min-width: 400px) {
-      flex: calc(33.32% - #{$gutter}) 0 1;
+  a {
+    font-size: 1.1em;
+    display: block;
+    font-weight: 500;
+
+    &:hover {
+      color: $color-dark-text;
     }
-
-    @media (min-width: 850px) {
-      flex: calc(25% - #{$gutter}) 0 1;
-    }
-  }
-
-  h4, h5 {
-    font-size: 1.3em;
-    margin: 0 auto 0.5em;
-  }
-  
-  h5 {
-    font-weight: normal;
-    color: $color-light-gray;
-  }
-
-  .img-container  {
-    border-radius: 50%;
-    overflow: hidden;
-    height: 150px;
-    width: 150px;
-    margin: 0 auto 1.5em;
-    background-color: #D8D8D8;
   }
 }

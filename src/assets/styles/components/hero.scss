@@ -5,12 +5,12 @@
   padding: 0 $gutter;
   font-size: 1.3em;
   text-align: center;
-  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 34em;
   background-color: $color-green;
+  background-attachment: fixed;
 
   h1 {
     font-weight: bold;
