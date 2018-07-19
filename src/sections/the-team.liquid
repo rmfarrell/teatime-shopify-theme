@@ -1,0 +1,51 @@
+<section id="the-team" class="rte">
+  <h2>{{ section.settings.title }}</h2>
+  <div class="img-container">
+    {% include 'responsive-image' with 
+      image: section.settings.image,
+      max_width: 1600 %}
+  </div>
+  <ul>
+    {% for block in section.blocks %}
+      <li>
+        <span>{{block.settings.label}}</span>
+        <a href="mailto:{{block.settings.email}}">{{block.settings.email}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% schema %}
+{
+  "name": "The Team",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Inquiries",
+      "type": "person",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
