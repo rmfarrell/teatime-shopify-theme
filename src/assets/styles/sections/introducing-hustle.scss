@@ -5,6 +5,11 @@
 
   h1 {
     margin-bottom: 0.25em;
+    text-shadow: -2px 3px 40px rgba(0,0,0,0.44);
+  }
+
+  .cta {
+    box-shadow: -2px 3px 40px -9px rgba(0,0,0,0.44);
   }
   
   @media($mq-medium) {
