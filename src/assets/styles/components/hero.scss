@@ -10,7 +10,6 @@
   justify-content: center;
   min-height: 34em;
   background-color: $color-green;
-  background-attachment: fixed;
 
   h1 {
     font-weight: bold;
@@ -38,8 +37,9 @@
     margin-bottom: 0;
   }
 
-  @media($mq-medium) {
+  @media ($mq-medium) {
     text-align: left;
+    background-attachment: fixed;
 
     h1 {
       letter-spacing: -1px;
