@@ -37,13 +37,16 @@ main {
   margin: 0 auto 7em;
   max-width: 30em;
 
-  h1, h2, h3, h4, h5 {
-    width: 50%
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    width: 50%;
   }
 }
 
 .flex-columns {
-
   .column {
     margin-bottom: 2em;
   }
@@ -64,16 +67,16 @@ main {
         flex: 65% 0 1;
       }
     }
-  }
 
-  &.narrow {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    &.narrow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
 
-    .column {
-      flex: 16% 0 0;
+      .column {
+        flex: 16% 0 0;
+      }
     }
   }
 }
