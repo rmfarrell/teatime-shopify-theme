@@ -3,8 +3,7 @@
   position: fixed;
   width: 100%;
   z-index: 100;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #global-header {
@@ -14,18 +13,18 @@
   top: 0;
   height: $header-height-initial;
   transition: height 0.3s;
-  
+
   // Hamburger menu
   .hamburger {
     outline: none;
     opacity: 0.5;
   }
 
-  .hamburger-inner, 
-  .hamburger-inner::before, 
+  .hamburger-inner,
+  .hamburger-inner::before,
   .hamburger-inner::after {
     width: 30px;
-    height:  2px;
+    height: 2px;
     border-radius: 0;
   }
 
@@ -44,14 +43,16 @@
     opacity: 0;
     max-height: 100vh;
     -webkit-overflow-scrolling: touch;
-    
+    left: 0;
+
     &.is-active {
       display: block;
       transform: translateY(0);
       opacity: 1;
     }
 
-    ul, li {
+    ul,
+    li {
       width: 100%;
       margin: 0;
       padding: 0;
@@ -60,7 +61,6 @@
     }
 
     > ul {
-      
       > li:last-child a {
         border-bottom: 1px solid $color-light-gray;
       }
@@ -157,7 +157,6 @@
 
     h1,
     .h1 {
-
       img {
         height: $header-height - 0.5rem;
       }
@@ -172,7 +171,8 @@
     align-items: center;
     justify-content: flex-end;
 
-    h1, .h1 {
+    h1,
+    .h1 {
       flex: 140px 0 0;
     }
 
@@ -199,7 +199,7 @@
         > li:last-child a {
           border-bottom: none;
         }
-  
+
         > li {
           display: inline-block;
           width: auto;
@@ -230,13 +230,13 @@
         margin-bottom: 2em;
       }
     }
-  
+
     .cart-button {
       opacity: 1;
       flex: 5em 0 0;
       padding: 0;
       text-align: center;
-      border-left: 1px solid rgba(0,0,0,0.1);
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     // Animate header elements in after page load
@@ -249,7 +249,7 @@
         transform: translateY(-100%);
         transition: transform 0.3s, opacity 0.3s;
       }
-    
+
       &.show {
         transform: translateY(0px);
 
