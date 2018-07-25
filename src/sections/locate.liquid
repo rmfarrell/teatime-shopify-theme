@@ -11,6 +11,7 @@
       </p>
     </header>
     <section id="find-a-bottle">
+      {{section.settings.locator}}
     </section>
     <section id="find-a-cafe" class="flex-columns">
       <nav class="subnav" class="column">
@@ -70,6 +71,11 @@
       "type": "richtext",
       "id": "description",
       "label": "Description"
+    },
+    {
+      "type":"html",
+      "id":"locator",
+      "label": "Locator HTML input"
     }
   ],
   "blocks": [
