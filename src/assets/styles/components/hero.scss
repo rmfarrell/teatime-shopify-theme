@@ -51,4 +51,24 @@
       margin-bottom: 0.15em;
     }
   }
+
+  // -- Homepage hero
+  .template-index & {
+    min-height: 22em;
+
+    h1 {
+      font-size: 4em;
+    }
+
+    @media ($mq-medium) {
+      min-height: 45em;
+      background-attachment: inherit;
+
+      h1 {
+        font-size: 10em;
+        text-align: center;
+      }
+    }
+  }
 }
+
