@@ -40,32 +40,25 @@ window.addEventListener('scroll', debouncedScroll)
 const debouncedResize = debounce(() => window.dispatchEvent(resizeEvent), 1000);
 window.addEventListener('resize', debouncedResize);
 
-// -- Global Nav
-
-// - Toggle header
-const $globalHeader = $('#global-header')
-const $navToggle = $globalHeader.querySelector('.hamburger')
-const $nav = $globalHeader.querySelector('nav')
-
-$navToggle.addEventListener('click', () => {
-  $navToggle.classList.toggle('is-active');
-  $nav.classList.toggle('is-active');
-});
-
-// - Highlight nav
-const $navAs = $globalHeader.querySelectorAll('a')
-each($navAs, ($a) => {
-  if (window.location.href.includes($a.getAttribute('href'))) {
-    $a.classList.add('active')
-  }
-});
+// - Initialize Global Header
+const $gh = $('#global-header');
+const nav = globalNav($gh,
+  $gh.querySelector('nav'),
+  $gh.querySelector('.hamburger'),
+);
 
 // - Apply scrolled when nav position is lower
-window.addEventListener('matchabar:scroll', () => {
-  if (window.scrollY > 100) return $globalHeader.classList.add('scrolled')
-  return $globalHeader.classList.remove('scrolled')
-});
+window.addEventListener('matchabar:scroll', nav.updateScrolled);
 
+// -- Trigger shop dropdown on #shop href
+each($$(`a[href^="#shop"]`), ($el) => {
+  $el.addEventListener('click', () => {
+    nav.toggle()
+    setTimeout(() => {
+      nav.$container.querySelector('.accordion').classList.add('open')
+    }, 200)
+  })
+});
 
 // - Stagger in links on homepage header
 (function () {
@@ -163,7 +156,49 @@ document.addEventListener('lazybeforeunveil', (e) => {
     });
   }, observerOptions);
   each(targs, (targ) => {
-    targ.classList.add('out-of-viewport')
-    observer.observe(targ)
+    targ.classList.add('out-of-viewport');
+    observer.observe(targ);
   })
 })();
+
+/**
+ * Set up a global header dropdown
+ * @param {HTMLElement} $globalHeader
+ * @param {HTMLElement} $nav
+ * @param {HTMLElement} $navToggle
+ * @param {ScrollEvent}
+ * @return {Object}
+ */
+function globalNav($globalHeader, $nav, $navToggle) {
+
+  $navToggle.addEventListener('click', toggle);
+
+  // - Highlight nav
+  const $navAs = $globalHeader.querySelectorAll('a');
+  each($navAs, ($a) => {
+    if (window.location.href.includes($a.getAttribute('href'))) {
+      $a.classList.add('active');
+    }
+  });
+
+  function toggle() {
+    $navToggle.classList.toggle('is-active');
+    $nav.classList.toggle('is-active');
+  }
+
+  function updateScrolled() {
+    if (_isScrolled()) return $globalHeader.classList.add('scrolled')
+    return $globalHeader.classList.remove('scrolled')
+  }
+
+  function _isScrolled() {
+    return window.scrollY > 100
+  }
+
+
+  return {
+    toggle,
+    updateScrolled,
+    $container: $globalHeader,
+  }
+}
