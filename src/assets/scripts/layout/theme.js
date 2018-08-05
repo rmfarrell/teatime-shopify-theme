@@ -54,9 +54,9 @@ each($$(`a[href^="#shop"]`), ($el) => {
   $el.addEventListener('click', () => {
     nav.toggle()
     setTimeout(() => {
-      nav.$container.querySelector('.accordion').classList.add('open')
-    }, 500)
-  })
+      nav.$container.querySelector('[data-open]').click()
+    })
+  });
 });
 
 // - Stagger in links on homepage header
