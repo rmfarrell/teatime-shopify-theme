@@ -55,7 +55,7 @@ each($$(`a[href^="#shop"]`), ($el) => {
     nav.toggle()
     setTimeout(() => {
       nav.$container.querySelector('.accordion').classList.add('open')
-    }, 200)
+    }, 500)
   })
 });
 
@@ -186,14 +186,15 @@ function globalNav($globalHeader, $nav, $navToggle) {
   }
 
   function updateScrolled() {
-    if (_isScrolled()) return $globalHeader.classList.add('scrolled')
-    return $globalHeader.classList.remove('scrolled')
+    if (_isScrolled()) {
+      return $globalHeader.classList.add('scrolled');
+    }
+    return $globalHeader.classList.remove('scrolled');
   }
 
   function _isScrolled() {
     return window.scrollY > 100
   }
-
 
   return {
     toggle,
