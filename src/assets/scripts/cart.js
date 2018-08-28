@@ -33,11 +33,9 @@ export function Cart(afterUpdate = function () { }) {
         return afterUpdate(res);
       })
 
-      // redirect to cart page
-      // TODO: style cart page.
       .catch((e) => {
-        console.log(e)
-        window.location.replace('/cart')
+        console.error(e)
+        window.top.location.replace('/cart')
       })
   }
 
